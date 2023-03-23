@@ -219,8 +219,13 @@ function FeaturesBlocks() {
             className="grid items-start max-w-sm gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:max-w-2xl lg:max-w-none"
             data-aos-id-blocks
           >
-            {cards.map(({ title, description, icon }) => (
-              <TeamCard icon={icon} title={title} description={description} />
+            {cards.map(({ title, description, icon }, index) => (
+              <TeamCard
+                icon={icon}
+                title={title}
+                description={description}
+                key={index}
+              />
             ))}
           </div>
         </div>

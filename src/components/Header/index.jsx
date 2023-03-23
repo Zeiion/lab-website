@@ -110,7 +110,12 @@ function Header() {
               }
             >
               <ul className="px-4 py-2 bg-gray-800">
-                <li>
+                {navList.map(({ title, href }) => (
+                  <li key={href}>
+                    <HeaderLink title={title} href={href} />
+                  </li>
+                ))}
+                {/* <li>
                   <Link
                     to="/signin"
                     className="flex justify-center w-full py-2 font-medium text-purple-600 hover:text-gray-200"
@@ -125,7 +130,7 @@ function Header() {
                   >
                     Sign up
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

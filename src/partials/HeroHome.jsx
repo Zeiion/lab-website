@@ -8,17 +8,31 @@ function HeroHome() {
 
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+      <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
         {/* Illustration behind hero content */}
         <div
-          className="absolute left-0 bottom-0 -ml-20 hidden lg:block pointer-events-none"
+          className="absolute bottom-0 left-0 hidden -ml-20 pointer-events-none lg:block"
           aria-hidden="true"
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          <svg className="max-w-full" width="564" height="552" viewBox="0 0 564 552" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            className="max-w-full"
+            width="564"
+            height="552"
+            viewBox="0 0 564 552"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <defs>
-              <linearGradient id="illustration-02" x1="-3.766" y1="300.204" x2="284.352" y2="577.921" gradientUnits="userSpaceOnUse">
+              <linearGradient
+                id="illustration-02"
+                x1="-3.766"
+                y1="300.204"
+                x2="284.352"
+                y2="577.921"
+                gradientUnits="userSpaceOnUse"
+              >
                 <stop stopColor="#5D5DFF" stopOpacity=".01" />
                 <stop offset="1" stopColor="#5D5DFF" stopOpacity=".32" />
               </linearGradient>
@@ -35,22 +49,36 @@ function HeroHome() {
         {/* Hero content */}
         <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-4" data-aos="fade-up">
-              Landing template for startups
+          <div className="max-w-4xl pb-12 mx-auto text-center md:pb-16">
+            <h1 className="mb-10 h1" data-aos="fade-up">
+              集成平台介绍
             </h1>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
-              Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.
+            <p
+              className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
+              data-aos="fade-up"
+              data-aos-delay="200"
+              style={{
+                textIndent: '2.5rem',
+              }}
+            >
+              欢迎来到我们的集成平台（-v-），一个由多个应用程序和服务组成的系统。在这里汇聚了我们的实验室主页、团队、项目和成果等信息。
+              在我们的实验室主页中，您可以了解我们的实验室的所有信息和资源，包括机构介绍、成员信息、研究方向、实验室新闻等。我们的团队由一群热爱科学研究和技术创新的专家和学者组成，他们在各种领域积累了丰富的经验和知识。
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">
-                  Start free trial
+                <a
+                  className="w-full mb-4 text-white bg-purple-600 btn hover:bg-purple-700 sm:w-auto sm:mb-0"
+                  href="#0"
+                >
+                  联系我们
                 </a>
               </div>
               <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">
-                  Learn more
+                <a
+                  className="w-full text-white bg-gray-700 btn hover:bg-gray-800 sm:w-auto sm:ml-4"
+                  href="#0"
+                >
+                  更多
                 </a>
               </div>
             </div>
@@ -58,8 +86,18 @@ function HeroHome() {
 
           {/* Hero image */}
           <div>
-            <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-              <img className="mx-auto" src={HeroImage} width="1024" height="504" alt="Hero" />
+            <div
+              className="relative flex items-center justify-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                className="mx-auto"
+                src={HeroImage}
+                width="1024"
+                height="504"
+                alt="Hero"
+              />
               <a
                 className="absolute group"
                 href="#0"
@@ -71,19 +109,25 @@ function HeroHome() {
                 aria-controls="modal"
               >
                 <svg
-                  className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
+                  className="w-16 h-16 transition duration-150 ease-in-out sm:w-20 sm:h-20 hover:opacity-75"
                   viewBox="0 0 88 88"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <defs>
-                    <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="a">
+                    <linearGradient
+                      x1="78.169%"
+                      y1="9.507%"
+                      x2="24.434%"
+                      y2="90.469%"
+                      id="a"
+                    >
                       <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
                       <stop stopColor="#EBF1F5" offset="100%" />
                     </linearGradient>
                   </defs>
                   <circle fill="url(#a)" cx="44" cy="44" r="44" />
                   <path
-                    className="fill-current text-purple-600"
+                    className="text-purple-600 fill-current"
                     d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
                   />
                 </svg>
@@ -91,9 +135,19 @@ function HeroHome() {
             </div>
 
             {/* Modal */}
-            <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
+            <Modal
+              id="modal"
+              ariaLabel="modal-headline"
+              show={videoModalOpen}
+              handleClose={() => setVideoModalOpen(false)}
+            >
               <div className="relative pb-9/16">
-                <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/174002812" title="Video" allowFullScreen></iframe>
+                <iframe
+                  className="absolute w-full h-full"
+                  src="https://player.vimeo.com/video/174002812"
+                  title="Video"
+                  allowFullScreen
+                ></iframe>
               </div>
             </Modal>
           </div>

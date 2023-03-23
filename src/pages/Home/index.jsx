@@ -7,6 +7,7 @@ import TeamSection from '~/partials/TeamSection';
 import TopicSection from '~/partials/TopicSection';
 import Testimonials from '~/partials/Testimonials';
 import Newsletter from '~/partials/Newsletter';
+import Timeline from '~/components/Timeline';
 import Banner from '~/components/Banner';
 import Footer from '~/components/Footer';
 
@@ -30,7 +31,8 @@ function Home() {
         <HeroHome />
         <TeamSection />
         <TopicSection />
-        {/* <Testimonials /> */}
+        <Testimonials />
+        <Timeline />
         {/* <Newsletter /> */}
       </main>
 

@@ -17,9 +17,9 @@ const HCard = ({
   ];
 
   return (
-    <section class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 min-h-screen">
-      <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full">
-        <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+    <section class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200">
+      <div class="max-w-6xl p-4 sm:px-0 h-full">
+        <article class="max-w-sm md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
           <a class="relative block group" href="#0">
             <div
               class="absolute inset-0 bg-gray-800 hidden md:block transform md:translate-y-2 md:translate-x-4 xl:translate-y-4 xl:translate-x-8 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out pointer-events-none"
@@ -63,7 +63,9 @@ const HCard = ({
                 </a>
               </h3>
             </header>
-            <p class="text-lg text-gray-400 flex-grow">{description}</p>
+            <p class="text-lg text-gray-400 flex-grow text-justify">
+              {description}
+            </p>
             <footer class="flex items-center mt-4">
               <a href="#0">
                 <img

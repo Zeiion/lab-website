@@ -17,10 +17,10 @@ const VCard = ({
   ];
 
   return (
-    <section class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 min-h-screen">
-      <div class=" mx-auto p-4 sm:px-6 h-full flex flex-col max-w-sm">
-        <a class="relative block group" href="#0">
-          <figure class="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform md:-translate-y-2 xl:-translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out">
+    <section class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 max-w-sm">
+      <div class="mx-auto h-full flex flex-col">
+        <a class="relative block group mb-6" href="#0">
+          <figure class="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform transition duration-700 ease-out">
             <img
               class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
               src={imgSrc}

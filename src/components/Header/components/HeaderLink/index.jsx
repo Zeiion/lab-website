@@ -5,7 +5,7 @@ const HeaderLink = ({ title, href }) => {
   return (
     <Link
       to={href}
-      className="flex items-center px-4 py-3 tracking-wider duration-150 ease-in-out 0 font-mediumtransition text-gray-50 hover:text-purple-600"
+      className="flex items-center px-4 py-3 tracking-wider text-gray-200 duration-150 ease-in-out 0 font-mediumtransition hover:text-purple-600"
     >
       {title}
     </Link>

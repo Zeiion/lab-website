@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import TagList from '~/components/TagList';
 
 const HCard = ({
   title,
@@ -18,19 +19,19 @@ const HCard = ({
 
   return (
     <section
-      class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200"
+      className="flex flex-col justify-center antialiased text-gray-200 bg-gray-900"
       data-aos="fade-up"
     >
-      <div class="max-w-7xl sm:px-0 h-full">
-        <article class="max-w-sm md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
-          <a class="relative block group" href="#0">
+      <div className="h-full max-w-7xl sm:px-0">
+        <article className="grid items-center max-w-sm gap-6 md:max-w-none md:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-16">
+          <a className="relative block group" href="#0">
             <div
-              class="absolute inset-0 bg-gray-800 hidden md:block transform md:translate-y-2 md:translate-x-4 xl:translate-y-4 xl:translate-x-8 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out pointer-events-none"
+              className="absolute inset-0 hidden transition duration-700 ease-out transform bg-gray-800 pointer-events-none md:block md:translate-y-2 md:translate-x-4 xl:translate-y-4 xl:translate-x-8 group-hover:translate-x-0 group-hover:translate-y-0"
               aria-hidden="true"
             ></div>
-            <figure class="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform md:-translate-y-2 xl:-translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out">
+            <figure className="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform md:-translate-y-2 xl:-translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-700 ease-out">
               <img
-                class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
+                className="absolute inset-0 object-cover w-full h-full transition duration-700 ease-out transform hover:scale-105"
                 src={imgSrc}
                 width="540"
                 height="303"
@@ -40,39 +41,25 @@ const HCard = ({
           </a>
           <div>
             <header>
-              <div class="mb-3">
-                <ul class="flex flex-wrap text-xs font-medium -m-1">
-                  {tags.map((text, index) => (
-                    <li class="m-1">
-                      <a
-                        class={
-                          'inline-flex text-center text-gray-100 py-1 px-3 rounded-full transition duration-150 ease-in-out ' +
-                          tagClassList[Math.floor(index % tagClassList.length)]
-                        }
-                        href="#0"
-                      >
-                        {text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <div className="mb-3">
+                <TagList list={tags} />
               </div>
-              <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+              <h3 className="mb-2 text-2xl font-bold leading-tight lg:text-3xl">
                 <a
-                  class="hover:text-gray-100 transition duration-150 ease-in-out"
+                  className="transition duration-150 ease-in-out hover:text-gray-100"
                   href="#0"
                 >
                   {title}
                 </a>
               </h3>
             </header>
-            <p class="text-lg text-gray-400 flex-grow text-justify">
+            <p className="flex-grow text-lg text-justify text-gray-400">
               {description}
             </p>
-            <footer class="flex items-center mt-4">
+            <footer className="flex items-center mt-4">
               <a href="#0">
                 <img
-                  class="rounded-full flex-shrink-0 mr-4"
+                  className="flex-shrink-0 mr-4 rounded-full"
                   src={authorImgSrc}
                   width="40"
                   height="40"
@@ -81,13 +68,13 @@ const HCard = ({
               </a>
               <div>
                 <a
-                  class="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out"
+                  className="font-medium text-gray-200 transition duration-150 ease-in-out hover:text-gray-100"
                   href="#0"
                 >
                   {author}
                 </a>
-                <span class="text-gray-700"> - </span>
-                <span class="text-gray-500">{date}</span>
+                <span className="text-gray-700"> - </span>
+                <span className="text-gray-500">{date}</span>
               </div>
             </footer>
           </div>

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import TagList from '~/components/TagList';
 
 const VCard = ({
   title,
@@ -18,14 +19,14 @@ const VCard = ({
 
   return (
     <section
-      class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 max-w-sm"
+      className="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 max-w-sm"
       data-aos="fade-up"
     >
-      <div class="mx-auto h-full flex flex-col">
-        <a class="relative block group mb-6" href="#0">
-          <figure class="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform transition duration-700 ease-out">
+      <div className="mx-auto h-full flex flex-col">
+        <a className="relative block group mb-6" href={href}>
+          <figure className="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform transition duration-700 ease-out">
             <img
-              class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
+              className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
               src={imgSrc}
               width="540"
               height="303"
@@ -35,37 +36,23 @@ const VCard = ({
         </a>
         <div>
           <header>
-            <div class="mb-3">
-              <ul class="flex flex-wrap text-xs font-medium -m-1">
-                {tags.map((text, index) => (
-                  <li class="m-1">
-                    <a
-                      class={
-                        'inline-flex text-center text-gray-100 py-1 px-3 rounded-full transition duration-150 ease-in-out ' +
-                        tagClassList[Math.floor(index % tagClassList.length)]
-                      }
-                      href="#0"
-                    >
-                      {text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="mb-3">
+              <TagList list={tags} />
             </div>
-            <h3 class="text-xl lg:text-2xl font-bold leading-tight mb-2">
+            <h3 className="text-xl lg:text-2xl font-bold leading-tight mb-2">
               <a
-                class="hover:text-gray-100 transition duration-150 ease-in-out"
+                className="hover:text-gray-100 transition duration-150 ease-in-out"
                 href="#0"
               >
                 {title}
               </a>
             </h3>
           </header>
-          <p class="text-lg text-gray-400 flex-grow">{description}</p>
-          <footer class="flex items-center mt-4">
+          <p className="text-lg text-gray-400 flex-grow">{description}</p>
+          <footer className="flex items-center mt-4">
             <a href="#0">
               <img
-                class="rounded-full flex-shrink-0 mr-4"
+                className="rounded-full flex-shrink-0 mr-4"
                 src={authorImgSrc}
                 width="40"
                 height="40"
@@ -74,13 +61,13 @@ const VCard = ({
             </a>
             <div>
               <a
-                class="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out"
+                className="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out"
                 href="#0"
               >
                 {author}
               </a>
-              <span class="text-gray-700"> - </span>
-              <span class="text-gray-500">{date}</span>
+              <span className="text-gray-700"> - </span>
+              <span className="text-gray-500">{date}</span>
             </div>
           </footer>
         </div>

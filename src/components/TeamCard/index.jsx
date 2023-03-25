@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Card = ({
+  id,
   title,
   icon = (
     <svg
@@ -39,7 +41,9 @@ const Card = ({
       data-aos-anchor="[data-aos-id-blocks]"
     >
       {icon}
-      <h4 className="mb-2 h4">{title}</h4>
+      <Link className="mb-2 h4" to={'/team/' + id}>
+        {title}
+      </Link>
       <p className="text-lg text-center text-gray-400">{description}</p>
     </div>
   );
@@ -48,6 +52,7 @@ const Card = ({
 export default Card;
 
 Card.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
   description: PropTypes.string.isRequired,

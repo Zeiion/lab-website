@@ -20,6 +20,7 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
+      href: '/achievements/1',
     },
     {
       title: 'Designing a functional workflow at home.',
@@ -33,6 +34,7 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
+      href: '/achievements/1',
     },
     {
       title: 'Designing a functional workflow at home.',
@@ -45,6 +47,7 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
+      href: '/achievements/1',
     },
     {
       title: 'Designing a functional workflow at home.',
@@ -57,6 +60,7 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
+      href: '/achievements/1',
     },
     {
       title: 'Designing a functional workflow at home.',
@@ -70,6 +74,7 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
+      href: '/achievements/1',
     },
     {
       title: 'Designing a functional workflow at home.',
@@ -82,20 +87,23 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
+      href: '/achievements/1',
     },
   ];
   const prizeList = archieveList;
   return (
     <PageTemplate title={'成果共享'} subTitle={'Achievements'}>
-      <HCard
-        title={archieveList[0].title}
-        description={archieveList[0].description}
-        imgSrc={archieveList[0].imgSrc}
-        tags={archieveList[0].tags}
-        author={archieveList[0].author}
-        authorImgSrc={archieveList[0].authorImgSrc}
-        date={archieveList[0].date}
-      />
+      <div className="mt-10">
+        <HCard
+          title={archieveList[0].title}
+          description={archieveList[0].description}
+          imgSrc={archieveList[0].imgSrc}
+          tags={archieveList[0].tags}
+          author={archieveList[0].author}
+          authorImgSrc={archieveList[0].authorImgSrc}
+          date={archieveList[0].date}
+        />
+      </div>
       <VCardList
         title="Latest articles"
         list={archieveList.slice(1)}

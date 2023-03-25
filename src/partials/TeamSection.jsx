@@ -171,31 +171,37 @@ const TeamSection = () => {
 
   const cards = [
     {
+      id: 'team-1',
       title: '团队1',
       description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       icon: iconList[0],
     },
     {
+      id: 'team-2',
       title: '团队2',
       description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       icon: iconList[1],
     },
     {
+      id: 'team-3',
       title: '团队3',
       description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       icon: iconList[2],
     },
     {
+      id: 'team-4',
       title: '团队4',
       description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       icon: iconList[3],
     },
     {
+      id: 'team-5',
       title: '团队5',
       description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       icon: iconList[4],
     },
     {
+      id: 'team-6',
       title: '团队6',
       description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       icon: iconList[5],
@@ -204,7 +210,7 @@ const TeamSection = () => {
 
   return (
     <section>
-      <div className="max-w-7xl px-4 mx-auto sm:px-6">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6">
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl pb-12 mx-auto text-center md:pb-20">
@@ -219,8 +225,9 @@ const TeamSection = () => {
             className="grid items-start max-w-sm gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:max-w-2xl lg:max-w-none"
             data-aos-id-blocks
           >
-            {cards.map(({ title, description, icon }, index) => (
+            {cards.map(({ title, description, icon, id }, index) => (
               <TeamCard
+                id={id}
                 icon={icon}
                 title={title}
                 description={description}

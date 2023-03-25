@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import Achievements from './pages/Achievements';
 import Models from './pages/Models';
 import Scenes from './pages/Scenes';
+import TeamIntro from './pages/TeamIntro';
+
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
@@ -39,6 +41,7 @@ function App() {
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/models" element={<Models />} />
         <Route path="/scenes" element={<Scenes />} />
+        <Route path="/team/:id" element={<TeamIntro />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />

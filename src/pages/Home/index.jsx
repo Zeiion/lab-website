@@ -129,7 +129,7 @@ function Home() {
       <main className="grow">
         {/*  Page illustration */}
         <div
-          className="relative h-0 max-w-7xl mx-auto pointer-events-none"
+          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
           aria-hidden="true"
         >
           <PageIllustration />
@@ -138,7 +138,12 @@ function Home() {
         {/*  Page sections */}
         <HeroHome />
         <TeamSection />
-        <TopicSection />
+        <TopicSection
+          title="课题介绍"
+          description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit laborum — semper quis lectus nulla."
+          subTitle="Topic Intro"
+        />
         {/* <Testimonials /> */}
         {/* <Timeline /> */}
 

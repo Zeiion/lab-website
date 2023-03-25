@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 
-const TopicCard = ({ imgSrc, slogan, title, description, list, index }) => {
+const TopicCard = ({
+  imgSrc,
+  slogan,
+  title,
+  description,
+  list,
+  index,
+  href,
+}) => {
   const dataAos = index % 2 === 0 ? 'fade-left' : 'fade-right';
   const direction = index % 2 === 0 ? 'rtl' : 'md:order-1';
   const contentClass =
@@ -32,8 +40,10 @@ const TopicCard = ({ imgSrc, slogan, title, description, list, index }) => {
           <div className="mb-2 text-xl text-purple-600 font-architects-daughter">
             {slogan}
           </div>
-          <h3 className="mb-3 h3">{title}</h3>
-          <p className="mb-4 text-xl text-gray-400">{description}</p>
+          <a className="h3" href={href}>
+            {title}
+          </a>
+          <p className="mt-3 mb-4 text-xl text-gray-400">{description}</p>
           <ul className="-mb-2 text-lg text-gray-400">
             {list.map(({ text }) => (
               <li className="flex items-center mb-2" key={text}>
@@ -66,4 +76,5 @@ TopicCard.propTypes = {
       text: PropTypes.string.isRequired,
     }),
   ),
+  href: PropTypes.string,
 };

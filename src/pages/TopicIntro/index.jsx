@@ -4,10 +4,10 @@ import VCardList from '~/components/VCardList';
 import Timeline from '~/components/Timeline';
 import TagList from '~/components/TagList';
 import MemberCard from '../../components/MemberCard';
-const TeamIntro = () => {
+const TopicIntro = () => {
   const { id } = useParams();
-  const teamInfo = {
-    title: '团队名称',
+  const topicInfo = {
+    title: '课题名称',
     description: `We are a full-service digital agency that builds immersive user experience. Our tr team creates an exceptionaxlvisualization and thought-out r team creates an exceptionaxlvisualization and thought-out eam creates an exceptionaxlvisualization and thought-out functionality. We believe, our clients deserve to be remarkable in their business. The studio develops the products people appreciate all around the world.`,
     researchDirections: ['研究方向1', '研究方向2'],
     members: [
@@ -206,7 +206,7 @@ const TeamIntro = () => {
       title={
         <>
           {/* TODO color */}
-          团队介绍 —— <span className="text-purple-600">{teamInfo.title}</span>
+          <span className="text-purple-600">{topicInfo.title}</span>
         </>
       }
       subTitle={'Team Profile'}
@@ -219,17 +219,17 @@ const TeamIntro = () => {
           textIndent: '2.5rem',
         }}
       >
-        {teamInfo.description}
+        {topicInfo.description}
       </p>
 
       <h3 className="h3">研究方向</h3>
       <div className="mt-5 mb-16">
-        <TagList list={teamInfo.researchDirections} size="medium" />
+        <TagList list={topicInfo.researchDirections} size="medium" />
       </div>
 
       <h3 className="h3">团队成员</h3>
       <div className="grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4">
-        {teamInfo.members.map(({ name, imgSrc, description, works, tags }) => (
+        {topicInfo.members.map(({ name, imgSrc, description, works, tags }) => (
           <MemberCard
             key={name}
             name={name}
@@ -241,10 +241,10 @@ const TeamIntro = () => {
         ))}
       </div>
 
-      <Timeline list={teamInfo.timeline} />
-      <VCardList title="Lateset Works" list={teamInfo.works}></VCardList>
+      <Timeline list={topicInfo.timeline} />
+      <VCardList title="Lateset Works" list={topicInfo.works}></VCardList>
     </PageTemplate>
   );
 };
 
-export default TeamIntro;
+export default TopicIntro;

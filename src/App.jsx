@@ -11,6 +11,7 @@ import Achievements from './pages/Achievements';
 import Models from './pages/Models';
 import Scenes from './pages/Scenes';
 import TeamIntro from './pages/TeamIntro';
+import TopicIntro from './pages/TopicIntro';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/models" element={<Models />} />
         <Route path="/scenes" element={<Scenes />} />
         <Route path="/team/:id" element={<TeamIntro />} />
+        <Route path="/topic/:id" element={<TopicIntro />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />

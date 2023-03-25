@@ -5,13 +5,17 @@ import FeatImage01 from '../images/features-03-image-01.png';
 import FeatImage02 from '../images/features-03-image-02.png';
 import FeatImage03 from '../images/features-03-image-03.png';
 
-const TopicSection = () => {
-  const topicList = [
+const TopicSection = ({
+  title,
+  subTitle,
+  description,
+  list = [
     {
       title: '基于深度学习的人脸识别',
       description: `基于深度学习的人脸识别系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人脸特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage01,
       slogan: 'Face Recognition',
+      href: '/topic/1',
       list: [
         {
           text: '人脸识别',
@@ -26,6 +30,7 @@ const TopicSection = () => {
       description: `基于深度学习的人体姿态估计系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人体姿态特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage02,
       slogan: 'XXXXX',
+      href: '/topic/1',
       list: [
         {
           text: '人体姿态估计',
@@ -40,6 +45,7 @@ const TopicSection = () => {
       description: `基于深度学习的人流量统计系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人流量特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage03,
       slogan: 'XXXXX',
+      href: '/topic/1',
       list: [
         {
           text: '人流量统计',
@@ -49,27 +55,25 @@ const TopicSection = () => {
         },
       ],
     },
-  ];
+  ],
+}) => {
   return (
     <section>
-      <div className="max-w-7xl px-4 mx-auto sm:px-6">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6">
         <div className="py-12 border-t border-gray-800 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl pb-12 mx-auto text-center md:pb-16">
             <div className="inline-flex px-3 py-1 m-2 mb-4 text-sm font-semibold text-green-600 bg-green-200 rounded-full">
-              Reach goals that matter
+              {subTitle}
             </div>
-            <h1 className="mb-4 h2">课题介绍</h1>
-            <p className="text-xl text-gray-400">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit laborum — semper quis lectus nulla.
-            </p>
+            <h1 className="mb-4 h2">{title}</h1>
+            <p className="text-xl text-gray-400">{description}</p>
           </div>
 
           {/* Items */}
           <div className="grid gap-20">
-            {topicList.map(
-              ({ imgSrc, slogan, title, description, list }, index) => (
+            {list.map(
+              ({ imgSrc, slogan, title, description, list, href }, index) => (
                 <TopicCard
                   key={index}
                   imgSrc={imgSrc}
@@ -77,6 +81,7 @@ const TopicSection = () => {
                   title={title}
                   description={description}
                   list={list}
+                  href={href}
                   index={index}
                 />
               ),

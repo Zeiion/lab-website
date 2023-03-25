@@ -54,8 +54,7 @@ const TeamIntro = () => {
             href: '/achievements/2',
           },
           {
-            title:
-              '11111111111111111111111111111111111111         11111111111111 作品1',
+            title: '11111111111111',
             href: '/achievements/1',
           },
           {
@@ -229,7 +228,7 @@ const TeamIntro = () => {
       </div>
 
       <h3 className="h3">团队成员</h3>
-      <div className="grid grid-cols-2 mt-8 mb-16 gap-y-10 gap-x-4">
+      <div className="grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4">
         {teamInfo.members.map(({ name, imgSrc, description, works, tags }) => (
           <MemberCard
             key={name}

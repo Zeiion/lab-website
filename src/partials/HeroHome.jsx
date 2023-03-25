@@ -8,7 +8,7 @@ function HeroHome() {
 
   return (
     <section>
-      <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
+      <div className="relative max-w-7xl px-4 mx-auto sm:px-6">
         {/* Illustration behind hero content */}
         <div
           className="absolute bottom-0 left-0 hidden -ml-20 pointer-events-none lg:block"

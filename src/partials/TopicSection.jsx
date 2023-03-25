@@ -52,7 +52,7 @@ const TopicSection = () => {
   ];
   return (
     <section>
-      <div className="max-w-6xl px-4 mx-auto sm:px-6">
+      <div className="max-w-7xl px-4 mx-auto sm:px-6">
         <div className="py-12 border-t border-gray-800 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl pb-12 mx-auto text-center md:pb-16">

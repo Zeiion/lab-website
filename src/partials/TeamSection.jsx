@@ -204,7 +204,7 @@ const TeamSection = () => {
 
   return (
     <section>
-      <div className="max-w-6xl px-4 mx-auto sm:px-6">
+      <div className="max-w-7xl px-4 mx-auto sm:px-6">
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl pb-12 mx-auto text-center md:pb-20">

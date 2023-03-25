@@ -95,17 +95,17 @@ const Achievements = () => {
       <main className="grow">
         {/*  Page illustration */}
         <div
-          className="relative h-0 max-w-6xl mx-auto pointer-events-none"
+          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
           aria-hidden="true"
         >
           <PageIllustration />
         </div>
 
         <section className="relative">
-          <div className="max-w-6xl px-4 mx-auto sm:px-6">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
-              <div className="max-w-6xl pb-12 mx-auto text-center md:pb-20 md:text-left">
+              <div className="pb-12 mx-auto text-center max-w-7xl md:pb-20 md:text-left">
                 <h1 className="h1" data-aos="fade-up">
                   成果列表 <br /> <h2 className="h2">Achievements</h2>
                 </h1>

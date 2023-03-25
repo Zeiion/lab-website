@@ -15,14 +15,14 @@ function SignIn() {
       <main className="grow">
         {/*  Page illustration */}
         <div
-          className="relative h-0 max-w-6xl mx-auto pointer-events-none"
+          className="relative h-0 max-w-7xl mx-auto pointer-events-none"
           aria-hidden="true"
         >
           <PageIllustration />
         </div>
 
         <section className="relative">
-          <div className="max-w-6xl px-4 mx-auto sm:px-6">
+          <div className="max-w-7xl px-4 mx-auto sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl pb-12 mx-auto text-center md:pb-20">

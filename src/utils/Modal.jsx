@@ -57,7 +57,7 @@ function Modal({ children, id, ariaLabel, show, handleClose }) {
         leaveEnd="opacity-0 scale-95"
       >
         <div
-          className="bg-white overflow-auto max-w-6xl w-full max-h-full"
+          className="bg-white overflow-auto max-w-7xl w-full max-h-full"
           ref={modalContent}
         >
           {children}

@@ -49,7 +49,7 @@ function Footer() {
   return (
     <footer>
       <div className="py-12 md:py-16">
-        <div className="max-w-6xl px-4 mx-auto sm:px-6">
+        <div className="max-w-7xl px-4 mx-auto sm:px-6">
           {/* Top area: Blocks */}
           <div className="grid gap-8 mb-8 md:grid-cols-12 lg:gap-20 md:mb-12">
             {/* 1st block */}

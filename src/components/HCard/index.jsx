@@ -21,7 +21,7 @@ const HCard = ({
       class="flex flex-col justify-center antialiased bg-gray-900 text-gray-200"
       data-aos="fade-up"
     >
-      <div class="max-w-6xl sm:px-0 h-full">
+      <div class="max-w-7xl sm:px-0 h-full">
         <article class="max-w-sm md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
           <a class="relative block group" href="#0">
             <div

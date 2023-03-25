@@ -108,7 +108,7 @@ const Carousel = ({ children }) => {
 
   // TODO recursively render children
   return (
-    <div className="flex justify-center max-w-6xl px-4 mx-auto sm:px-6">
+    <div className="flex justify-center max-w-7xl px-4 mx-auto sm:px-6">
       <div className="carousel">
         {active > 0 && (
           <button className="nav left" onClick={() => handleClickPrev()}>

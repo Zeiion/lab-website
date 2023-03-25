@@ -39,7 +39,7 @@ function Header() {
 
   return (
     <header className="absolute z-30 w-full">
-      <div className="max-w-6xl px-4 mx-auto sm:px-6">
+      <div className="max-w-7xl px-4 mx-auto sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Site branding */}
           <div className="mr-4 shrink-0">

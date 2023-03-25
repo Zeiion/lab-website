@@ -129,7 +129,7 @@ function Home() {
       <main className="grow">
         {/*  Page illustration */}
         <div
-          className="relative h-0 max-w-6xl mx-auto pointer-events-none"
+          className="relative h-0 max-w-7xl mx-auto pointer-events-none"
           aria-hidden="true"
         >
           <PageIllustration />

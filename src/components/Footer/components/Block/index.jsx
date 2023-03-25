@@ -7,7 +7,7 @@ const Block = ({ list, title }) => {
       <h6 className="mb-1 font-medium text-gray-200">{title}</h6>
       <ul>
         {list.map(({ title, href }) => (
-          <li className="mb-1">
+          <li className="mb-1" key={href}>
             <Link
               to={href}
               className="text-gray-400 transition duration-150 ease-in-out hover:text-gray-100"

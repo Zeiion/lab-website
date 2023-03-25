@@ -1,0 +1,59 @@
+/**
+   {
+      title: 'Designing a functional workflow at home.',
+      description: `Description of the card
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed euismod, nisl nec tincidunt lacinia, nunc est aliquam
+      nisl, eu aliquet nunc nunc eget lorem.`,
+      imgSrc: 'http://placekitten.com/1200/600',
+      href: 'https://www.baidu.com',
+    },
+ */
+import './index.scss';
+
+const ProjectCard = ({ title, description, imgSrc, href }) => {
+  return (
+    <div className="pro-card">
+      <div className="card">
+        <div className="content">
+          <h3 className="title">{title}</h3>
+          <p className="copy">{description}</p>
+          <button className="btn">
+            <a href={href}>
+              <span>Read More</span>
+            </a>
+          </button>
+        </div>
+        <img className="object-cover bg" src={imgSrc} alt="" />
+      </div>
+    </div>
+    // <a
+    //   className="relative flex w-full h-full gap-2 bg-gray-800"
+    //   data-aos="fade-up"
+    //   data-aos-delay="200"
+    //   href={href}
+    // >
+    //   <figure className="relative w-full h-full overflow-hidden transition duration-700 ease-out transform">
+    //     <img
+    //       className="absolute inset-0 object-cover w-full h-full transition duration-700 ease-out transform hover:scale-105"
+    //       src={imgSrc}
+    //       width="540"
+    //       height="303"
+    //       alt="Blog post"
+    //     />
+    //   </figure>
+    //   <div className="flex flex-col justify-between p-6 w-96">
+    //     <p className="mt-2 text-lg text-justify text-gray-500 dark:text-gray-400">
+    //       {description}
+    //     </p>
+    //   </div>
+    //   <div className="box-border absolute w-3/4 p-2 mx-16 rounded-full bottom-4 bg-slate-100/70">
+    //     <h3 className="text-3xl font-bold leading-snug tracking-tight text-slate-800">
+    //       {title}
+    //     </h3>
+    //   </div>
+    // </a>
+  );
+};
+
+export default ProjectCard;

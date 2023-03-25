@@ -1,6 +1,6 @@
 import PropsType from 'prop-types';
 
-const IconCard = ({ description, cite, source, imgSrc }) => {
+const IconCard = ({ description, cite = '', source = '', imgSrc }) => {
   return (
     <div
       className="flex flex-col h-full p-6 bg-gray-800"

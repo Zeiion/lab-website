@@ -5,13 +5,13 @@ import FeatImage01 from '../images/features-03-image-01.png';
 import FeatImage02 from '../images/features-03-image-02.png';
 import FeatImage03 from '../images/features-03-image-03.png';
 
-function FeaturesZigzag() {
+const TopicSection = () => {
   const topicList = [
     {
       title: '基于深度学习的人脸识别',
       description: `基于深度学习的人脸识别系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人脸特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage01,
-      slogan: '人脸识别',
+      slogan: 'Face Recognition',
       list: [
         {
           text: '人脸识别',
@@ -25,7 +25,7 @@ function FeaturesZigzag() {
       title: '基于深度学习的人体姿态估计',
       description: `基于深度学习的人体姿态估计系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人体姿态特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage02,
-      slogan: '人体姿态估计',
+      slogan: 'XXXXX',
       list: [
         {
           text: '人体姿态估计',
@@ -39,7 +39,7 @@ function FeaturesZigzag() {
       title: '基于深度学习的人流量统计',
       description: `基于深度学习的人流量统计系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人流量特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage03,
-      slogan: '人流量统计',
+      slogan: 'XXXXX',
       list: [
         {
           text: '人流量统计',
@@ -86,6 +86,6 @@ function FeaturesZigzag() {
       </div>
     </section>
   );
-}
+};
 
-export default FeaturesZigzag;
+export default TopicSection;

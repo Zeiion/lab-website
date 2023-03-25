@@ -47,7 +47,7 @@ const Card = ({
 
 export default Card;
 
-Card.PropTypes = {
+Card.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
   description: PropTypes.string.isRequired,

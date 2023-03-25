@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamCard from '../components/TeamCard';
 
-function FeaturesBlocks() {
+const TeamSection = () => {
   const iconList = [
     <svg
       className="w-16 h-16 mb-4"
@@ -232,6 +232,6 @@ function FeaturesBlocks() {
       </div>
     </section>
   );
-}
+};
 
-export default FeaturesBlocks;
+export default TeamSection;

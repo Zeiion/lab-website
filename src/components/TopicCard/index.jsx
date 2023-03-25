@@ -56,7 +56,7 @@ const TopicCard = ({ imgSrc, slogan, title, description, list, index }) => {
 
 export default TopicCard;
 
-TopicCard.PropTypes = {
+TopicCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   slogan: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

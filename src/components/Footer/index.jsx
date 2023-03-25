@@ -10,11 +10,11 @@ function Footer() {
       list: [
         {
           title: 'Company',
-          href: '/#',
+          href: '/#1',
         },
         {
           title: 'Team',
-          href: '/#',
+          href: '/#2',
         },
       ],
     },
@@ -23,11 +23,11 @@ function Footer() {
       list: [
         {
           title: 'Blog',
-          href: '/#',
+          href: '/#3',
         },
         {
           title: 'Support dsadasd ',
-          href: '/#',
+          href: '/#4',
         },
       ],
     },
@@ -36,11 +36,11 @@ function Footer() {
       list: [
         {
           title: 'Company asjdkasjdkasjd',
-          href: '/#',
+          href: '/#5',
         },
         {
           title: 'Team sadasdasd',
-          href: '/#',
+          href: '/#6',
         },
       ],
     },

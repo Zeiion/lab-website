@@ -91,7 +91,7 @@ const VCard = ({
 
 export default VCard;
 
-VCard.PropTypes = {
+VCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,

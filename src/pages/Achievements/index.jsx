@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from '~/components/Header';
-import PageIllustration from '~/partials/PageIllustration';
-import Banner from '~/components/Banner';
-import HCard from '../../components/HCard';
-import VCard from '../../components/VCard';
+import HCard from '~/components/HCard';
+import VCard from '~/components/VCard';
+import PageTemplate from '~/components/PageTemplate';
+import VCardList from '~/components/VCardList';
 
 const Achievements = () => {
   const archieveList = [
@@ -87,116 +86,22 @@ const Achievements = () => {
   ];
   const prizeList = archieveList;
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden bg-gray-900">
-      {/*  Site header */}
-      <Header />
-
-      {/*  Page content */}
-      <main className="grow">
-        {/*  Page illustration */}
-        <div
-          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
-          aria-hidden="true"
-        >
-          <PageIllustration />
-        </div>
-
-        <section className="relative">
-          <div className="px-4 mx-auto max-w-7xl sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-              {/* Page header */}
-              <div className="pb-12 mx-auto text-center max-w-7xl md:pb-20 md:text-left">
-                <h1 className="h1" data-aos="fade-up">
-                  成果列表 <br /> <h2 className="h2">Achievements</h2>
-                </h1>
-              </div>
-              <HCard
-                title={archieveList[0].title}
-                description={archieveList[0].description}
-                imgSrc={archieveList[0].imgSrc}
-                tags={archieveList[0].tags}
-                author={archieveList[0].author}
-                authorImgSrc={archieveList[0].authorImgSrc}
-                date={archieveList[0].date}
-              />
-              <h4
-                class="aos-init aos-animate border-b-2 pb-6 h4 mb-8 mt-16 border-gray-700"
-                data-aos="fade-up"
-              >
-                Latest articles
-              </h4>
-              <div className="grid items-start w-full md:grid-cols-3 md:gap-x-6 md:gap-y-8 gap-y-5">
-                {archieveList
-                  .slice(1)
-                  .map(
-                    (
-                      {
-                        title,
-                        description,
-                        imgSrc,
-                        tags,
-                        author,
-                        authorImgSrc,
-                        date,
-                      },
-                      index,
-                    ) => (
-                      <VCard
-                        title={title}
-                        description={description}
-                        imgSrc={imgSrc}
-                        tags={tags}
-                        author={author}
-                        authorImgSrc={authorImgSrc}
-                        date={date}
-                        key={index}
-                      />
-                    ),
-                  )}
-              </div>
-
-              <h4
-                class="aos-init aos-animate border-b-2 pb-6 h4 mb-8 mt-16 border-gray-700"
-                data-aos="fade-up"
-              >
-                Latest prizes
-              </h4>
-              <div className="grid items-start w-full md:grid-cols-3 md:gap-x-6 md:gap-y-8 gap-y-5">
-                {prizeList
-                  .slice(1)
-                  .map(
-                    (
-                      {
-                        title,
-                        description,
-                        imgSrc,
-                        tags,
-                        author,
-                        authorImgSrc,
-                        date,
-                      },
-                      index,
-                    ) => (
-                      <VCard
-                        title={title}
-                        description={description}
-                        imgSrc={imgSrc}
-                        tags={tags}
-                        author={author}
-                        authorImgSrc={authorImgSrc}
-                        date={date}
-                        key={index}
-                      />
-                    ),
-                  )}
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Banner />
-    </div>
+    <PageTemplate title={'成果共享'} subTitle={'Achievements'}>
+      <HCard
+        title={archieveList[0].title}
+        description={archieveList[0].description}
+        imgSrc={archieveList[0].imgSrc}
+        tags={archieveList[0].tags}
+        author={archieveList[0].author}
+        authorImgSrc={archieveList[0].authorImgSrc}
+        date={archieveList[0].date}
+      />
+      <VCardList
+        title="Latest articles"
+        list={archieveList.slice(1)}
+      ></VCardList>
+      <VCardList title="Recent Prizes" list={prizeList} />
+    </PageTemplate>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import './index.scss';
+import left from './left.svg';
 
 const MAX_VISIBILITY = 4;
 
@@ -108,11 +109,11 @@ const Carousel = ({ children }) => {
 
   // TODO recursively render children
   return (
-    <div className="flex justify-center max-w-7xl px-4 mx-auto sm:px-6">
+    <div className="flex justify-center px-4 mx-auto max-w-7xl sm:px-6">
       <div className="carousel">
         {active > 0 && (
           <button className="nav left" onClick={() => handleClickPrev()}>
-            {'<'}
+            <img src={left} alt="<" />
           </button>
         )}
         {React.Children.map(children, (child, i) => (
@@ -137,7 +138,7 @@ const Carousel = ({ children }) => {
         ))}
         {active < count - 1 && (
           <button className="nav right" onClick={() => handleClickNext()}>
-            {'>'}
+            <img src={left} alt="<" className="rotate-180" />
           </button>
         )}
       </div>

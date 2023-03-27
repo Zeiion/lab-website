@@ -90,21 +90,24 @@ const Models = () => {
       href: '/achievements/1',
     },
   ];
-  const prizeList = modelList;
   return (
     <PageTemplate title={'典型模型'} subTitle={'Models'}>
-      <div className="mt-10">
-        <HCard
-          title={modelList[0].title}
-          description={modelList[0].description}
-          imgSrc={modelList[0].imgSrc}
-          tags={modelList[0].tags}
-          author={modelList[0].author}
-          authorImgSrc={modelList[0].authorImgSrc}
-          date={modelList[0].date}
-        />
-      </div>
-      <VCardList title="Models" list={modelList.slice(1)}></VCardList>
+      {modelList && modelList.length > 0 && (
+        <>
+          <div className="mt-10">
+            <HCard
+              title={modelList[0].title}
+              description={modelList[0].description}
+              imgSrc={modelList[0].imgSrc}
+              tags={modelList[0].tags}
+              author={modelList[0].author}
+              authorImgSrc={modelList[0].authorImgSrc}
+              date={modelList[0].date}
+            />
+          </div>
+          <VCardList title="Models" list={modelList.slice(1)}></VCardList>
+        </>
+      )}
     </PageTemplate>
   );
 };

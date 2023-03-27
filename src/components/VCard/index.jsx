@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import TagList from '~/components/TagList';
 
 const VCard = ({
-  title,
-  description,
-  imgSrc,
-  href,
+  title = '',
+  description = '',
+  imgSrc = '',
+  href = '#0',
   tags = [],
-  author,
-  authorImgSrc,
-  date,
+  author = '',
+  authorImgSrc = '',
+  date = '',
 }) => {
   // TODO style
   const tagClassList = [
@@ -19,14 +19,14 @@ const VCard = ({
 
   return (
     <section
-      className="flex flex-col justify-center antialiased bg-gray-900 text-gray-200 max-w-sm"
+      className="flex flex-col justify-center max-w-sm antialiased text-gray-200 bg-gray-900"
       data-aos="fade-up"
     >
-      <div className="mx-auto h-full flex flex-col">
-        <a className="relative block group mb-6" href={href}>
+      <div className="flex flex-col w-full h-full mx-auto">
+        <a className="relative block mb-6 group" href={href}>
           <figure className="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform transition duration-700 ease-out">
             <img
-              className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition duration-700 ease-out"
+              className="absolute inset-0 object-cover w-full h-full transition duration-700 ease-out transform hover:scale-105"
               src={imgSrc}
               width="540"
               height="303"
@@ -39,20 +39,22 @@ const VCard = ({
             <div className="mb-3">
               <TagList list={tags} />
             </div>
-            <h3 className="text-xl lg:text-2xl font-bold leading-tight mb-2">
+            <h3 className="mb-2 overflow-hidden text-xl font-bold leading-tight lg:text-2xl text-ellipsis whitespace-nowrap">
               <a
-                className="hover:text-gray-100 transition duration-150 ease-in-out"
-                href="#0"
+                className="transition duration-150 ease-in-out hover:text-gray-100 "
+                href={href}
               >
                 {title}
               </a>
             </h3>
           </header>
-          <p className="text-lg text-gray-400 flex-grow">{description}</p>
+          <p className="flex-grow overflow-auto text-lg text-gray-400 max-h-48">
+            {description}
+          </p>
           <footer className="flex items-center mt-4">
             <a href="#0">
               <img
-                className="rounded-full flex-shrink-0 mr-4"
+                className="flex-shrink-0 mr-4 rounded-full"
                 src={authorImgSrc}
                 width="40"
                 height="40"
@@ -61,7 +63,7 @@ const VCard = ({
             </a>
             <div>
               <a
-                className="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out"
+                className="font-medium text-gray-200 transition duration-150 ease-in-out hover:text-gray-100"
                 href="#0"
               >
                 {author}

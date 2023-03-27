@@ -138,16 +138,6 @@ function Home() {
         {/*  Page sections */}
         <HeroHome />
         <TeamSection />
-        <TopicSection
-          title="课题介绍"
-          description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit laborum — semper quis lectus nulla."
-          subTitle="Topic Intro"
-        />
-        {/* <Testimonials /> */}
-        {/* <Timeline /> */}
-
-        {/* <Newsletter /> */}
         <Carousel>
           {projectList.map(({ title, imgSrc, description, href }, index) => (
             <ProjectCard
@@ -159,6 +149,16 @@ function Home() {
             />
           ))}
         </Carousel>
+        <TopicSection
+          title="机构介绍"
+          description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit laborum — semper quis lectus nulla."
+          subTitle="Topic Intro"
+        />
+        {/* <Testimonials /> */}
+        {/* <Timeline /> */}
+
+        {/* <Newsletter /> */}
       </main>
 
       <Banner />

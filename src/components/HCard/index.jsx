@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import TagList from '~/components/TagList';
 
 const HCard = ({
-  title,
-  description,
-  imgSrc,
-  href,
+  title = '',
+  description = '',
+  imgSrc = '',
+  href = '#0',
   tags = [],
-  author,
-  authorImgSrc,
-  date,
+  author = '',
+  authorImgSrc = '',
+  date = '',
 }) => {
   // TODO style
   const tagClassList = [
@@ -24,7 +24,7 @@ const HCard = ({
     >
       <div className="h-full max-w-7xl sm:px-0">
         <article className="grid items-center max-w-sm gap-6 md:max-w-none md:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-16">
-          <a className="relative block group" href="#0">
+          <a className="relative block group" href={href}>
             <div
               className="absolute inset-0 hidden transition duration-700 ease-out transform bg-gray-800 pointer-events-none md:block md:translate-y-2 md:translate-x-4 xl:translate-y-4 xl:translate-x-8 group-hover:translate-x-0 group-hover:translate-y-0"
               aria-hidden="true"
@@ -47,7 +47,7 @@ const HCard = ({
               <h3 className="mb-2 text-2xl font-bold leading-tight lg:text-3xl">
                 <a
                   className="transition duration-150 ease-in-out hover:text-gray-100"
-                  href="#0"
+                  href={href}
                 >
                   {title}
                 </a>

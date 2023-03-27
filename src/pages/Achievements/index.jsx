@@ -93,21 +93,26 @@ const Achievements = () => {
   const prizeList = archieveList;
   return (
     <PageTemplate title={'成果共享'} subTitle={'Achievements'}>
-      <div className="mt-10">
-        <HCard
-          title={archieveList[0].title}
-          description={archieveList[0].description}
-          imgSrc={archieveList[0].imgSrc}
-          tags={archieveList[0].tags}
-          author={archieveList[0].author}
-          authorImgSrc={archieveList[0].authorImgSrc}
-          date={archieveList[0].date}
-        />
-      </div>
-      <VCardList
-        title="Latest articles"
-        list={archieveList.slice(1)}
-      ></VCardList>
+      {archieveList && archieveList.length > 0 && (
+        <>
+          <div className="mt-10">
+            <HCard
+              title={archieveList[0].title}
+              description={archieveList[0].description}
+              imgSrc={archieveList[0].imgSrc}
+              tags={archieveList[0].tags}
+              author={archieveList[0].author}
+              authorImgSrc={archieveList[0].authorImgSrc}
+              date={archieveList[0].date}
+              href={archieveList[0].href}
+            />
+          </div>
+          <VCardList
+            title="Latest articles"
+            list={archieveList.slice(1)}
+          ></VCardList>
+        </>
+      )}
       <VCardList title="Recent Prizes" list={prizeList} />
     </PageTemplate>
   );

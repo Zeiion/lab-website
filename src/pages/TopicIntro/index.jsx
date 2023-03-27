@@ -7,7 +7,7 @@ import MemberCard from '../../components/MemberCard';
 const TopicIntro = () => {
   const { id } = useParams();
   const topicInfo = {
-    title: '课题名称',
+    title: 'XXX机构',
     description: `We are a full-service digital agency that builds immersive user experience. Our tr team creates an exceptionaxlvisualization and thought-out r team creates an exceptionaxlvisualization and thought-out eam creates an exceptionaxlvisualization and thought-out functionality. We believe, our clients deserve to be remarkable in their business. The studio develops the products people appreciate all around the world.`,
     researchDirections: ['研究方向1', '研究方向2'],
     members: [
@@ -209,7 +209,7 @@ const TopicIntro = () => {
           <span className="text-purple-600">{topicInfo.title}</span>
         </>
       }
-      subTitle={'Team Profile'}
+      subTitle={'Institution Profile'}
     >
       <p
         className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
@@ -227,7 +227,7 @@ const TopicIntro = () => {
         <TagList list={topicInfo.researchDirections} size="medium" />
       </div>
 
-      <h3 className="h3">团队成员</h3>
+      <h3 className="h3">核心成员</h3>
       <div className="grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4">
         {topicInfo.members.map(({ name, imgSrc, description, works, tags }) => (
           <MemberCard

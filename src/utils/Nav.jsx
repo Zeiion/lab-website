@@ -20,6 +20,14 @@ export const navList = [
     href: '/achievements',
   },
   {
+    title: '数据共享',
+    href: '/data',
+  },
+  {
+    title: '机构概览',
+    href: '/ins',
+  },
+  {
     title: '典型模型',
     href: '/models',
   },

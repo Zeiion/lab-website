@@ -11,7 +11,7 @@ const TopicSection = ({
   description,
   list = [
     {
-      title: '基于深度学习的人脸识别',
+      title: 'XXXX大学',
       description: `基于深度学习的人脸识别系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人脸特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage01,
       slogan: 'Face Recognition',
@@ -26,7 +26,7 @@ const TopicSection = ({
       ],
     },
     {
-      title: '基于深度学习的人体姿态估计',
+      title: 'XXX研究院',
       description: `基于深度学习的人体姿态估计系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人体姿态特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage02,
       slogan: 'XXXXX',
@@ -41,7 +41,7 @@ const TopicSection = ({
       ],
     },
     {
-      title: '基于深度学习的人流量统计',
+      title: 'XXXXX所',
       description: `基于深度学习的人流量统计系统是一种人工智能应用，其目的是通过训练深度神经网络来学习人流量特征，并以此来识别和验证人的身份。`,
       imgSrc: FeatImage03,
       slogan: 'XXXXX',

@@ -22,4 +22,14 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
+  // devServer: {
+  //   proxy: {
+  //     // /feiyun/ -> http://8.140.124.245:8129/
+  //     '/feiyun/': {
+  //       target: 'http://8.140.124.245:8129/',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/feiyun/, ''),
+  //     },
+  //   },
+  // },
 });

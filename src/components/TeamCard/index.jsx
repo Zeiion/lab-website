@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Card = ({
+const TeamCard = ({
   id,
   title,
   icon = (
@@ -49,9 +49,9 @@ const Card = ({
   );
 };
 
-export default Card;
+export default TeamCard;
 
-Card.propTypes = {
+TeamCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,

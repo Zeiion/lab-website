@@ -9,11 +9,15 @@ function Footer() {
       title: 'Products',
       list: [
         {
-          title: 'Company',
+          title: 'AI引擎平台',
           href: '/#1',
         },
         {
-          title: 'Team',
+          title: '安全监控系统',
+          href: '/#2',
+        },
+        {
+          title: '智慧交通系统',
           href: '/#2',
         },
       ],
@@ -22,11 +26,15 @@ function Footer() {
       title: 'Resources',
       list: [
         {
-          title: 'Blog',
+          title: '博客',
           href: '/#3',
         },
         {
-          title: 'Support dsadasd ',
+          title: '客户支持 ',
+          href: '/#4',
+        },
+        {
+          title: '资源库',
           href: '/#4',
         },
       ],
@@ -35,11 +43,15 @@ function Footer() {
       title: 'About',
       list: [
         {
-          title: 'Company asjdkasjdkasjd',
+          title: '基本情况',
           href: '/#5',
         },
         {
-          title: 'Team sadasdasd',
+          title: '发展历程',
+          href: '/#6',
+        },
+        {
+          title: '联系方式',
           href: '/#6',
         },
       ],
@@ -49,7 +61,7 @@ function Footer() {
   return (
     <footer>
       <div className="py-12 md:py-16">
-        <div className="max-w-7xl px-4 mx-auto sm:px-6">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6">
           {/* Top area: Blocks */}
           <div className="grid gap-8 mb-8 md:grid-cols-12 lg:gap-20 md:mb-12">
             {/* 1st block */}

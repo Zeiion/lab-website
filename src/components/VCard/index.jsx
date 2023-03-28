@@ -11,12 +11,6 @@ const VCard = ({
   authorImgSrc = '',
   date = '',
 }) => {
-  // TODO style
-  const tagClassList = [
-    'bg-purple-600 hover:bg-purple-700',
-    'bg-blue-500 hover:bg-blue-600',
-  ];
-
   return (
     <section
       className="flex flex-col justify-center max-w-sm antialiased text-gray-200 bg-gray-900"

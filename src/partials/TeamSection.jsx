@@ -172,38 +172,44 @@ const TeamSection = () => {
   const cards = [
     {
       id: 'team-1',
-      title: '团队1',
-      description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      title: '团队1——飞创',
+      description:
+        '专注于移动应用开发的软件开发团队，利用最新的技术和框架，为客户提供高性能和用户友好的移动应用',
       icon: iconList[0],
     },
     {
       id: 'team-2',
-      title: '团队2',
-      description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      title: '团队2——智能视觉',
+      description:
+        '专注于卷积神经网络的研发团队，利用深度学习和计算机视觉，为客户提供高精度和高效率的图像识别和分析服务',
       icon: iconList[1],
     },
     {
-      id: 'team-3',
+      id: 'team-3——推荐师',
       title: '团队3',
-      description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      description:
+        '专注于推荐系统的研发团队，利用机器学习和数据挖掘，为客户提供个性化和智能化的推荐服务',
       icon: iconList[2],
     },
     {
       id: 'team-4',
-      title: '团队4',
-      description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      title: '团队4——码力',
+      description:
+        '专注于Web应用开发的软件开发团队，利用最新的技术和框架，为客户提供高性能和用户友好的Web应用',
       icon: iconList[3],
     },
     {
       id: 'team-5',
-      title: '团队5',
-      description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      title: '团队5——知文',
+      description:
+        '专注于循环神经网络的研发团队，利用深度学习和自然语言处理，为客户提供高精度和高效率的文本生成和分析服务',
       icon: iconList[4],
     },
     {
       id: 'team-6',
-      title: '团队6',
-      description: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      title: '团队6——强化者',
+      description:
+        '专注于强化学习的研发团队，利用机器学习和人工智能，为客户提供自适应和智能化的决策支持服务',
       icon: iconList[5],
     },
   ];

@@ -10,6 +10,7 @@
 @import 'additional-styles/theme.css';
 
 @import 'tailwindcss/utilities';
+@import 'additional-styles/magic-card.scss';
 
 /* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
 @layer utilities {

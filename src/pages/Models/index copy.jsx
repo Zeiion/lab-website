@@ -5,8 +5,6 @@ import HCard from '~/components/HCard';
 import VCard from '~/components/VCard';
 import PageTemplate from '~/components/PageTemplate';
 import VCardList from '~/components/VCardList';
-import CardWall from '~/components/CardWall';
-import IconCard from '~/components/IconCard';
 
 const Models = () => {
   const modelList = [
@@ -20,7 +18,6 @@ const Models = () => {
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-02',
       href: '/models/1',
-      source: 'xxx课题',
     },
     {
       title: '基于自然语言处理的智能客服模型',
@@ -32,7 +29,6 @@ const Models = () => {
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-02',
       href: '/models/2',
-      source: 'OpenITS课题',
     },
     {
       title: '基于深度强化学习的自主导航模型',
@@ -44,95 +40,35 @@ const Models = () => {
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-03',
       href: '/models/3',
-      source: '地下基础设施课题',
     },
     {
       title: '自然语言处理模型：情感分析',
       description:
-        '情感分析是自然语言处理中的一项重要任务，用于自动识别和提取文本中的情感信息。我们的情感分析模型基于深度学习算法，能够自动判断文本中的情感极性，包括正面、负面和中性。我们的模型使用了大量的训练数据和高质量的语料库，具有较高的准确度和稳定性。',
+        '情感分析是自然语言处理中的一项重要任务，用于自动识别和提取文本中的情感信息。我们的情感分析模型基于深度学习算法，能够自动判断文本中的情感极性，包括正面、负面和中性。我们的模型使用了大量的训练数据和高质量的语料库，具有较高的准确度和稳定性。我们的模型可以广泛应用于各种场景，如社交媒体监测、产品评论分析、品牌口碑管理等。',
       imgSrc: 'http://placekitten.com/1200/600',
       tags: ['自然语言处理', '情感分析', '深度学习'],
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2022-12',
       href: '/models/1',
-      source: '飞云集智课题',
     },
   ];
   return (
     <PageTemplate title={'典型模型'} subTitle={'Models'}>
-      <CardWall
-        list={[
-          {
-            children: modelList.map(
-              (
-                {
-                  title,
-                  description,
-                  imgSrc,
-                  tags,
-                  author,
-                  authorImgSrc,
-                  date,
-                  href,
-                  source,
-                },
-                index,
-              ) => (
-                <IconCard
-                  title={title}
-                  description={description}
-                  imgSrc={authorImgSrc}
-                  tags={tags}
-                  author={author}
-                  source={source}
-                  authorImgSrc={authorImgSrc}
-                  date={date}
-                  key={index}
-                  href={href}
-                />
-              ),
-            ),
-            reverse: false,
-          },
-          {
-            children: modelList.map(
-              (
-                {
-                  title,
-                  description,
-                  imgSrc,
-                  tags,
-                  author,
-                  authorImgSrc,
-                  date,
-                  href,
-                  source,
-                },
-                index,
-              ) => (
-                <IconCard
-                  title={title}
-                  description={description}
-                  imgSrc={authorImgSrc}
-                  tags={tags}
-                  author={author}
-                  source={source}
-                  authorImgSrc={authorImgSrc}
-                  date={date}
-                  key={index}
-                  href={href}
-                />
-              ),
-            ),
-            reverse: true,
-          },
-        ]}
-      />
       {modelList && modelList.length > 0 && (
         <>
-          <div className="mt-10"></div>
-          <VCardList title="Models" list={modelList}></VCardList>
+          <div className="mt-10">
+            <HCard
+              title={modelList[0].title}
+              description={modelList[0].description}
+              imgSrc={modelList[0].imgSrc}
+              tags={modelList[0].tags}
+              author={modelList[0].author}
+              authorImgSrc={modelList[0].authorImgSrc}
+              date={modelList[0].date}
+            />
+          </div>
+          <VCardList title="Models" list={modelList.slice(1)}></VCardList>
         </>
       )}
     </PageTemplate>

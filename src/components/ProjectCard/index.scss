@@ -123,7 +123,6 @@
   .copy {
     font-family: var(--font-serif);
     font-size: 1.125rem;
-    font-style: italic;
     line-height: 1.35;
   }
 
@@ -136,11 +135,11 @@
     letter-spacing: 0.025rem;
     text-transform: uppercase;
     color: white;
-    background-color: black;
+    background-color: #665cfc;
     border: none;
 
     &:hover {
-      background-color: lighten(black, 5%);
+      background-color: lighten(#665cfc, 5%);
     }
 
     &:focus {

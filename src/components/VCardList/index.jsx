@@ -1,16 +1,53 @@
 import VCard from '~/components/VCard';
+import TagFilterList from '~/components/TagFilterList';
+import { useMemo, useState } from 'react';
 
 const VCardList = ({ title, list }) => {
+  const tags = list.map((item) => item.tags).flat(2);
+  const [uniqueTags, setUniqueTags] = useState(
+    [...new Set(tags)].map((text) => {
+      return {
+        text,
+        active: true,
+      };
+    }),
+  );
+  const computedList = useMemo(() => {
+    return list.filter((item) => {
+      const activeTags = uniqueTags
+        .filter((tag) => tag.active)
+        .map((tag) => tag.text);
+      return item.tags.some((tag) => activeTags.includes(tag));
+    });
+  }, [uniqueTags, list]);
+
   return (
     <>
-      <h4
-        className="pb-6 mt-16 mb-8 border-b-2 border-gray-700 aos-init aos-animate h4"
+      <div
+        className="flex items-center justify-between pb-6 mt-16 mb-8 border-b-2 border-gray-700 aos-init aos-animate"
         data-aos="fade-up"
       >
-        {title}
-      </h4>
+        <h4 className="h4">{title}</h4>
+        <div>
+          <TagFilterList
+            list={uniqueTags}
+            callback={(tag) => {
+              const newTags = uniqueTags.map((item) => {
+                if (item.text === tag) {
+                  return {
+                    ...item,
+                    active: !item.active,
+                  };
+                }
+                return item;
+              });
+              setUniqueTags(newTags);
+            }}
+          />
+        </div>
+      </div>
       <div className="grid items-start w-full md:grid-cols-3 md:gap-x-6 md:gap-y-8 gap-y-5">
-        {list.map(
+        {computedList.map(
           (
             {
               title,

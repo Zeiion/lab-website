@@ -50,7 +50,6 @@ export const parseDataList = () => {
       href: `http://www.feiyun.tech/#/manage/data/dataDetail/${item.id}`,
     };
   });
-  console.log('list', list);
   return list;
 };
 

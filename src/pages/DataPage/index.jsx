@@ -15,7 +15,7 @@ const DataPage = () => {
   //   });
   // }, []);
   return (
-    <PageTemplate title={'典型模型'} subTitle={'Models'}>
+    <PageTemplate title={'数据共享'} subTitle={'Models'}>
       {dataList && dataList.length > 0 && (
         <>
           <div className="mt-10">

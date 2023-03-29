@@ -24,7 +24,7 @@ export const navList = [
     href: '/data',
   },
   {
-    title: '机构概览',
+    title: '参与机构',
     href: '/ins',
   },
   {

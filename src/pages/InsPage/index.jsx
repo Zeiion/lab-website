@@ -11,7 +11,7 @@ import { parseInsList } from '~/consts/insList';
 const insList = parseInsList();
 const InsPage = () => {
   return (
-    <PageTemplate title={'机构概览'} subTitle={'Institution Overview'}>
+    <PageTemplate title={'参与机构'} subTitle={'Institution Overview'}>
       {insList && insList.length > 0 && (
         <>
           <div className="mt-10">

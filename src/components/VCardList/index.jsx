@@ -24,7 +24,7 @@ const VCardList = ({ title, list }) => {
   return (
     <>
       <div
-        className="flex items-center justify-between pb-6 mt-16 mb-8 border-b-2 border-gray-700 aos-init aos-animate"
+        className="flex flex-col items-center justify-between gap-3 pb-6 mt-16 mb-8 border-b-2 border-gray-700 aos-init aos-animate md:flex-row"
         data-aos="fade-up"
       >
         <h4 className="h4">{title}</h4>

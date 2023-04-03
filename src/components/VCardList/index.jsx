@@ -58,6 +58,7 @@ const VCardList = ({ title, list }) => {
               authorImgSrc,
               date,
               href,
+              action = null,
             },
             index,
           ) => (
@@ -71,6 +72,7 @@ const VCardList = ({ title, list }) => {
               date={date}
               key={index}
               href={href}
+              action={action}
             />
           ),
         )}

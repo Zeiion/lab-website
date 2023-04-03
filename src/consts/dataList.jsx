@@ -50,6 +50,15 @@ export const parseDataList = () => {
       authorImgSrc: item.img,
       date: item.date,
       href: `http://www.feiyun.tech/#/manage/data/dataDetail/${item.id}`,
+      action: (
+        <a
+          href="http://81.70.246.244:9898/scene/create/3"
+          target="_blank"
+          className="absolute bottom-0 right-0 px-3 py-1 text-sm font-bold text-purple-700 transition duration-200 bg-transparent border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-white"
+        >
+          数据使用
+        </a>
+      ),
     };
   });
   return list;

@@ -31,14 +31,18 @@ const Tag = ({
   };
 
   return (
-    <li className="m-1 cursor-pointer">
+    <li
+      className={
+        'm-1 p-2 rounded-full cursor-pointer transition duration-150 ease-in-out ' +
+        computedStyle +
+        ' ' +
+        (sizeStyle[size] || sizeStyle['small'])
+      }
+    >
       <a
         onClick={clickHandler}
         className={
-          'inline-flex text-center text-gray-100 rounded-full transition duration-150 ease-in-out ' +
-          computedStyle +
-          ' ' +
-          (sizeStyle[size] || sizeStyle['small'])
+          'max-w-[12em] inline-flex text-ellipsis whitespace-nowrap overflow-hidden text-center text-gray-100 '
         }
       >
         {text}

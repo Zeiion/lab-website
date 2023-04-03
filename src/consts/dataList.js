@@ -1,3 +1,5 @@
+import { getIndexPic } from '../utils/GetRandomPic';
+
 /**
  * 
  * {
@@ -41,8 +43,8 @@ export const parseDataList = () => {
   const list = dataList.map((item) => {
     return {
       title: item.dataName,
-      description: item.dataName,
-      imgSrc: item.img,
+      description: item.description || item.dataName,
+      imgSrc: getIndexPic(item.id),
       tags: [item.source],
       author: item.organizationName,
       authorImgSrc: item.img,
@@ -74,7 +76,81 @@ export const dataList = [
     id: 53,
     region: '市辖区',
     sceneSize: 0,
+    description: `
+    This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.`,
   },
+  {
+    date: '2022-02-28',
+    img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/7e0c1742f2fb3fa3a465962d58fc7395.jpg',
+    organizationName: '北航计算机学院交通大数据组',
+    city: '市辖区',
+    organizationSize: 0,
+    dataSize: 129870500,
+    dataName: 'LOS_LOOP',
+    source: '自有数据',
+    modelSize: 0,
+    meritSize: 8,
+    is_outer: false,
+    province: '云南省',
+    demoFile:
+      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-demo/75e7d5073eb910d4a4c8c250091f9b54.zip',
+    donation: 0,
+    contractSize: 0,
+    id: 19,
+    region: '昆明市',
+    sceneSize: 9,
+    description: `LOS_LOOP 是指一个由环路探测器在高速公路上收集的交通速度数据集，它由 2012 年 5 月 1 日到 6 月 27 日之间的 207 个传感器记录的交通速度数据组成，数据间隔为 5min。
+LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在高速公路上行驶的车辆的速度、位置、方向等信息。这些信息对于研究交通流量、交通事故、道路设计等方面都有着重要的作用。`,
+  },
+  {
+    date: '2022-02-12',
+    img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
+    organizationName: '中国科学技术大学交通大数据组',
+    city: '市辖区',
+    organizationSize: 2,
+    dataSize: 568945500,
+    dataName: 'instagram数据',
+    source: '自有数据',
+    modelSize: 0,
+    meritSize: 0,
+    is_outer: false,
+    province: '北京市',
+    demoFile:
+      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-demo/edf2f9a3fa5bc7a5599d60a35027ec94.zip',
+    donation: 0,
+    contractSize: 1,
+    id: 6,
+    region: '海淀区',
+    sceneSize: 7,
+    description: `Instagram 是一个社交媒体平台，它允许用户分享照片和视频，并与其他用户互动。Instagram 数据集是由 Instagram 自己收集的数据，包括用户信息、帖子、点赞、评论等信息。这些数据集的规模非常大，包含了超过 10 亿个用户和超过 100 亿个帖子
+    Instagram 数据集的一个重要特点是它包含了用户的互动信息，例如点赞、评论、分享等。这些信息对于理解用户行为、兴趣、互动模式等方面都非常重要。
+    Instagram 数据集也被广泛应用于图像分类、目标检测、文本分类等领域。通过使用这些数据集，研究人员可以更好地了解用户在 Instagram 上的行为和兴趣，并开发更好的机器学习模型来预测用户的行为和兴趣。`,
+  },
+  {
+    date: '2022-02-01',
+    img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/c15a6517b5f6fd6c763fb4ee0e7e59c9.jpg',
+    organizationName: '北航计算机学院交通大数据组',
+    city: '市辖区',
+    organizationSize: 4,
+    dataSize: 2448647500,
+    dataName: 'Los Angeles (METR-LA) and the Bay Area (PEMS-BAY) Traffic Data',
+    source: '外部数据',
+    modelSize: 5,
+    meritSize: 5,
+    is_outer: true,
+    path: 'https://github.com/LiuZH-19/Ada-STNet/tree/master/data',
+    province: '北京市',
+    demoFile:
+      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-demo/4ccde79afb2f1904b3831b2e078284bd.rar',
+    donation: 5,
+    contractSize: 4,
+    id: 2,
+    region: '海淀区',
+    sceneSize: 7,
+    description: `Same as DCRNN, the traffic data files for Los Angeles (METR-LA) and the Bay Area (PEMS-BAY), i.e., metr-la.h5 and pems-bay.h5, are available at Google Drive or Baidu Yun, and should be put into the data/ folder. The *.h5 files store the data in panads.DataFrame using the HDF5 file format. 
+    `,
+  },
+
   {
     date: '2022-10-26',
     img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/a7bdd66cbdba53631b7a5179cf13e9c4.jpg',
@@ -95,6 +171,8 @@ export const dataList = [
     id: 52,
     region: '市辖区',
     sceneSize: 0,
+    description:
+      '本期开放车辆重识别数据，开放的数据发布在OpenITS官方网站（http://www.openits.cn/），可供所有人免费下载使用，这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。',
   },
   {
     date: '2022-10-26',
@@ -116,6 +194,7 @@ export const dataList = [
     id: 51,
     region: '市辖区',
     sceneSize: 0,
+    description: `宣城市位于安徽省东南部，此次Open-Data计划开放宣城市中心城区（水阳江范围内）的数据，如图 1。 首期将开放2016年12月15日全天的交通数据集，开放数据包括路网GIS-T、交通信号控制数据、路段旅行时间数据以及交叉口车道交通量数据共四种。采用滚动更新的方式，可供所有人免费下载使用，这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -137,6 +216,7 @@ export const dataList = [
     id: 50,
     region: '市辖区',
     sceneSize: 0,
+    description: `为了更好地体现岭南通跨区刷卡交易的特色，本案例选取了四条具有代表性的跨区（广佛）公交线路数据，分别是线路A、B、C、D（真实线路拟用代号）。选取的线路A的特点是经过繁华的商业区，公交客流量较大，通过刷卡数据可监控到客流量和线路运力情况，用以分析该线路的运行情况；选取的线路B具有南北走向特征，在南北向交通线路上有代表性，途经流花路、荔湾路、黄沙大道、花地大道、佛山永安路等主干道，能通过交易数据反映广佛地区南北线公交流量；选取的线路C具有东西走向特征，线路途经荔湾路、中山八路、双桥路、广成路等重要城市道路，能反映广佛地区东西方向公交客流量；选取的线路D具有东西走向特征，线路途经中山六路、中山七路、中山八路、双桥路、广佛路、黄海路等重要城市道路，能反映广佛地区东西方向公交客流量。本文数据可供所有人免费下载使用，这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -158,6 +238,7 @@ export const dataList = [
     id: 49,
     region: '市辖区',
     sceneSize: 0,
+    description: `开放的合肥市示范区黄科路口相关数据，数据采集时间为2016年10.11-15日的7:30-8:30，可供所有人免费下载使用。这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -179,6 +260,7 @@ export const dataList = [
     id: 48,
     region: '市辖区',
     sceneSize: 0,
+    description: `开放的合肥市示范区开放数据，数据采集时间为2016年10.11-15日的7:30-8:30，可供所有人免费下载使用。这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -200,6 +282,7 @@ export const dataList = [
     id: 47,
     region: '市辖区',
     sceneSize: 0,
+    description: `开放的SYSU功能性能车牌图像数据库，数据采集时间为2016年10.11-15日的7:30-8:30，可供所有人免费下载使用。这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -221,6 +304,7 @@ export const dataList = [
     id: 46,
     region: '市辖区',
     sceneSize: 0,
+    description: `开放的功能车牌图像库数据，数据采集时间为2016年10.11-15日的7:30-8:30，可供所有人免费下载使用。这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -242,6 +326,7 @@ export const dataList = [
     id: 45,
     region: '市辖区',
     sceneSize: 0,
+    description: `开放的广州机场高速公路开放数据——交通事件数据，数据采集时间为2016年10.11-15日的7:30-8:30，可供所有人免费下载使用。这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -263,6 +348,7 @@ export const dataList = [
     id: 44,
     region: '市辖区',
     sceneSize: 0,
+    description: `开放的广州机场高速公路开放数据，数据采集时间为2016年10.11-15日的7:30-8:30，可供所有人免费下载使用。这些数据仅限用于非商业用途，且基于开放数据的研究成果必须标注数据由OpenITS提供。`,
   },
   {
     date: '2022-10-26',
@@ -786,70 +872,6 @@ export const dataList = [
     donation: 0,
     contractSize: 0,
     id: 7,
-    region: '海淀区',
-    sceneSize: 7,
-  },
-  {
-    date: '2022-02-28',
-    img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/7e0c1742f2fb3fa3a465962d58fc7395.jpg',
-    organizationName: '北航计算机学院交通大数据组',
-    city: '市辖区',
-    organizationSize: 0,
-    dataSize: 129870500,
-    dataName: 'LOS_LOOP',
-    source: '自有数据',
-    modelSize: 0,
-    meritSize: 8,
-    is_outer: false,
-    province: '云南省',
-    demoFile:
-      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-demo/75e7d5073eb910d4a4c8c250091f9b54.zip',
-    donation: 0,
-    contractSize: 0,
-    id: 19,
-    region: '昆明市',
-    sceneSize: 9,
-  },
-  {
-    date: '2022-02-12',
-    img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
-    organizationName: '中国科学技术大学交通大数据组',
-    city: '市辖区',
-    organizationSize: 2,
-    dataSize: 568945500,
-    dataName: 'instagram数据',
-    source: '自有数据',
-    modelSize: 0,
-    meritSize: 0,
-    is_outer: false,
-    province: '北京市',
-    demoFile:
-      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-demo/edf2f9a3fa5bc7a5599d60a35027ec94.zip',
-    donation: 0,
-    contractSize: 1,
-    id: 6,
-    region: '海淀区',
-    sceneSize: 7,
-  },
-  {
-    date: '2022-02-01',
-    img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/c15a6517b5f6fd6c763fb4ee0e7e59c9.jpg',
-    organizationName: '北航计算机学院交通大数据组',
-    city: '市辖区',
-    organizationSize: 4,
-    dataSize: 2448647500,
-    dataName: 'Los Angeles (METR-LA) and the Bay Area (PEMS-BAY) Traffic Data',
-    source: '外部数据',
-    modelSize: 5,
-    meritSize: 5,
-    is_outer: true,
-    path: 'https://github.com/LiuZH-19/Ada-STNet/tree/master/data',
-    province: '北京市',
-    demoFile:
-      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-demo/4ccde79afb2f1904b3831b2e078284bd.rar',
-    donation: 5,
-    contractSize: 4,
-    id: 2,
     region: '海淀区',
     sceneSize: 7,
   },

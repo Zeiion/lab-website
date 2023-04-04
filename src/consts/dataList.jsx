@@ -52,9 +52,9 @@ export const parseDataList = () => {
       href: `http://www.feiyun.tech/#/manage/data/dataDetail/${item.id}`,
       action: (
         <a
-          href="http://81.70.246.244:9898/scene/create/3"
-          target="_blank"
-          className="absolute bottom-0 right-0 px-3 py-1 text-sm font-bold text-purple-700 transition duration-200 bg-transparent border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-white"
+          href='http://81.70.246.244:9898/scene/create/3'
+          target='_blank'
+          className='absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200'
         >
           数据使用
         </a>

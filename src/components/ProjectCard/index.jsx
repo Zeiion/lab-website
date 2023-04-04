@@ -24,7 +24,7 @@ const ProjectCard = ({ title, description, imgSrc, href }) => {
             </a>
           </button>
         </div>
-        <img className="object-cover bg" src={imgSrc} alt="" />
+        <img className="object-cover bg" src={imgSrc} alt="图片" />
       </div>
     </div>
     // <a

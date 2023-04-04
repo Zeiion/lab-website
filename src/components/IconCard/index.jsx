@@ -13,7 +13,7 @@ const IconCard = ({ title, description, author = '', source = '', imgSrc }) => {
           <h4 className="h4">{title}</h4>
         </div>
       </div>
-      <blockquote className="text-lg text-gray-400 grow">
+      <blockquote className="text-lg text-gray-400 grow max-h-48 flex-grow overflow-auto">
         {description}
       </blockquote>
       <div className="pt-5 mt-6 font-medium text-gray-700 border-t border-gray-700">

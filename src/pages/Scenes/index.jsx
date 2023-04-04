@@ -4,7 +4,8 @@ import PageTemplate from '~/components/PageTemplate';
 import Carousel from '~/components/Carousel';
 import ProjectCard from '~/components/ProjectCard';
 import TopicSection from '~/partials/TopicSection';
-
+import { parseApplicationList } from '~/consts/applicationList';
+const scenes = parseApplicationList();
 const Scenes = () => {
   const sceneList = [
     {
@@ -44,10 +45,21 @@ const Scenes = () => {
   return (
     <PageTemplate title="典型场景" subTitle="Typical Scenarios">
       <Carousel>
-        {sceneList.map(({ title, description, imgSrc, href }, index) => (
+        {scenes.map(({ title, heat,influence,faculty ,imgSrc, user,href }, index) => (
           <ProjectCard
             title={title}
-            description={description}
+            description={
+              <p className="copy">
+                <div data-v-6273df8a="" style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                  <span data-v-6273df8a="">贡献机构: {faculty}</span>
+                  <span data-v-6273df8a="">负责用户: {user}</span><br/>
+                  <span data-v-6273df8a="">点击量: {heat}</span>
+                  <span data-v-6273df8a="">影响力: {influence}</span>
+
+                </div>
+                <br/>
+              </p>
+            }
             imgSrc={imgSrc}
             href={href}
           />

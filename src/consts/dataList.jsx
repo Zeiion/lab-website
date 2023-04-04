@@ -52,9 +52,9 @@ export const parseDataList = () => {
       href: `http://www.feiyun.tech/#/manage/data/dataDetail/${item.id}`,
       action: (
         <a
-          href="http://81.70.246.244:9898/scene/create/3"
-          target="_blank"
-          className="absolute bottom-0 right-0 px-3 py-1 text-sm font-bold text-purple-700 transition duration-200 bg-transparent border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-white"
+          href='http://81.70.246.244:9898/scene/create/3'
+          target='_blank'
+          className='absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200'
         >
           数据使用
         </a>
@@ -114,7 +114,7 @@ LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在�
   {
     date: '2022-02-12',
     img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
-    organizationName: '中国科学技术大学交通大数据组',
+    organizationName: '中国科学院交通大数据组',
     city: '市辖区',
     organizationSize: 2,
     dataSize: 568945500,
@@ -845,7 +845,7 @@ LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在�
   {
     date: '2022-04-01',
     img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
-    organizationName: '中国科学技术大学交通大数据组',
+    organizationName: '中国科学院交通大数据组',
     city: '朝阳区',
     organizationSize: 0,
     dataSize: 368479500,
@@ -971,7 +971,7 @@ LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在�
   {
     date: '2021-08-15',
     img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
-    organizationName: '中国科学技术大学交通大数据组',
+    organizationName: '中国科学院交通大数据组',
     city: '湛江市',
     organizationSize: 4,
     dataSize: 1534500,
@@ -1013,7 +1013,7 @@ LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在�
   {
     date: '2021-07-16',
     img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
-    organizationName: '中国科学技术大学交通大数据组',
+    organizationName: '中国科学院交通大数据组',
     city: '市辖区',
     organizationSize: 0,
     dataSize: 169068500,
@@ -1055,7 +1055,7 @@ LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在�
   {
     date: '2021-05-13',
     img: 'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/fcffcfdcaea2c58e2fa853fa0882291e.jpg',
-    organizationName: '中国科学技术大学交通大数据组',
+    organizationName: '中国科学院交通大数据组',
     city: '市辖区',
     organizationSize: 3,
     dataSize: 41527500,
@@ -1158,3 +1158,4 @@ LOS_LOOP 数据集是一个重要的交通数据分析资源，它包含了在�
     sceneSize: 9,
   },
 ];
+console.log("datalist",dataList.length);

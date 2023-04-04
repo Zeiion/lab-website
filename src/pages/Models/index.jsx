@@ -7,6 +7,8 @@ import PageTemplate from '~/components/PageTemplate';
 import VCardList from '~/components/VCardList';
 import CardWall from '~/components/CardWall';
 import IconCard from '~/components/IconCard';
+import { parseModelList } from '~/consts/modelList';
+const models = parseModelList();
 
 const Models = () => {
   const modelList = [
@@ -64,7 +66,7 @@ const Models = () => {
       <CardWall
         list={[
           {
-            children: modelList.map(
+            children: models.map(
               (
                 {
                   title,
@@ -96,7 +98,7 @@ const Models = () => {
             reverse: false,
           },
           {
-            children: modelList.map(
+            children: models.map(
               (
                 {
                   title,
@@ -129,10 +131,10 @@ const Models = () => {
           },
         ]}
       />
-      {modelList && modelList.length > 0 && (
+      {models && models.length > 0 && (
         <>
           <div className="mt-10"></div>
-          <VCardList title="Models" list={modelList}></VCardList>
+          <VCardList title="Models" list={models}></VCardList>
         </>
       )}
     </PageTemplate>

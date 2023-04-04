@@ -14,6 +14,7 @@ import VCard from '~/components/VCard';
 import Carousel from '~/components/Carousel';
 import ProjectCard from '~/components/ProjectCard';
 import IconCard from '~/components/IconCard';
+import { parseHomeInsList } from '~/consts/homeInsList';
 
 function Home() {
   const projectList = [
@@ -92,6 +93,7 @@ function Home() {
           description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit laborum — semper quis lectus nulla."
           subTitle="Topic Intro"
+          list={parseHomeInsList()}
         />
         {/* <Testimonials /> */}
         {/* <Timeline /> */}

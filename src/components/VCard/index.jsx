@@ -43,7 +43,7 @@ const VCard = ({
               </a>
             </h3>
           </header>
-          <p className="flex-grow overflow-auto text-lg text-gray-400 max-h-48">
+          <p className="flex-grow overflow-auto text-lg text-gray-400 h-48">
             {description}
           </p>
           <footer className="flex items-center mt-4">

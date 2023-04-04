@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Modal from '../utils/Modal';
 
 import HeroImage from '../images/hero-image-01.jpg';
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const video = useRef(null);
+  useEffect(() => {
+    videoModalOpen ? video.current.play() : video.current.pause();
+  }, [videoModalOpen]);
+
   function toBottom() {
-    window.scrollTo(0, document.documentElement.scrollHeight-document.documentElement.clientHeight);
+    window.scrollTo(
+      0,
+      document.documentElement.scrollHeight -
+        document.documentElement.clientHeight,
+    );
   }
   return (
     <section>
-      <div className="relative max-w-7xl px-4 mx-auto sm:px-6">
+      <div className="relative px-4 mx-auto max-w-7xl sm:px-6">
         {/* Illustration behind hero content */}
         <div
           className="absolute bottom-0 left-0 hidden -ml-20 pointer-events-none lg:block"
@@ -66,26 +75,22 @@ function HeroHome() {
               城市交通大数据集成平台是一个集成多种数据源、丰富模型、多样应用场景的智慧平台。
               本平台共享了大量来自不同机构的高质量数据集，并提供算法辅助使用；同时展示了丰富的由多团队开发的高性能、应用广泛的优质典型模型；
               并列举大量典型应用场景，在智慧城市交通管理应用中巧妙发挥大数据的作用。
-              
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400" onClick={toBottom}>
-                <a
-                  className="w-full mb-4 text-white bg-purple-600 btn hover:bg-purple-700 sm:w-auto sm:mb-0"
-                >
+                <a className="w-full mb-4 text-white bg-purple-600 btn hover:bg-purple-700 sm:w-auto sm:mb-0">
                   联系我们
                 </a>
               </div>
-              
-                <div data-aos="fade-up" data-aos-delay="600">
-                  <a
-                    className="w-full text-white bg-gray-700 btn hover:bg-gray-800 sm:w-auto sm:ml-4"
-                    href="http://www.feiyun.tech/#/about"
-                  >
-                    更多
-                  </a>
-                </div>
-              
+
+              <div data-aos="fade-up" data-aos-delay="600">
+                <a
+                  className="w-full text-white bg-gray-700 btn hover:bg-gray-800 sm:w-auto sm:ml-4"
+                  href="http://www.feiyun.tech/#/about"
+                >
+                  更多
+                </a>
+              </div>
             </div>
           </div>
 
@@ -147,12 +152,18 @@ function HeroHome() {
               handleClose={() => setVideoModalOpen(false)}
             >
               <div className="relative pb-9/16">
-                <iframe
+                <video
+                  ref={video}
                   className="absolute w-full h-full"
-                  src="https://player.vimeo.com/video/174002812"
-                  title="Video"
-                  allowFullScreen
-                ></iframe>
+                  width="1920"
+                  height="1080"
+                  loop
+                  autoPlay
+                  controls
+                >
+                  <source src="/src/assets/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </Modal>
           </div>

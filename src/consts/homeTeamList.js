@@ -1,15 +1,15 @@
-
-export const teamDescription =  "我们的交通大数据研发团队致力于将大数据技术应用于交通领域，旨在提高城市交通的效率和安全性。我们的团队由一群技术精湛、富有创新精神的专家和工程师组成，拥有丰富的大数据处理、机器学习、人工智能等方面的经验。我们利用先进的技术手段，对城市交通数据进行采集、存储、处理和分析，以便深入理解交通运行状况，并为政府和企业提供数据驱动的决策支持和解决方案。我们致力于为人们创造更加安全、高效、绿色的出行环境，以此推动城市可持续发展。"
+export const teamDescription =
+  '我们的交通大数据研发团队致力于将大数据技术应用于交通领域，旨在提高城市交通的效率和安全性。我们的团队由一群技术精湛、富有创新精神的专家和工程师组成，拥有丰富的大数据处理、机器学习、人工智能等方面的经验。我们利用先进的技术手段，对城市交通数据进行采集、存储、处理和分析，以便深入理解交通运行状况，并为政府和企业提供数据驱动的决策支持和解决方案。我们致力于为人们创造更加安全、高效、绿色的出行环境，以此推动城市可持续发展。';
 export const parseCards = () => {
   return teams.map((card) => {
-   return {
-     id: card.node_id,
-     title: card.name,
-     description: card.description,
-     icon: card.iconUrl,
-   }
-  })
-} 
+    return {
+      id: card.node_id,
+      title: card.name,
+      description: card.description,
+      icon: card.iconUrl,
+    };
+  });
+};
 const teams = [
   {
     support_faculty: 40,
@@ -20,8 +20,7 @@ const teams = [
     owner_phone: '12345678910',
     register_time: '2022-07-04 18:30:29',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12t396m.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12t396m.webp',
     contribution: 71,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -44,8 +43,7 @@ const teams = [
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:25',
     merit_count: 6,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 17,
     node_type: '科研院校-数据节点',
     user_count: 2,
@@ -68,8 +66,7 @@ const teams = [
     owner_phone: '12345678910',
     register_time: '2021-11-22 18:22:08',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/ckj90.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/ckj90.webp',
     contribution: 2,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -92,8 +89,7 @@ const teams = [
     owner_phone: '12345678910',
     register_time: '2022-02-06 18:25:54',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12zelsi.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12zelsi.webp',
     contribution: 7,
     node_type: '公司-算法节点',
     user_count: 1,
@@ -118,8 +114,7 @@ const teams = [
     owner_phone: '18811591037',
     register_time: '2022-10-25 15:46:44',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/fnkdt.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/fnkdt.webp',
     contribution: 53,
     node_type: '公司-混合节点',
     user_count: 1,
@@ -136,19 +131,18 @@ const teams = [
   {
     support_faculty: 0,
     data_detail_id: [3, 6, 9, 18, 21],
-    owner_name: '中国科学技术大学管理员',
+    owner_name: '中国科学院管理员',
     description:
-      '中国科学技术大学是中国科学院直属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的全国重点大学，中央直管副部级建制，由中科院、教育部和安徽省三方重点共建；位列“双一流”“985工程”“211工程”',
+      '中国科学院是中国科学院直属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的全国重点大学，中央直管副部级建制，由中科院、教育部和安徽省三方重点共建；位列“双一流”“985工程”“211工程”',
     owner_phone: '12345678910',
     register_time: '2021-11-03 18:20:10',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/b23n0.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/b23n0.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
     model_count: 0,
-    name: '中国科学技术大学交通大数据组',
+    name: '中国科学院交通大数据组',
     contract_count: 0,
     iconUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/f38c30edd2d269929c02b62f4efef3df.png',
@@ -157,5 +151,4 @@ const teams = [
     support_app: 0,
     node_id: 4,
   },
-]
-
+];

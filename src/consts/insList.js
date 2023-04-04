@@ -75,8 +75,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2022-07-04 18:30:29',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12t396m.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12t396m.webp',
     contribution: 71,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -99,8 +98,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:25',
     merit_count: 6,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 17,
     node_type: '科研院校-数据节点',
     user_count: 2,
@@ -123,8 +121,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:43',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/98ma5.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/98ma5.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
@@ -147,8 +144,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2021-09-07 22:25:31',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/ad93x.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/ad93x.webp',
     contribution: 0,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -165,19 +161,18 @@ export const insList = [
   {
     support_faculty: 0,
     data_detail_id: [3, 6, 9, 18, 21],
-    owner_name: '中国科学技术大学管理员',
+    owner_name: '中国科学院管理员',
     description:
-      '中国科学技术大学（University of Science and Technology of China），位于安徽省合肥市，是中国科学院直属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的全国重点大学，中央直管副部级建制，由中科院、教育部和安徽省三方重点共建；位列“双一流”“985工程”“211工程”，入选““珠峰计划”“强基计划”“111计划”“2011计划”、卓越工程师教育培养计划、中国科学院知识创新工程、国家建设高水平大学公派研究生项目、全国深化创新创业教育改革示范高校、中国政府奖学金来华留学生接收院校，首批学位授权自主审核单位，九校联盟 [91]  、中国大学校长联谊会、环太平洋大学联盟、国际应用科技开发协作网、东亚研究型大学协会成员。',
+      '中国科学院（University of Science and Technology of China），位于安徽省合肥市，是中国科学院直属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的全国重点大学，中央直管副部级建制，由中科院、教育部和安徽省三方重点共建；位列“双一流”“985工程”“211工程”，入选““珠峰计划”“强基计划”“111计划”“2011计划”、卓越工程师教育培养计划、中国科学院知识创新工程、国家建设高水平大学公派研究生项目、全国深化创新创业教育改革示范高校、中国政府奖学金来华留学生接收院校，首批学位授权自主审核单位，九校联盟 [91]  、中国大学校长联谊会、环太平洋大学联盟、国际应用科技开发协作网、东亚研究型大学协会成员。',
     owner_phone: '12345678910',
     register_time: '2021-11-03 18:20:10',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/b23n0.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/b23n0.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
     model_count: 0,
-    name: '中国科学技术大学交通大数据组',
+    name: '中国科学院交通大数据组',
     contract_count: 0,
     iconUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/f38c30edd2d269929c02b62f4efef3df.png',
@@ -195,8 +190,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2021-11-22 18:22:08',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/ckj90.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/ckj90.webp',
     contribution: 2,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -219,8 +213,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2021-12-24 18:22:49',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/d5q1k.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/d5q1k.webp',
     contribution: 20,
     node_type: '公司-混合节点',
     user_count: 1,
@@ -243,8 +236,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2021-01-04 18:25:11',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/dt86l.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/dt86l.webp',
     contribution: 0,
     node_type: '公司-计算节点',
     user_count: 1,
@@ -267,8 +259,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2022-02-06 18:25:54',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12zelsi.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12zelsi.webp',
     contribution: 7,
     node_type: '公司-算法节点',
     user_count: 1,
@@ -291,8 +282,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2022-08-16 22:35:23',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 19,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -315,8 +305,7 @@ export const insList = [
     owner_phone: '12345678910',
     register_time: '2022-08-16 22:37:41',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 7,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -341,8 +330,7 @@ export const insList = [
     owner_phone: '18811591037',
     register_time: '2022-10-25 15:46:44',
     merit_count: 0,
-    background_picture:
-      'https://i2.100024.xyz/2023/04/04/fnkdt.webp',
+    background_picture: 'https://i2.100024.xyz/2023/04/04/fnkdt.webp',
     contribution: 53,
     node_type: '公司-混合节点',
     user_count: 1,

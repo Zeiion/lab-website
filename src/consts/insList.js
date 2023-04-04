@@ -52,6 +52,7 @@ const calcHref = ({ name = '', id = '' }) => {
 export const parseInsList = () => {
   return insList.map((item) => {
     return {
+      id: item.node_id,
       title: item.name,
       description: item.description,
       imgSrc: item.background_picture,
@@ -63,7 +64,32 @@ export const parseInsList = () => {
     };
   });
 };
+
 export const insList = [
+  {
+    support_faculty: 40,
+    data_detail_id: [2, 7, 10, 13, 14, 16, 19, 20, 22],
+    owner_name: '北航计算机学院交通大数据组',
+    description:
+      '北京航空航天大学（简称北航）成立于1952年，是新中国第一所航空航天高等学府，现隶属于工业和信息化部。学校所在地北京，总建筑面积170余万平方米。建校以来，北航一直是国家重点建设的高校，是全国第一批16所重点高校之一，也是80年代恢复学位制度后全国第一批设立研究生院的22所高校之一，首批进入“211工程”，2001年进入“985工程”，2017年入选国家“双一流”建设高校名单...',
+    owner_phone: '12345678910',
+    register_time: '2022-07-04 18:30:29',
+    merit_count: 0,
+    background_picture:
+      'https://i2.100024.xyz/2023/04/03/12t396m.webp',
+    contribution: 71,
+    node_type: '科研院校-混合节点',
+    user_count: 1,
+    model_count: 12,
+    name: '北航计算机学院交通大数据组',
+    contract_count: 26,
+    iconUrl:
+      'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/31b2afe97919a416e92e0e9ee7516a10.jpg',
+    index_identify_id: '',
+    data_count: 9,
+    support_app: 0,
+    node_id: 12,
+  },
   {
     support_faculty: 0,
     data_detail_id: [1, 4, 8, 11, 12],
@@ -74,7 +100,7 @@ export const insList = [
     register_time: '2021-07-06 18:17:25',
     merit_count: 6,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 17,
     node_type: '科研院校-数据节点',
     user_count: 2,
@@ -98,7 +124,7 @@ export const insList = [
     register_time: '2021-07-06 18:17:43',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/98ma5.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
@@ -122,7 +148,7 @@ export const insList = [
     register_time: '2021-09-07 22:25:31',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/ad93x.webp',
     contribution: 0,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -146,7 +172,7 @@ export const insList = [
     register_time: '2021-11-03 18:20:10',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/b23n0.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
@@ -170,7 +196,7 @@ export const insList = [
     register_time: '2021-11-22 18:22:08',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/ckj90.webp',
     contribution: 2,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -194,7 +220,7 @@ export const insList = [
     register_time: '2021-12-24 18:22:49',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/d5q1k.webp',
     contribution: 20,
     node_type: '公司-混合节点',
     user_count: 1,
@@ -218,7 +244,7 @@ export const insList = [
     register_time: '2021-01-04 18:25:11',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/dt86l.webp',
     contribution: 0,
     node_type: '公司-计算节点',
     user_count: 1,
@@ -242,7 +268,7 @@ export const insList = [
     register_time: '2022-02-06 18:25:54',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/03/12zelsi.webp',
     contribution: 7,
     node_type: '公司-算法节点',
     user_count: 1,
@@ -257,30 +283,6 @@ export const insList = [
     node_id: 8,
   },
   {
-    support_faculty: 40,
-    data_detail_id: [2, 7, 10, 13, 14, 16, 19, 20, 22],
-    owner_name: '北航计算机学院交通大数据组',
-    description:
-      '北京航空航天大学（简称北航）成立于1952年，是新中国第一所航空航天高等学府，现隶属于工业和信息化部。学校所在地北京，总建筑面积170余万平方米。建校以来，北航一直是国家重点建设的高校，是全国第一批16所重点高校之一，也是80年代恢复学位制度后全国第一批设立研究生院的22所高校之一，首批进入“211工程”，2001年进入“985工程”，2017年入选国家“双一流”建设高校名单...',
-    owner_phone: '12345678910',
-    register_time: '2022-07-04 18:30:29',
-    merit_count: 0,
-    background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
-    contribution: 71,
-    node_type: '科研院校-混合节点',
-    user_count: 1,
-    model_count: 12,
-    name: '北航计算机学院交通大数据组',
-    contract_count: 26,
-    iconUrl:
-      'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/31b2afe97919a416e92e0e9ee7516a10.jpg',
-    index_identify_id: '',
-    data_count: 9,
-    support_app: 0,
-    node_id: 12,
-  },
-  {
     support_faculty: 4,
     data_detail_id: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34],
     owner_name: ' 中山大学超算中心（混合节点1）',
@@ -290,7 +292,7 @@ export const insList = [
     register_time: '2022-08-16 22:35:23',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 19,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -314,7 +316,7 @@ export const insList = [
     register_time: '2022-08-16 22:37:41',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
     contribution: 7,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -340,7 +342,7 @@ export const insList = [
     register_time: '2022-10-25 15:46:44',
     merit_count: 0,
     background_picture:
-      'http://8.140.124.245:8129/mnt/deploy/resource/background_default.svg',
+      'https://i2.100024.xyz/2023/04/04/fnkdt.webp',
     contribution: 53,
     node_type: '公司-混合节点',
     user_count: 1,

@@ -5,7 +5,9 @@ import Carousel from '~/components/Carousel';
 import ProjectCard from '~/components/ProjectCard';
 import TopicSection from '~/partials/TopicSection';
 import { parseApplicationList } from '~/consts/applicationList';
+import {parseApplicationList2} from "~/consts/applicationList";
 const scenes = parseApplicationList();
+const scenes2 = parseApplicationList2();
 const Scenes = () => {
   const sceneList = [
     {
@@ -55,7 +57,6 @@ const Scenes = () => {
                   <span data-v-6273df8a="">负责用户: {user}</span><br/>
                   <span data-v-6273df8a="">点击量: {heat}</span>
                   <span data-v-6273df8a="">影响力: {influence}</span>
-
                 </div>
                 <br/>
               </p>
@@ -70,6 +71,7 @@ const Scenes = () => {
         description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit laborum — semper quis lectus nulla."
         subTitle="Scene List"
+        list={scenes2}
       />
     </PageTemplate>
   );

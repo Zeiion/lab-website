@@ -16,16 +16,16 @@ export const navList = [
     href: '/',
   },
   {
+    title: '参与机构',
+    href: '/ins',
+  },
+  {
     title: '成果共享',
     href: '/achievements',
   },
   {
     title: '数据共享',
     href: '/data',
-  },
-  {
-    title: '参与机构',
-    href: '/ins',
   },
   {
     title: '典型模型',

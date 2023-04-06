@@ -1,11 +1,11 @@
 import {isElementOfType} from "react-dom/test-utils";
-import { getIndexPic } from '~/utils/GetRandomPic';
+import { getTrafficPic } from '~/utils/GetRandomPic';
 export const parseModelList = () => {
     const list =modelList.map((item) => {
         return {
             title: item.name,
             description:item.description,
-            imgSrc: getIndexPic(item.id),
+            imgSrc: getTrafficPic(item.id),
             tags: item.tags,
             author: item.author,
             authorImgSrc: 'http://placekitten.com/300/300',

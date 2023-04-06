@@ -8,8 +8,33 @@ export const parseApplicationList = () => {
             influence:item.influence,
             faculty:item.faculty,
             imgSrc:item.backgroundUrl,
+            slogan:'',
             user:item.user,
             href:item.link,
+            data:item.data,
+            model:item.model,
+        }
+    })
+    return list;
+}
+
+export const parseApplicationList2 = () => {
+    const list =applicationList.map((item) => {
+        return {
+            title: item.name,
+            description:
+                `使用的数据集:\n${item.data.slice(1)}\n使用的模型:${item.model.slice(1)}`,
+            imgSrc: item.backgroundUrl,
+            slogan: ' ',
+            href: '/topic/1',
+            list: [
+            {
+                text: '热度:'+ item.heat,
+            },
+            {
+                text: '影响力:' + item.influence,
+            },
+        ],
         }
     })
     return list;
@@ -30,7 +55,7 @@ export const applicationList = [
         user: '系统管理员',
         logoUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/f422b57b3eaf84f177d9c2a6edd25676.jpg',
         faculty: '该用户未注册机构',
-        influence: 0
+        influence: 21342
     },{
         backgroundUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/97f4413480b4b203abbd1eb03a18f10e.png',
         heat: 39241,
@@ -63,7 +88,7 @@ export const applicationList = [
         user: '系统管理员',
         logoUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/6c2b6e57ff86535d435a47d6d330add2.png',
         faculty: '该用户未注册机构',
-        influence: 0
+        influence: 34293
     },{
         backgroundUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/686fc2ae65a775c7eadce617c1126c74.png',
         heat: 39240,
@@ -121,7 +146,7 @@ export const applicationList = [
         user: '系统管理员',
         logoUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/eeaae2324e2fd55c65f13d2dab015831.png',
         faculty: '该用户未注册机构',
-        influence: 0
+        influence: 18283
     },{
         backgroundUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/168f491be7222b70e36be992d067a814.png',
         heat: 16995,
@@ -163,6 +188,6 @@ export const applicationList = [
         user: '系统管理员',
         logoUrl: 'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/4dc6b127268dacf533c953e493b68703.png',
         faculty: '该用户未注册机构',
-        influence: 0
+        influence: 8497
     }
 ]

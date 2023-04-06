@@ -23,6 +23,22 @@ const imgList = [
   'https://cdn.pixabay.com/photo/2019/10/15/05/17/artificial-intelligence-4550606__340.jpg',
 ];
 
+export const trafficImgList = [
+  "https://i2.100024.xyz/2023/04/07/1yhrzk.webp" ,
+  "https://i2.100024.xyz/2023/04/07/1yilth.webp",
+  "https://i2.100024.xyz/2023/04/07/1yj3zh.webp",
+  "https://i2.100024.xyz/2023/04/07/1yjbbv.webp",
+  "https://i2.100024.xyz/2023/04/07/1yjt0m.webp",
+  "https://i2.100024.xyz/2023/04/07/1ykg2p.webp",
+  "https://i2.100024.xyz/2023/04/07/1ykskq.webp",
+  "https://i2.100024.xyz/2023/04/07/1yl57p.webp",
+  "https://i2.100024.xyz/2023/04/07/1ylfkj.webp",
+  "https://i2.100024.xyz/2023/04/07/1yupyt.webp",
+  "https://i2.100024.xyz/2023/04/07/1yuyzz.webp",
+  "https://i2.100024.xyz/2023/04/07/1ywd3k.webp",
+  "https://i2.100024.xyz/2023/04/07/1yx48m.webp",
+  "https://i2.100024.xyz/2023/04/07/1yxwxu.webp",
+];
 export const getIndexPic = (index) => {
   const idx = Math.floor(index % imgList.length);
   return imgList[idx];
@@ -32,3 +48,13 @@ export const getRandomPic = () => {
   const idx = Math.floor(Math.random() * imgList.length);
   return imgList[idx];
 };
+
+export const getTrafficPic = (index) => {
+  const idx = Math.floor(index % trafficImgList.length);
+  return trafficImgList[idx];
+}
+
+export const getTrafficPicRandom = () => {  
+  const idx = Math.floor(Math.random() * trafficImgList.length);
+  return trafficImgList[idx];
+}

@@ -140,7 +140,7 @@ const teams = [
     node_type: '科研院校-混合节点',
     user_count: 1,
     model_count: 0,
-    name: '中山大学超算中心（混合节点2）',
+    name: '中山大学超算中心',
     contract_count: 4,
     iconUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/2fcbae7f31639527a9327213ce6c4f61.jpg',

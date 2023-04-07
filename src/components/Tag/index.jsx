@@ -33,7 +33,7 @@ const Tag = ({
   return (
     <li
       className={
-        'm-1 p-2 rounded-full cursor-pointer transition duration-150 ease-in-out ' +
+        'max-w-[14em] m-1 p-2 rounded-full cursor-pointer transition duration-150 ease-in-out ' +
         computedStyle +
         ' ' +
         (sizeStyle[size] || sizeStyle['small'])

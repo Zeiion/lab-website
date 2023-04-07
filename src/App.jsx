@@ -12,6 +12,7 @@ import Models from './pages/Models';
 import Scenes from './pages/Scenes';
 import TeamIntro from './pages/TeamIntro';
 import TopicIntro from './pages/TopicIntro';
+import DataIntro from './pages/DataIntro';
 import DataPage from './pages/DataPage';
 import InsPage from './pages/InsPage';
 
@@ -40,18 +41,19 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/achievements" element={<Achievements />} />
-        <Route path="/models" element={<Models />} />
-        <Route path="/scenes" element={<Scenes />} />
-        <Route path="/data" element={<DataPage />} />
-        <Route path="/ins" element={<InsPage />} />
-        <Route path="/team/:id" element={<TeamIntro />} />
-        <Route path="/topic/:id" element={<TopicIntro />} />
+        <Route exact path='/' element={<Home />} />
+        <Route path='/achievements' element={<Achievements />} />
+        <Route path='/models' element={<Models />} />
+        <Route path='/scenes' element={<Scenes />} />
+        <Route path='/data' element={<DataPage />} />
+        <Route path='/ins' element={<InsPage />} />
+        <Route path='/team/:id' element={<TeamIntro />} />
+        <Route path='/data/:id' element={<DataIntro />} />
+        <Route path='/topic/:id' element={<TopicIntro />} />
 
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
       </Routes>
     </>
   );

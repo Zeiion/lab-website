@@ -1,0 +1,12 @@
+.container {
+  background-color: white;
+  #bg {
+    opacity: 0.3;
+  }
+  .piece {
+    &:hover {
+      // shadow
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+}

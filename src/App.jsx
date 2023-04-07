@@ -14,6 +14,7 @@ import TeamIntro from './pages/TeamIntro';
 import TopicIntro from './pages/TopicIntro';
 import DataIntro from './pages/DataIntro';
 import DataPage from './pages/DataPage';
+import DataUsePage from './pages/DataUsePage';
 import InsPage from './pages/InsPage';
 
 import SignIn from './pages/SignIn';
@@ -46,6 +47,7 @@ function App() {
         <Route path='/models' element={<Models />} />
         <Route path='/scenes' element={<Scenes />} />
         <Route path='/data' element={<DataPage />} />
+        <Route path='/datause' element={<DataUsePage />} />
         <Route path='/ins' element={<InsPage />} />
         <Route path='/team/:id' element={<TeamIntro />} />
         <Route path='/data/:id' element={<DataIntro />} />

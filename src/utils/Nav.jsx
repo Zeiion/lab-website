@@ -35,4 +35,8 @@ export const navList = [
     title: '典型场景',
     href: '/scenes',
   },
+  {
+    title: '关于我们',
+    href: '/about',
+  },
 ];

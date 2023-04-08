@@ -16,6 +16,7 @@ import DataIntro from './pages/DataIntro';
 import DataPage from './pages/DataPage';
 import DataUsePage from './pages/DataUsePage';
 import InsPage from './pages/InsPage';
+import AboutPage from './pages/AboutPage';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -52,6 +53,7 @@ function App() {
         <Route path="/team/:id" element={<TeamIntro />} />
         <Route path="/data/:id" element={<DataIntro />} />
         <Route path="/topic/:id" element={<TopicIntro />} />
+        <Route path="/about" element={<AboutPage />} />
 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />

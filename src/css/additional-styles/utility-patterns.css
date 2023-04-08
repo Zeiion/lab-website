@@ -81,3 +81,7 @@
 .form-radio {
   @apply text-purple-600;
 }
+
+.animate-scale {
+  @apply transition duration-700 ease-out transform hover:scale-105;
+}

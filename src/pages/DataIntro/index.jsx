@@ -58,15 +58,15 @@ const DataIntro = () => {
       title={
         <>
           {/* TODO color */}
-          数据介绍 —— <span className='text-purple-600'>{dataInfo.title}</span>
+          数据介绍 —— <span className="text-purple-600">{dataInfo.title}</span>
         </>
       }
       subTitle={'Data Introduction'}
     >
       <p
-        className='mb-8 text-xl text-justify text-gray-400 text-indent-2 '
-        data-aos='fade-up'
-        data-aos-delay='200'
+        className="mb-8 text-xl text-justify text-gray-400 text-indent-2"
+        data-aos="fade-up"
+        data-aos-delay="200"
         style={{
           textIndent: '2.5rem',
         }}
@@ -74,35 +74,47 @@ const DataIntro = () => {
         {dataInfo.description}
       </p>
 
-      <div className='flex flex-row items-center content-between gap-2'>
-        <div className='flex flex-col items-start content-between flex-1'>
-          <h3 className='h3'>规模介绍</h3>
-          <div className='mt-2 mb-8 '>
-            <TagList list={[dataInfo.sizeInfo.tag]}></TagList>
-            <p className='mt-2 text-gray-400'>
-              {dataInfo.sizeInfo.description}
-            </p>
+      <div
+        className="flex flex-col items-center content-between gap-4 mt-6 md:flex-row"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div className="flex flex-col items-start content-between flex-1">
+          <div className="animate-scale">
+            <h3 className="h3">规模介绍</h3>
+            <div className="mt-3 mb-8">
+              <TagList list={[dataInfo.sizeInfo.tag]}></TagList>
+              <p className="mt-3 text-gray-400">
+                {dataInfo.sizeInfo.description}
+              </p>
+            </div>
           </div>
-          <h3 className='h3'>格式介绍</h3>
-          <div className='mt-2 mb-8 '>
-            <TagList list={[dataInfo.formatInfo.tag]}></TagList>
-            <p className='mt-2 text-gray-400 whitespace-pre-wrap'>
-              {dataInfo.formatInfo.description}
-            </p>
+          <div className="animate-scale">
+            <h3 className="mt-4 h3">格式介绍</h3>
+            <div className="mt-3 mb-8">
+              <TagList list={[dataInfo.formatInfo.tag]}></TagList>
+              <p className="mt-3 text-gray-400 whitespace-pre-wrap">
+                {dataInfo.formatInfo.description}
+              </p>
+            </div>
           </div>
         </div>
         <img
-          className='object-cover w-7/12 h-full transition duration-700 ease-out transform hover:scale-105'
+          className="object-cover w-full h-full md:w-7/12 animate-scale"
           src={dataInfo.imgSrc}
-          alt='-'
+          alt="-"
         />
       </div>
 
-      <h3 className='h3'>注意事项</h3>
-      <div className='mt-5 mb-8 '>
-        <p className='mt-2 text-gray-400 whitespace-pre-wrap'>
-          {dataInfo.attentionInfo}
-        </p>
+      <div className="animate-scale">
+        <h3 className="mt-6 h3" data-aos="fade-up" data-aos-delay="200">
+          注意事项
+        </h3>
+        <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
+          <p className="text-gray-400 whitespace-pre-wrap ">
+            {dataInfo.attentionInfo}
+          </p>
+        </div>
       </div>
 
       {/* <h3 className='h3'>研究方向</h3>

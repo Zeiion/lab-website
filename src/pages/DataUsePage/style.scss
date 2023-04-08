@@ -1,12 +1,21 @@
 .container {
-  background-color: white;
+  // border: 1px solid #e9ecef;
+  #container {
+    width: 100%;
+    height: calc(100vh - 25rem);
+  }
   #bg {
     opacity: 0.3;
   }
   .piece {
-    &:hover {
-      // shadow
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
+    cursor: pointer;
+  }
+  .piece-fixed {
+    pointer-events: none;
+  }
+  .puzzle-text {
+    user-select: none;
+    fill: white;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 }

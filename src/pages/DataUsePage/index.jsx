@@ -1,238 +1,429 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+import PageTemplate from '~/components/PageTemplate';
+
+import { usePuzzle } from './usePuzzle';
 
 import './style.scss';
 
+const yOffset = 130;
+
+// random position of the puzzle pieces
+const randomPos = [
+  {
+    x: 294,
+    y: 473,
+  },
+  {
+    x: 523,
+    y: 350,
+  },
+  {
+    x: 643,
+    y: 591,
+  },
+  {
+    x: 823,
+    y: 262,
+  },
+  {
+    x: 344,
+    y: 692,
+  },
+];
+
 function Puzzle() {
-  const [puzzles, setPuzzles] = useState(
-    document.getElementsByClassName('movil'),
-  );
-  const widthList = [134, 192, 134, 163, 134, 163, 134, 192, 134];
-  const heightList = [163, 134, 163, 134, 192, 134, 163, 134, 163];
+  const {
+    selectElement,
+    moveElement,
+    deSelectElement,
+    currentId,
+    droppedId,
+    setMoves,
+  } = usePuzzle(yOffset);
 
-  const initialize = () => {
-    for (let i = 0; i < puzzles.length; i++) {
-      puzzles[i].setAttribute('width', widthList[i]);
-      puzzles[i].setAttribute('height', heightList[i]);
-      puzzles[i].setAttribute('x', Math.floor(Math.random() * 10 + 1));
-      puzzles[i].setAttribute('y', Math.floor(Math.random() * 409 + 1));
+  useEffect(() => {
+    setMoves(document.querySelectorAll('.move'));
+  }, []);
+
+  // position of the puzzle pieces
+  const pos = [
+    {
+      x: 1064,
+      y: yOffset + 192,
+    },
+    {
+      x: 1088,
+      y: yOffset + 250,
+    },
+    {
+      x: 830,
+      y: yOffset + 474,
+    },
+    {
+      x: 806,
+      y: yOffset + 415,
+    },
+  ];
+
+  const { id } = useParams();
+  const dataInfo = {
+    title: 'Large-scale Traffic Speed Data Set',
+    description:
+      'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
+    imgSrc: 'https://i2.100024.xyz/2023/04/07/1ywd3k.webp',
+    tags: ['Openits'],
+    author: 'OpenITs',
+    authorImgSrc:
+      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/9527fc2d434b052852ae152a8d40f9a4.jpg',
+    date: '2022-10-26',
+    href: 'http://www.feiyun.tech/#/manage/data/dataDetail/53',
+    action: {
+      type: 'a',
+      key: null,
+      ref: null,
+      props: {
+        href: 'http://81.70.246.244:9898/scene/create/3',
+        target: '_blank',
+        className:
+          'absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200',
+        children: '数据使用',
+      },
+      _owner: null,
+      _store: {},
+    },
+    // 规模介绍
+    sizeInfo: {
+      tag: '文件大小：1.2GB',
+      description: `当前数据集包含 214 个匿名路段，每个路段包含 2016 年 8 月 1 日至 2016 年 9 月 30 日的 10 分钟间隔的速度数据。`,
+    },
+    // 格式介绍
+    formatInfo: {
+      tag: '文件后缀：csv',
+      description: `每个路段的字段如下：
+  - segment_id: 路段 ID
+  - date: 日期
+  - time: 时间
+  - speed: 速度
+  - travel_time: 行驶时间`,
+    },
+    // 注意事项
+    attentionInfo: `1. 本数据集仅供学术研究使用，不得用于商业用途。
+2. 本数据集仅供学术研究使用，不得用于商业用途。
+3. 本数据集仅供学术研究使用，不得用于商业用途。
+    `,
+  };
+  const modelList = [
+    {
+      id: '0001',
+      title: 'RNN模型',
+    },
+    {
+      id: '0002',
+      title: 'CNN模型',
+    },
+    {
+      id: '0003',
+      title: 'GNN模型',
+    },
+    {
+      id: '0004',
+      title: 'GRU模型',
+    },
+    {
+      id: '0005',
+      title: ['Attention', '模型'],
+    },
+  ];
+  const model = useMemo(() => {
+    if (droppedId == null) return null;
+    return modelList.find(({ id }) => id === droppedId);
+  }, [droppedId, modelList]);
+
+  const getTextNode = (title) => {
+    if (Array.isArray(title)) {
+      return (
+        <text
+          x={-720}
+          y={-50}
+          fontSize={150}
+          className="puzzle-text"
+          transform="rotate(225)"
+          width={200}
+          style={{
+            textAnchor: 'middle',
+          }}
+        >
+          <tspan>{title[0]}</tspan>
+          <tspan x={-720} y={150}>
+            {title[1]}
+          </tspan>
+        </text>
+      );
     }
-  };
-
-  const [elementSelect, setElementSelect] = useState(null);
-  const [currentX, setCurrentX] = useState(0);
-  const [currentY, setCurrentY] = useState(0);
-  const [currentPosX, setCurrentPosX] = useState(0);
-  const [currentPosY, setCurrentPosY] = useState(0);
-
-  const selectElement = (evt) => {
-    const newElementSelect = evt.target;
-    // const newElementSelect = reorder(evt);
-    setCurrentX(evt.clientX);
-    setCurrentY(evt.clientY);
-    setCurrentPosX(parseFloat(newElementSelect.getAttribute('x')));
-    setCurrentPosY(parseFloat(newElementSelect.getAttribute('y')));
-    setElementSelect(newElementSelect);
-  };
-
-  const moveElement = (evt) => {
-    if (elementSelect === null) return;
-    const dx = evt.clientX - currentX;
-    const dy = evt.clientY - currentY;
-    const newCurrentPosx = currentPosX + dx;
-    const newCurrentPosy = currentPosY + dy;
-    elementSelect.setAttribute('x', newCurrentPosx);
-    elementSelect.setAttribute('y', newCurrentPosy);
-    setCurrentPosX(newCurrentPosx);
-    setCurrentPosY(newCurrentPosy);
-    setCurrentX(evt.clientX);
-    setCurrentY(evt.clientY);
-    absorb();
-  };
-
-  const deSelectElement = () => {
-    console.log('!!trying deselect');
-    if (elementSelect) {
-      elementSelect.removeAttribute('onMouseMove');
-      elementSelect.removeAttribute('onMouseOut');
-      elementSelect.removeAttribute('onMouseUp');
-      setElementSelect(null);
-    }
-  };
-
-  const reorder = (evt) => {
-    const container = document.getElementById('container');
-    console.log('evt reorder', evt, container);
-    const piece = evt.target.parentNode;
-    const clone = piece.cloneNode(true);
-    const id = piece.getAttribute('id');
-    container.removeChild(document.getElementById(id));
-    container.appendChild(clone);
-    return container.lastChild.firstChild;
-  };
-
-  const origX = [200, 304, 466, 200, 333, 437, 200, 304, 466];
-  const origY = [100, 100, 100, 233, 204, 233, 337, 366, 337];
-
-  const absorbOffset = 15;
-  const absorb = () => {
-    for (let i = 0; i < puzzles.length; i++) {
-      if (
-        Math.abs(currentPosX - origX[i]) < absorbOffset &&
-        Math.abs(currentPosY - origY[i]) < absorbOffset
-      ) {
-        elementSelect.setAttribute('x', origX[i]);
-        elementSelect.setAttribute('y', origY[i]);
-      }
+    const len = title.length;
+    if (len <= 5)
+      return (
+        <text
+          x={-720}
+          y={0}
+          fontSize={150}
+          className="puzzle-text"
+          transform="rotate(225)"
+          width={200}
+          style={{
+            textAnchor: 'middle',
+          }}
+        >
+          {title}
+        </text>
+      );
+    else if (len > 5 && len <= 10) {
+      return (
+        <text
+          x={-720}
+          y={-50}
+          fontSize={150}
+          className="puzzle-text"
+          transform="rotate(225)"
+          width={200}
+          style={{
+            textAnchor: 'middle',
+          }}
+        >
+          <tspan>{title.slice(0, 5)}</tspan>
+          <tspan x={-720} y={150}>
+            {title.slice(5, 10)}
+          </tspan>
+        </text>
+      );
+    } else {
+      return (
+        <text
+          x={-720}
+          y={-100}
+          fontSize={150}
+          className="puzzle-text"
+          transform="rotate(225)"
+          width={200}
+          style={{
+            textAnchor: 'middle',
+          }}
+        >
+          <tspan>{title.slice(0, 5)}</tspan>
+          <tspan x={-720} y={50}>
+            {title.slice(5, 10)}
+          </tspan>
+          <tspan x={-720} y={200}>
+            {title.slice(10)}
+          </tspan>
+        </text>
+      );
     }
   };
 
   return (
-    <div onLoad={initialize} className='container m-c'>
-      <svg width='600' height='600' id='container'>
-        <defs>
-          <pattern
-            id='a'
-            patternUnits='userSpaceOnUse'
-            width='160'
-            height='160'
-            patternTransform='scale(2) rotate(90)'
-          >
-            <rect
-              x='0'
-              y='0'
-              width='100%'
-              height='100%'
-              fill='hsla(225,59.3%,10.6%,1)'
-            />
-            <path
-              d='M121.5 39.5V9.169c0-2.827 1.724-4.707 3.473-5.602l.707-.362c2.086-1.068 4.702-.631 6.359 1.026l1.985 1.985c1.349 1.349 3.235 2.018 5.14 2.128 12.336 0 12.336-18.505 0-18.505M40.75 39.499V9.17c0-2.827-1.724-4.707-3.473-5.602l-.707-.362c-2.086-1.068-4.702-.631-6.359 1.026l-1.985 1.985c-1.349 1.349-3.236 2.018-5.14 2.128-12.336 0-12.336-18.505 0-18.505m146.575 111.248c0-12.337-18.505-12.337-18.505 0 .11 1.904.78 3.79 2.128 5.139l1.985 1.985c1.657 1.657 2.094 4.273 1.026 6.36l-.362.706c-.895 1.75-2.775 3.474-5.602 3.474l-30.33-.001m49.66-63.086c0 12.336-18.505 12.336-18.505 0 .11-1.904.78-3.791 2.128-5.14l1.985-1.985c1.657-1.657 2.094-4.273 1.026-6.359l-.362-.707c-.895-1.749-2.775-3.474-5.602-3.473h-30.33m19.162 130.344c12.337 0 12.337-18.505 0-18.505-1.631 0-3.99.98-5.139 2.128l-1.985 1.985c-1.656 1.656-4.274 2.094-6.36 1.027l-.706-.362c-2.086-1.069-3.474-3.258-3.474-5.602v-34.302l.001-26.228c0-2.344-1.427-4.458-3.473-5.602l-.707-.361a5.83 5.83 0 00-6.36 1.026l-1.984 1.985c-1.144 1.152-3.508 2.128-5.14 2.128-12.336 0-12.336-18.505 0-18.505 1.904.11 3.715.86 5.14 2.128l1.985 1.985a5.812 5.812 0 006.359 1.026l.707-.362c1.287-1.485 3.473-2.775 3.473-5.602v-30.33M23.086 168.343c-12.336 0-12.336-18.505 0-18.505 1.632 0 3.992.98 5.14 2.128l1.985 1.985c1.656 1.656 4.274 2.094 6.359 1.027l.707-.362c2.086-1.069 3.474-3.258 3.474-5.602l-.001-34.302V88.485c0-2.344 1.387-4.533 3.473-5.602l.707-.361c2.085-1.068 4.703-.63 6.359 1.026l1.985 1.985c1.148 1.148 3.508 2.128 5.14 2.128 12.336 0 12.336-18.505 0-18.505-1.905.11-3.791.78-5.14 2.128l-1.985 1.985c-1.657 1.657-4.273 2.094-6.36 1.026l-.706-.362c-1.75-.895-3.474-2.775-3.474-5.602v-30.33m80.75 80.749H91.17c-2.827 0-4.707 1.724-5.602 3.473l-.362.707c-1.068 2.086-.631 4.702 1.026 6.359l1.985 1.985c1.349 1.349 2.018 3.236 2.128 5.14 0 12.336-18.505 12.336-18.505 0 0-1.632.98-3.992 2.128-5.14l1.985-1.985c1.656-1.656 2.094-4.274 1.026-6.359l-.361-.707c-1.069-2.086-3.258-3.474-5.602-3.473h-60.53c-2.344 0-4.533-1.387-5.602-3.473l-.362-.707c-1.067-2.085-.63-4.703 1.027-6.359l1.985-1.985c1.148-1.148 2.128-3.508 2.128-5.14 0-12.336-18.505-12.336-18.505 0M121.5 38H91.169c-2.827 0-4.707-1.724-5.602-3.473l-.362-.707c-1.068-2.086-.631-4.702 1.026-6.359l1.985-1.985c1.349-1.349 2.018-3.235 2.128-5.14C90.344 8 71.84 8 71.84 20.337c0 1.632.977 3.994 2.128 5.14.663.66 1.343 1.305 1.985 1.985 1.608 1.703 2.003 4.23 1.026 6.36-.11.24-.233.474-.361.706C75.48 36.577 73.359 38 71.015 38H36.712L10.485 38c-2.344 0-4.533 1.387-5.602 3.473-.12.236-.24.471-.362.707-1.067 2.085-.63 4.703 1.027 6.36l1.985 1.984c1.148 1.148 2.128 3.508 2.128 5.14C9.66 68-8.844 68-8.844 55.664'
-              strokeWidth='3'
-              stroke='hsla(213,29.7%,32.4%,1)'
-              fill='none'
-            />
-          </pattern>
-        </defs>
-        {/* <rect
-          width='50%'
-          height='50%'
-          transform='translate(0,0)'
-          fill='url(#a)'
-          className='movil'
-          onMouseDown={selectElement}
-          onMouseMove={moveElement}
-          onMouseUp={deSelectElement}
-          onMouseOut={deSelectElement}
-        /> */}
-        <g id='bg'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master//pikachu.png'
-            width='400'
-            height='400'
-            x='200'
-            y='100'
-          />
-        </g>
-        <g className='piece' id='0'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/1.png'
-            className='movil'
-            onMouseDown={selectElement}
-            onMouseMove={moveElement}
-            onMouseUp={deSelectElement}
-            onMouseOut={deSelectElement}
-          />
-        </g>
-        <rect
-          width='800%'
-          height='800%'
-          transform='translate(0,0)'
-          fill='url(#a)'
-        />
-        <rect
-          className='movil'
-          onMouseDown={selectElement}
-          onMouseMove={moveElement}
-          onMouseUp={deSelectElement}
-          onMouseOut={deSelectElement}
-          fill='black'
-        >
-          <path
-            d='M121.5 39.5V9.169c0-2.827 1.724-4.707 3.473-5.602l.707-.362c2.086-1.068 4.702-.631 6.359 1.026l1.985 1.985c1.349 1.349 3.235 2.018 5.14 2.128 12.336 0 12.336-18.505 0-18.505M40.75 39.499V9.17c0-2.827-1.724-4.707-3.473-5.602l-.707-.362c-2.086-1.068-4.702-.631-6.359 1.026l-1.985 1.985c-1.349 1.349-3.236 2.018-5.14 2.128-12.336 0-12.336-18.505 0-18.505m146.575 111.248c0-12.337-18.505-12.337-18.505 0 .11 1.904.78 3.79 2.128 5.139l1.985 1.985c1.657 1.657 2.094 4.273 1.026 6.36l-.362.706c-.895 1.75-2.775 3.474-5.602 3.474l-30.33-.001m49.66-63.086c0 12.336-18.505 12.336-18.505 0 .11-1.904.78-3.791 2.128-5.14l1.985-1.985c1.657-1.657 2.094-4.273 1.026-6.359l-.362-.707c-.895-1.749-2.775-3.474-5.602-3.473h-30.33m19.162 130.344c12.337 0 12.337-18.505 0-18.505-1.631 0-3.99.98-5.139 2.128l-1.985 1.985c-1.656 1.656-4.274 2.094-6.36 1.027l-.706-.362c-2.086-1.069-3.474-3.258-3.474-5.602v-34.302l.001-26.228c0-2.344-1.427-4.458-3.473-5.602l-.707-.361a5.83 5.83 0 00-6.36 1.026l-1.984 1.985c-1.144 1.152-3.508 2.128-5.14 2.128-12.336 0-12.336-18.505 0-18.505 1.904.11 3.715.86 5.14 2.128l1.985 1.985a5.812 5.812 0 006.359 1.026l.707-.362c1.287-1.485 3.473-2.775 3.473-5.602v-30.33M23.086 168.343c-12.336 0-12.336-18.505 0-18.505 1.632 0 3.992.98 5.14 2.128l1.985 1.985c1.656 1.656 4.274 2.094 6.359 1.027l.707-.362c2.086-1.069 3.474-3.258 3.474-5.602l-.001-34.302V88.485c0-2.344 1.387-4.533 3.473-5.602l.707-.361c2.085-1.068 4.703-.63 6.359 1.026l1.985 1.985c1.148 1.148 3.508 2.128 5.14 2.128 12.336 0 12.336-18.505 0-18.505-1.905.11-3.791.78-5.14 2.128l-1.985 1.985c-1.657 1.657-4.273 2.094-6.36 1.026l-.706-.362c-1.75-.895-3.474-2.775-3.474-5.602v-30.33m80.75 80.749H91.17c-2.827 0-4.707 1.724-5.602 3.473l-.362.707c-1.068 2.086-.631 4.702 1.026 6.359l1.985 1.985c1.349 1.349 2.018 3.236 2.128 5.14 0 12.336-18.505 12.336-18.505 0 0-1.632.98-3.992 2.128-5.14l1.985-1.985c1.656-1.656 2.094-4.274 1.026-6.359l-.361-.707c-1.069-2.086-3.258-3.474-5.602-3.473h-60.53c-2.344 0-4.533-1.387-5.602-3.473l-.362-.707c-1.067-2.085-.63-4.703 1.027-6.359l1.985-1.985c1.148-1.148 2.128-3.508 2.128-5.14 0-12.336-18.505-12.336-18.505 0M121.5 38H91.169c-2.827 0-4.707-1.724-5.602-3.473l-.362-.707c-1.068-2.086-.631-4.702 1.026-6.359l1.985-1.985c1.349-1.349 2.018-3.235 2.128-5.14C90.344 8 71.84 8 71.84 20.337c0 1.632.977 3.994 2.128 5.14.663.66 1.343 1.305 1.985 1.985 1.608 1.703 2.003 4.23 1.026 6.36-.11.24-.233.474-.361.706C75.48 36.577 73.359 38 71.015 38H36.712L10.485 38c-2.344 0-4.533 1.387-5.602 3.473-.12.236-.24.471-.362.707-1.067 2.085-.63 4.703 1.027 6.36l1.985 1.984c1.148 1.148 2.128 3.508 2.128 5.14C9.66 68-8.844 68-8.844 55.664'
-            strokeWidth='3'
-            stroke='hsla(213,29.7%,32.4%,1)'
-            fill='none'
-          />
-        </rect>
-        <g className='piece' id='0'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/1.png'
-            className='movil'
-            onMouseDown={selectElement}
-            onMouseMove={moveElement}
-            onMouseUp={deSelectElement}
-            onMouseOut={deSelectElement}
-          />
-        </g>{' '}
-        <g className='piece' id='0'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/1.png'
-            className='movil'
-            onMouseDown={selectElement}
-            onMouseMove={moveElement}
-            onMouseUp={deSelectElement}
-            onMouseOut={deSelectElement}
-          />
-        </g>
-        {/* <g className='piece' id='1'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/2.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='2'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/3.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='3'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/4.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='4'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/5.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='5'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/6.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='6'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/7.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='7'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/8.png'
-            className='movil'
-          />
-        </g>
-        <g className='piece' id='8'>
-          <image
-            xlinkHref='https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/9.png'
-            className='movil'
-          />
-        </g> */}
-      </svg>
-    </div>
+    <PageTemplate
+      title={
+        <>
+          {/* TODO color */}
+          数据使用 —— <span className="text-purple-600">{dataInfo.title}</span>
+        </>
+      }
+      subTitle={'Data Use'}
+    >
+      <p
+        className="absolute mb-8 text-xl text-justify text-gray-400 text-indent-2 top-[20rem] max-w-7xl pr-8 sm:pr-12 box-border pointer-events-none select-none"
+        style={{
+          textIndent: '2.5rem',
+        }}
+      >
+        {dataInfo.description}
+      </p>
+      <div className="container relative">
+        <svg width="600" height="600" id="container">
+          <defs>
+            <linearGradient id="content-gradient" x2="1" y2="1">
+              <stop offset="0%" stopColor="#665cfc" />
+              <stop offset="100%" stopColor="#9708cc" />
+            </linearGradient>
+            <linearGradient id="border-gradient" x2="1" y2="1">
+              <stop offset="0%" stopColor="#6441a5" />
+              <stop offset="100%" stopColor="#2a0845" />
+            </linearGradient>
+            <g id="puzzle-1" transform="rotate(45)">
+              <svg
+                t="1680919590915"
+                className="piece piece-1 piece-fixed"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                fill="url(#content-gradient)"
+              >
+                <path
+                  d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                  p-id="9317"
+                  stroke="url(#border-gradient)"
+                  strokeWidth={10}
+                ></path>
+                {/* <text x={200} y={500} fontSize={150} className="puzzle-text">
+                  test-1
+                </text> */}
+              </svg>
+            </g>
+            {/* <g id="puzzle-2" transform="rotate(135)">
+              <svg
+                t="1680919590915"
+                className="piece piece-2"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                fill="url(#content-gradient)"
+              >
+                <path
+                  d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                  p-id="9317"
+                  stroke="url(#border-gradient)"
+                  strokeWidth={10}
+                ></path>
+                <text
+                  x={-720}
+                  y={0}
+                  fontSize={150}
+                  className="puzzle-text"
+                  transform="rotate(225)"
+                >
+                  test-2
+                </text>
+              </svg>
+            </g> */}
+            {modelList.map(({ title, id }) => {
+              return (
+                <g id={id} transform="rotate(135)" key={id}>
+                  <svg
+                    t="1680919590915"
+                    className="piece piece-2"
+                    viewBox="0 0 1024 1024"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="200"
+                    height="200"
+                    fill="url(#content-gradient)"
+                  >
+                    <path
+                      d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                      p-id="9317"
+                      stroke="url(#border-gradient)"
+                      strokeWidth={10}
+                    ></path>
+                    {getTextNode(title)}
+                  </svg>
+                </g>
+              );
+            })}
+            <g id="puzzle-2-empty" transform="rotate(135)">
+              <svg
+                t="1680919590915"
+                className="piece piece-2 piece-fixed"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                fill="#ffffff00"
+              >
+                <path
+                  d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                  p-id="9317"
+                  stroke="white"
+                  strokeDasharray={80}
+                  strokeWidth={20}
+                ></path>
+              </svg>
+            </g>
+            <g id="puzzle-3" transform="rotate(225)">
+              <svg
+                t="1680919590915"
+                className="piece piece-3 piece-fixed"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                fill="url(#content-gradient)"
+              >
+                <path
+                  d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                  p-id="9317"
+                  stroke="url(#border-gradient)"
+                  strokeWidth={10}
+                ></path>
+                {/* <text x={200} y={500} fontSize={150} className="puzzle-text">
+                  test-3
+                </text> */}
+              </svg>
+            </g>
+            <g id="puzzle-4" transform="rotate(315)">
+              <svg
+                t="1680919590915"
+                className="piece piece-4 piece-fixed"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                fill="url(#content-gradient)"
+              >
+                <path
+                  d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                  p-id="9317"
+                  stroke="url(#border-gradient)"
+                  strokeWidth={10}
+                ></path>
+                {/* <text x={200} y={500} fontSize={150} className="puzzle-text">
+                  test-4
+                </text> */}
+              </svg>
+            </g>
+          </defs>
+          <use xlinkHref="#puzzle-1" x={pos[0].x} y={pos[0].y}></use>
+          <use xlinkHref="#puzzle-3" x={pos[2].x} y={pos[2].y}></use>
+          <use xlinkHref="#puzzle-4" x={pos[3].x} y={pos[3].y}></use>
+
+          {/* others */}
+          {modelList.map(({ id }, index) => {
+            return (
+              <use
+                key={id}
+                xlinkHref={`#${id}`}
+                x={randomPos[index].x}
+                y={randomPos[index].y}
+                className="move"
+                onMouseDown={selectElement}
+                onMouseMove={moveElement}
+                onMouseUp={deSelectElement}
+                onMouseOut={deSelectElement}
+                data-id={id}
+              ></use>
+            );
+          })}
+          {!model && (
+            <use xlinkHref="#puzzle-2-empty" x={pos[1].x} y={pos[1].y}></use>
+          )}
+        </svg>
+        <div className="fixed pointer-events-none right-1/3 bottom-1/3">
+          <div className="filter-bg"></div>
+        </div>
+        <div className="absolute pointer-events-none right-0 top-[30rem] w-[36rem] text-center">
+          <h4 className="h4"> {dataInfo.title}</h4>
+        </div>
+      </div>
+    </PageTemplate>
   );
 }
 

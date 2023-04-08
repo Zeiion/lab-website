@@ -42,21 +42,25 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/achievements' element={<Achievements />} />
-        <Route path='/models' element={<Models />} />
-        <Route path='/scenes' element={<Scenes />} />
-        <Route path='/data' element={<DataPage />} />
-        <Route path='/datause' element={<DataUsePage />} />
-        <Route path='/ins' element={<InsPage />} />
-        <Route path='/team/:id' element={<TeamIntro />} />
-        <Route path='/data/:id' element={<DataIntro />} />
-        <Route path='/topic/:id' element={<TopicIntro />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/achievements" element={<Achievements />} />
+        <Route path="/models" element={<Models />} />
+        <Route path="/scenes" element={<Scenes />} />
+        <Route path="/data" element={<DataPage />} />
+        <Route path="/datause" element={<DataUsePage />} />
+        <Route path="/ins" element={<InsPage />} />
+        <Route path="/team/:id" element={<TeamIntro />} />
+        <Route path="/data/:id" element={<DataIntro />} />
+        <Route path="/topic/:id" element={<TopicIntro />} />
 
-        <Route path='/signin' element={<SignIn />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='/reset-password' element={<ResetPassword />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
+      <div className="starsec"></div>
+      <div className="starthird"></div>
+      <div className="starfourth"></div>
+      <div className="starfifth"></div>
     </>
   );
 }

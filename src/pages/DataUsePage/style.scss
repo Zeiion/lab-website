@@ -1,0 +1,22 @@
+.container {
+  // border: 1px solid #e9ecef;
+
+  #container {
+    width: 100%;
+    height: calc(100vh - 25rem);
+  }
+  #bg {
+    opacity: 0.3;
+  }
+  .piece {
+    cursor: pointer;
+  }
+  .piece-fixed {
+    pointer-events: none;
+  }
+  .puzzle-text {
+    user-select: none;
+    fill: rgba(255, 255, 255, 0.8);
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+}

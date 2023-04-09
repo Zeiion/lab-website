@@ -10,7 +10,7 @@ export const parseCards = () => {
     };
   });
 };
-const teams = [
+export const teams = [
   {
     support_faculty: 40,
     data_detail_id: [2, 7, 10, 13, 14, 16, 19, 20, 22],

@@ -13,6 +13,7 @@ import Scenes from './pages/Scenes';
 import TeamIntro from './pages/TeamIntro';
 import TopicIntro from './pages/TopicIntro';
 import DataIntro from './pages/DataIntro';
+import ModelIntro from './pages/ModelIntro';
 import DataPage from './pages/DataPage';
 import DataUsePage from './pages/DataUsePage';
 import InsPage from './pages/InsPage';
@@ -52,6 +53,7 @@ function App() {
         <Route path="/ins" element={<InsPage />} />
         <Route path="/team/:id" element={<TeamIntro />} />
         <Route path="/data/:id" element={<DataIntro />} />
+        <Route path="/model/:id" element={<ModelIntro />} />
         <Route path="/topic/:id" element={<TopicIntro />} />
         <Route path="/about" element={<AboutPage />} />
 

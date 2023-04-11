@@ -65,7 +65,7 @@ export const usePuzzle = (yOffset) => {
 
   const absorbOffset = 30;
   const absorb = () => {
-    const absortX = 1088;
+    const absortX = 738;
     const absortY = yOffset + 250;
     if (
       Math.abs(currentPosX - absortX) < absorbOffset &&

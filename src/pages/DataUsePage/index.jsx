@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import PageTemplate from '~/components/PageTemplate';
 import Cursor from '../../components/Cursor';
+import Modal from '../../utils/Modal';
 
 import { usePuzzle } from './usePuzzle';
 
@@ -18,18 +19,18 @@ const randomPos = [
   },
   {
     x: 523,
-    y: 350,
+    y: 250,
   },
   {
-    x: 643,
+    x: 1063,
     y: 591,
   },
   {
-    x: 823,
-    y: 262,
+    x: 1150,
+    y: 332,
   },
   {
-    x: 344,
+    x: 444,
     y: 692,
   },
 ];
@@ -44,6 +45,14 @@ function Puzzle() {
     setMoves,
   } = usePuzzle(yOffset);
 
+  const [resultModalOpen, setResultModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (droppedId) {
+      setResultModalOpen(true);
+    }
+  }, [droppedId]);
+
   useEffect(() => {
     setMoves(document.querySelectorAll('.move'));
   }, []);
@@ -51,19 +60,19 @@ function Puzzle() {
   // position of the puzzle pieces
   const pos = [
     {
-      x: 1064,
+      x: 714,
       y: yOffset + 192,
     },
     {
-      x: 1088,
+      x: 738,
       y: yOffset + 250,
     },
     {
-      x: 830,
+      x: 480,
       y: yOffset + 474,
     },
     {
-      x: 806,
+      x: 456,
       y: yOffset + 415,
     },
   ];
@@ -428,19 +437,29 @@ function Puzzle() {
             <div className="filter-bg"></div>
           </div>
           <canvas className="fireworks"></canvas>
-          <div className="absolute pointer-events-none right-0 top-[30rem] w-[36rem] text-center">
+          <div className="absolute pointer-events-none right-[22rem] top-[30rem] w-[36rem] text-center">
             <h4 className="h4"> {dataInfo.title}</h4>
           </div>
-          <div className="absolute right-0 top-[13rem] h3 font-architects-daughter flex gap-1">
+          <div className="absolute right-[20rem] top-[13rem] flex gap-1">
             <img
               src={'/src/assets/arrow.png'}
               alt=""
               className="w-20 h-20 mt-1"
             />
-            Drop Here
+            <span className="h3 font-architects-daughter">Drop Here</span>
           </div>
         </div>
       </PageTemplate>
+      <Modal
+        id="modal"
+        ariaLabel="modal-headline"
+        show={resultModalOpen}
+        handleClose={() => setResultModalOpen(false)}
+      >
+        <div className="w-full bg-black h-96">
+          Successfully use data & model TODO style here
+        </div>
+      </Modal>
     </>
   );
 }

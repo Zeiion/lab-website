@@ -37,7 +37,7 @@
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
-      href: '/achievements/1',
+      href: '/achieve/1',
     },
  */
 const calcHref = ({ name = '', id = '' }) => {
@@ -274,7 +274,7 @@ export const insList = [
     support_app: 0,
     node_id: 4,
   },
-  
+
   {
     support_faculty: 5,
     data_detail_id: [],
@@ -298,7 +298,7 @@ export const insList = [
     support_app: 0,
     node_id: 14,
   },
-  
+
   {
     support_faculty: 20,
     data_detail_id: [],
@@ -322,5 +322,4 @@ export const insList = [
     support_app: 0,
     node_id: 6,
   },
-  
 ];

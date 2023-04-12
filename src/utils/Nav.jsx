@@ -16,7 +16,7 @@ export const navList = [
     href: '/',
   },
   {
-    title: '参与机构',
+    title: '合作团队',
     href: '/ins',
   },
   {
@@ -28,7 +28,7 @@ export const navList = [
     href: '/data',
   },
   {
-    title: '典型模型',
+    title: '知识协同',
     href: '/models',
   },
   {

@@ -9,7 +9,7 @@
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
-      href: '/achievements/1',
+      href: '/achieve/1',
     }
  */
 
@@ -29,7 +29,7 @@ export const parseAchieveList = () => {
       author: item.firstAuthorName,
       authorImgSrc: item.imagePath,
       date: item.date,
-      href: `/achievements/${item.id}`,
+      href: `/achieve/${item.id}`,
     };
   });
 };

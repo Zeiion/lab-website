@@ -23,7 +23,7 @@ function Home() {
       description:
         'AI 引擎平台是一种用于构建和部署人工智能应用程序的软件平台。它提供了一种将数据转化为智能模型的方法，使开发人员能够使用机器学习和深度学习算法来处理大规模数据集，并提供预测、分类、聚类、推荐等功能。',
       imgSrc: 'https://i2.100024.xyz/2023/04/03/123vmt7.webp',
-      href: '/achievements/3',
+      href: '/achieve/3',
     },
     {
       title: '地下基础设施智慧化管理平台',
@@ -43,7 +43,7 @@ function Home() {
       description:
         'AI 引擎平台是一种用于构建和部署人工智能应用程序的软件平台。它提供了一种将数据转化为智能模型的方法，使开发人员能够使用机器学习和深度学习算法来处理大规模数据集，并提供预测、分类、聚类、推荐等功能。',
       imgSrc: 'https://i2.100024.xyz/2023/04/03/123vmt7.webp',
-      href: '/achievements/3',
+      href: '/achieve/3',
     },
     {
       title: '地下基础设施智慧化管理平台',
@@ -60,16 +60,16 @@ function Home() {
     },
   ];
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className='flex flex-col min-h-screen overflow-hidden'>
       {/*  Site header */}
       <Header />
 
       {/*  Page content */}
-      <main className="grow">
+      <main className='grow'>
         {/*  Page illustration */}
         <div
-          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
-          aria-hidden="true"
+          className='relative h-0 mx-auto pointer-events-none max-w-7xl'
+          aria-hidden='true'
         >
           <PageIllustration />
         </div>
@@ -89,10 +89,10 @@ function Home() {
           ))}
         </Carousel>
         <TopicSection
-          title="机构介绍"
-          description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit laborum — semper quis lectus nulla."
-          subTitle="Topic Intro"
+          title='机构介绍'
+          description='Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit laborum — semper quis lectus nulla.'
+          subTitle='Topic Intro'
           list={parseHomeInsList()}
         />
         {/* <Testimonials /> */}

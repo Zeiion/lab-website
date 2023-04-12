@@ -36,7 +36,7 @@ import { getTrafficPic } from '../utils/GetRandomPic';
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-01',
-      href: '/achievements/1',
+      href: '/achieve/1',
     },
  */
 
@@ -54,9 +54,9 @@ export const parseDataList = () => {
       href: `/data/${item.id}`,
       action: (
         <a
-          href="/datause"
-          target="_blank"
-          className="absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200"
+          href='/datause'
+          target='_blank'
+          className='absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200'
         >
           数据使用
         </a>

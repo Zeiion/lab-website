@@ -21,7 +21,7 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-02',
-      href: '/achievements/2',
+      href: '/achieve/2',
     },
     {
       title: '基于深度学习的人脸识别技术获得国际大奖',
@@ -32,14 +32,14 @@ const Achievements = () => {
       author: 'Zeiion',
       authorImgSrc: 'http://placekitten.com/300/300',
       date: '2023-03',
-      href: '/achievements/3',
+      href: '/achieve/3',
     },
   ];
   return (
     <PageTemplate title={'成果共享'} subTitle={'Achievements'}>
       {achieveList && achieveList.length > 0 && (
         <>
-          <div className="mt-10">
+          <div className='mt-10'>
             <HCard
               title={achieveList[0].title}
               description={achieveList[0].description}
@@ -52,12 +52,12 @@ const Achievements = () => {
             />
           </div>
           <VCardList
-            title="Latest articles"
+            title='Latest articles'
             list={achieveList.slice(1)}
           ></VCardList>
         </>
       )}
-      <VCardList title="Recent Prizes" list={prizeList} />
+      <VCardList title='Recent Prizes' list={prizeList} />
     </PageTemplate>
   );
 };

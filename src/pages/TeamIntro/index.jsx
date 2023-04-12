@@ -22,11 +22,11 @@ const TeamIntro = () => {
         works: [
           {
             title: '作品1',
-            href: '/achievements/1',
+            href: '/achieve/1',
           },
           {
             title: '作品2',
-            href: '/achievements/2',
+            href: '/achieve/2',
           },
         ],
       },
@@ -41,27 +41,27 @@ const TeamIntro = () => {
         works: [
           {
             title: '作品21321321311',
-            href: '/achievements/1',
+            href: '/achieve/1',
           },
           {
             title: '作213213123123品2',
-            href: '/achievements/2',
+            href: '/achieve/2',
           },
           {
             title: '作12312321321312321321321312品1',
-            href: '/achievements/1',
+            href: '/achieve/1',
           },
           {
             title: '作1品2',
-            href: '/achievements/2',
+            href: '/achieve/2',
           },
           {
             title: '11111111111111',
-            href: '/achievements/1',
+            href: '/achieve/1',
           },
           {
             title: '作品2',
-            href: '/achievements/2',
+            href: '/achieve/2',
           },
         ],
       },
@@ -75,11 +75,11 @@ const TeamIntro = () => {
         works: [
           {
             title: '作品1',
-            href: '/achievements/1',
+            href: '/achieve/1',
           },
           {
             title: '作品2',
-            href: '/achievements/2',
+            href: '/achieve/2',
           },
         ],
       },
@@ -97,7 +97,7 @@ const TeamIntro = () => {
         author: 'Zeiion',
         authorImgSrc: 'http://placekitten.com/300/300',
         date: '2023-01',
-        href: '/achievements/1',
+        href: '/achieve/1',
       },
       {
         title: 'Designing a functional workflow at home.',
@@ -111,7 +111,7 @@ const TeamIntro = () => {
         author: 'Zeiion',
         authorImgSrc: 'http://placekitten.com/300/300',
         date: '2023-01',
-        href: '/achievements/2',
+        href: '/achieve/2',
       },
       {
         title: 'Designing a functional workflow at home.',
@@ -124,7 +124,7 @@ const TeamIntro = () => {
         author: 'Zeiion',
         authorImgSrc: 'http://placekitten.com/300/300',
         date: '2023-01',
-        href: '/achievements/1',
+        href: '/achieve/1',
       },
       {
         title: 'Designing a functional workflow at home.',
@@ -137,7 +137,7 @@ const TeamIntro = () => {
         author: 'Zeiion',
         authorImgSrc: 'http://placekitten.com/300/300',
         date: '2023-01',
-        href: '/achievements/1',
+        href: '/achieve/1',
       },
       {
         title: 'Designing a functional workflow at home.',
@@ -151,7 +151,7 @@ const TeamIntro = () => {
         author: 'Zeiion',
         authorImgSrc: 'http://placekitten.com/300/300',
         date: '2023-01',
-        href: '/achievements/1',
+        href: '/achieve/1',
       },
       {
         title: 'Designing a functional workflow at home.',
@@ -164,7 +164,7 @@ const TeamIntro = () => {
         author: 'Zeiion',
         authorImgSrc: 'http://placekitten.com/300/300',
         date: '2023-01',
-        href: '/achievements/1',
+        href: '/achieve/1',
       },
     ],
     timeline: [
@@ -208,15 +208,15 @@ const TeamIntro = () => {
       title={
         <>
           {/* TODO color */}
-          团队介绍 —— <span className="text-purple-600">{teamInfo.title}</span>
+          团队介绍 —— <span className='text-purple-600'>{teamInfo.title}</span>
         </>
       }
       subTitle={'Team Profile'}
     >
       <p
-        className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
-        data-aos="fade-up"
-        data-aos-delay="200"
+        className='mb-8 text-xl text-justify text-gray-400 text-indent-2 '
+        data-aos='fade-up'
+        data-aos-delay='200'
         style={{
           textIndent: '2.5rem',
         }}
@@ -224,13 +224,13 @@ const TeamIntro = () => {
         {teamInfo.description}
       </p>
 
-      <h3 className="h3">研究方向</h3>
-      <div className="mt-5 mb-16">
-        <TagList list={teamInfo.researchDirections} size="medium" />
+      <h3 className='h3'>研究方向</h3>
+      <div className='mt-5 mb-16'>
+        <TagList list={teamInfo.researchDirections} size='medium' />
       </div>
 
-      <h3 className="h3">团队成员</h3>
-      <div className="grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4">
+      <h3 className='h3'>团队成员</h3>
+      <div className='grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4'>
         {teamInfo.members.map(({ name, imgSrc, description, works, tags }) => (
           <MemberCard
             key={name}
@@ -244,7 +244,7 @@ const TeamIntro = () => {
       </div>
 
       <Timeline list={teamInfo.timeline} />
-      <VCardList title="Lateset Works" list={teamInfo.works}></VCardList>
+      <VCardList title='Lateset Works' list={teamInfo.works}></VCardList>
     </PageTemplate>
   );
 };

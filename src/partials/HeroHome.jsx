@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Modal from '../utils/Modal';
+import videoURL from '~/assets/video.mp4';
 
-import HeroImage from '../images/hero-image-01.jpg';
+import HeroImage from '../images/video-bg.jpg';
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const video = useRef(null);
   useEffect(() => {
+    if (!video.current) return;
     videoModalOpen ? video.current.play() : video.current.pause();
   }, [videoModalOpen]);
 
@@ -101,51 +103,72 @@ function HeroHome() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <img
-                className="mx-auto"
-                src={HeroImage}
-                width="1024"
-                height="504"
-                alt="Hero"
-              />
-              <a
-                className="absolute group"
-                href="#0"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setVideoModalOpen(true);
-                }}
-                aria-controls="modal"
-              >
-                <svg
-                  className="w-16 h-16 transition duration-150 ease-in-out sm:w-20 sm:h-20 hover:opacity-75"
-                  viewBox="0 0 88 88"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient
-                      x1="78.169%"
-                      y1="9.507%"
-                      x2="24.434%"
-                      y2="90.469%"
-                      id="a"
-                    >
-                      <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
-                      <stop stopColor="#EBF1F5" offset="100%" />
-                    </linearGradient>
-                  </defs>
-                  <circle fill="url(#a)" cx="44" cy="44" r="44" />
-                  <path
-                    className="text-purple-600 fill-current"
-                    d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
+              {!videoModalOpen ? (
+                <>
+                  <img
+                    className="w-full h-full mx-auto opacity-70"
+                    src={HeroImage}
+                    width="1920"
+                    height="1080"
+                    alt="Hero"
                   />
-                </svg>
-              </a>
+                  <a
+                    className="absolute group"
+                    href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setVideoModalOpen(true);
+                    }}
+                    aria-controls="modal"
+                  >
+                    <svg
+                      className="w-16 h-16 transition duration-150 ease-in-out sm:w-20 sm:h-20 hover:opacity-75"
+                      viewBox="0 0 88 88"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <linearGradient
+                          x1="78.169%"
+                          y1="9.507%"
+                          x2="24.434%"
+                          y2="90.469%"
+                          id="a"
+                        >
+                          <stop
+                            stopColor="#EBF1F5"
+                            stopOpacity=".8"
+                            offset="0%"
+                          />
+                          <stop stopColor="#EBF1F5" offset="100%" />
+                        </linearGradient>
+                      </defs>
+                      <circle fill="url(#a)" cx="44" cy="44" r="44" />
+                      <path
+                        className="text-purple-600 fill-current"
+                        d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
+                      />
+                    </svg>
+                  </a>
+                </>
+              ) : (
+                <video
+                  ref={video}
+                  className="w-full h-full"
+                  width="1920"
+                  height="1080"
+                  loop
+                  autoPlay
+                  controls
+                >
+                  <source src={videoURL} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
             </div>
 
             {/* Modal */}
-            <Modal
+            {/* <Modal
               id="modal"
               ariaLabel="modal-headline"
               show={videoModalOpen}
@@ -165,7 +188,7 @@ function HeroHome() {
                   Your browser does not support the video tag.
                 </video>
               </div>
-            </Modal>
+            </Modal> */}
           </div>
         </div>
       </div>

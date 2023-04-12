@@ -17,16 +17,26 @@ const DataPage = () => {
   const [keyword, setKeyword] = useState('');
   const dataList = fullDataList.filter((item) => {
     const lower = keyword.toLowerCase();
-    return item.title.toLowerCase().match(lower) || item.description.toLowerCase().match(lower) 
-    || item.tags.join(',').toLowerCase().match(lower) || item.author.toLowerCase().match(lower)
-    || item.source.toLowerCase().match(lower);
+    return (
+      item.title?.toLowerCase().match(lower) ||
+      item.description?.toLowerCase().match(lower) ||
+      item.tags?.join(',').toLowerCase().match(lower) ||
+      item.author?.toLowerCase().match(lower) ||
+      item.source?.toLowerCase().match(lower)
+    );
   });
   const handleOnChange = (e) => {
     setKeyword(e.target.value);
   };
   return (
     <PageTemplate title={'数据共享'} subTitle={'Models'}>
-      <input type="text" className="form-input mb-10" placeholder="输入关键词" value={keyword} onChange={handleOnChange}></input>
+      <input
+        type="text"
+        className="mb-10 form-input"
+        placeholder="输入关键词"
+        value={keyword}
+        onChange={handleOnChange}
+      ></input>
       {dataList && dataList.length > 0 && (
         <>
           <div className="mt-10">

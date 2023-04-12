@@ -1,9 +1,9 @@
 .container {
   // border: 1px solid #e9ecef;
-
-  #container {
+  max-height: 100vh;
+  #svg-container {
     width: 100%;
-    height: calc(100vh - 25rem);
+    height: 70%;
   }
   #bg {
     opacity: 0.3;
@@ -13,6 +13,7 @@
   }
   .piece-fixed {
     pointer-events: none;
+    user-select: none;
   }
   .puzzle-text {
     user-select: none;

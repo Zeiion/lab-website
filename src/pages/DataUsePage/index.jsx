@@ -263,7 +263,7 @@ function Puzzle() {
           {dataInfo.description}
         </p>
         <div className='container relative'>
-          <svg width='600' height='600' id='container'>
+          <svg width='600' height='600' id='svg-container'>
             <defs>
               <linearGradient id='border-gradient' x2='1' y2='1'>
                 <stop offset='0%' stopColor='#665cfc66' />
@@ -441,14 +441,14 @@ function Puzzle() {
               <use xlinkHref='#puzzle-2-empty' x={pos[1].x} y={pos[1].y}></use>
             )}
           </svg>
-          <div className='fixed pointer-events-none right-1/3 bottom-1/3'>
+          <div className='fixed pointer-events-none select-none right-1/3 bottom-1/3'>
             <div className='filter-bg'></div>
           </div>
           <canvas className='fireworks'></canvas>
-          <div className='absolute pointer-events-none right-[22rem] top-[30rem] w-[36rem] text-center'>
+          <div className='absolute pointer-events-none select-none right-[22rem] top-[30rem] w-[36rem] text-center'>
             <h4 className='h4'> {dataInfo.title}</h4>
           </div>
-          <div className='absolute right-[20rem] top-[13rem] flex gap-1'>
+          <div className='absolute right-[20rem] top-[13rem] flex gap-1 pointer-events-none select-none'>
             <img src={arrowImg} alt='' className='w-20 h-20 mt-1' />
             <span className='h3 font-architects-daughter'>Drop Here</span>
           </div>

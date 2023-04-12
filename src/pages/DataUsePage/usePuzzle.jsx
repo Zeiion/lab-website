@@ -63,7 +63,7 @@ export const usePuzzle = (yOffset) => {
     });
   };
 
-  const absorbOffset = 30;
+  const absorbOffset = 15;
   const absorb = () => {
     const absortX = 738;
     const absortY = yOffset + 250;

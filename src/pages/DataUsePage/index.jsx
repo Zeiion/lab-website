@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import PageTemplate from '~/components/PageTemplate';
 import Cursor from '../../components/Cursor';
 import Modal from '../../utils/Modal';
+import arrowImg from '~/images/arrow.png';
 
 import { usePuzzle } from './usePuzzle';
 
@@ -441,11 +442,7 @@ function Puzzle() {
             <h4 className="h4"> {dataInfo.title}</h4>
           </div>
           <div className="absolute right-[20rem] top-[13rem] flex gap-1">
-            <img
-              src={'/src/assets/arrow.png'}
-              alt=""
-              className="w-20 h-20 mt-1"
-            />
+            <img src={arrowImg} alt="" className="w-20 h-20 mt-1" />
             <span className="h3 font-architects-daughter">Drop Here</span>
           </div>
         </div>

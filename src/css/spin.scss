@@ -1,0 +1,21 @@
+.hp-spin {
+  position: relative;
+  .spin-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+  &.hide .spin-content {
+    display: none;
+  }
+  .spin-img {
+    display: inline-block;
+    width: 37.5px; /*no*/
+    height: 18px; /*no*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/loading.gif');
+  }
+}

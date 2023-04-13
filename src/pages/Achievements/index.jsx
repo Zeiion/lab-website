@@ -67,7 +67,7 @@ const Achievements = () => {
             />
           </div>
           <VCardList
-            title="Latest articles"
+            title="Latest achievements"
             list={achieveList.slice(1)}
           ></VCardList>
         </>

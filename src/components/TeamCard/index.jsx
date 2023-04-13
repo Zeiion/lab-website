@@ -17,7 +17,7 @@ const TeamCard = ({ id, title, icon, description }) => {
       <Link className="mb-2 h4" to={'/teams'}>
         {title}
       </Link>
-      <p className="text-lg text-center text-gray-400">{description}</p>
+      <p className="text-xl text-justify text-gray-400">{description}</p>
     </div>
   );
 };

@@ -20,7 +20,7 @@ const DataPage = () => {
         href: '/data/' + item.id,
         action: (
           <a
-            href={'/datause/' + item.id}
+            href={'/datause'}
             target="_blank"
             className="absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200"
           >

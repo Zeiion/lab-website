@@ -11,7 +11,7 @@ function Banner() {
             <div className="inline-flex text-slate-500">
               <a
                 className="font-medium hover:underline text-slate-50"
-                href="https://buaa.edu.cn"
+                href="https://feiyun.tech"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -20,7 +20,7 @@ function Banner() {
               <span className="italic px-1.5">or</span>{' '}
               <a
                 className="font-medium hover:underline text-emerald-400"
-                href="https://github.com/"
+                href="https://github.com/Feiyunpublic"
                 target="_blank"
                 rel="noreferrer"
               >

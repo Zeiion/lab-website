@@ -6,6 +6,44 @@ import Cursor from '~/components/Cursor';
 import Modal from '~/utils/Modal';
 import arrowImg from '~/images/arrow.png';
 import SuccessCard from '~/components/SuccessCard';
+import Spin from '~/utils/Loading';
+import { chart1, chart2, chart3, chart4 } from '~/consts/chartData';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar, Line } from 'react-chartjs-2';
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+);
+const chartConfig = (title) => {
+  return {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: title,
+      },
+    },
+  };
+};
 
 import { usePuzzle } from './usePuzzle';
 
@@ -52,6 +90,7 @@ function Puzzle() {
   useEffect(() => {
     if (droppedId) {
       setResultModalOpen(true);
+      setStatus(0);
     }
   }, [droppedId]);
 
@@ -82,7 +121,16 @@ function Puzzle() {
   const result = {
     status: 'SUCCESS',
     time: '00:00:08',
-    output: '恭喜你，拼图成功！',
+    output: [
+      {
+        trainLoss: [3.721989154815674, 3.4008986949920654, 3.313478708267212],
+        valLoss: [
+          3.2404239177703857, 3.113647937774658, 3.04894757270813,
+          3.060734987258911,
+        ],
+        testLoss: [3.5975935459136963, 3.4593799114227295, 3.3675615787506104],
+      },
+    ],
   };
 
   const { id } = useParams();
@@ -134,24 +182,24 @@ function Puzzle() {
   };
   const modelList = [
     {
-      id: '0001',
-      title: 'RNN模型',
+      id: '0002',
+      title: 'DCRNN',
     },
     {
-      id: '0002',
-      title: 'CNN模型',
+      id: '0001',
+      title: ['Ada-', 'STNet'],
     },
     {
       id: '0003',
-      title: 'GNN模型',
+      title: 'STGCN',
     },
     {
       id: '0004',
-      title: 'GRU模型',
+      title: 'HGCN',
     },
     {
       id: '0005',
-      title: ['Attention', '模型'],
+      title: 'STRNN',
     },
   ];
   const model = useMemo(() => {
@@ -166,8 +214,8 @@ function Puzzle() {
           x={-720}
           y={-50}
           fontSize={150}
-          className='puzzle-text'
-          transform='rotate(225)'
+          className="puzzle-text"
+          transform="rotate(225)"
           width={200}
           style={{
             textAnchor: 'middle',
@@ -187,8 +235,8 @@ function Puzzle() {
           x={-720}
           y={0}
           fontSize={150}
-          className='puzzle-text'
-          transform='rotate(225)'
+          className="puzzle-text"
+          transform="rotate(225)"
           width={200}
           style={{
             textAnchor: 'middle',
@@ -203,8 +251,8 @@ function Puzzle() {
           x={-720}
           y={-50}
           fontSize={150}
-          className='puzzle-text'
-          transform='rotate(225)'
+          className="puzzle-text"
+          transform="rotate(225)"
           width={200}
           style={{
             textAnchor: 'middle',
@@ -222,8 +270,8 @@ function Puzzle() {
           x={-720}
           y={-100}
           fontSize={150}
-          className='puzzle-text'
-          transform='rotate(225)'
+          className="puzzle-text"
+          transform="rotate(225)"
           width={200}
           style={{
             textAnchor: 'middle',
@@ -241,6 +289,8 @@ function Puzzle() {
     }
   };
 
+  const [status, setStatus] = useState(false);
+
   return (
     <>
       <PageTemplate
@@ -248,50 +298,50 @@ function Puzzle() {
           <>
             {/* TODO color */}
             数据使用 ——{' '}
-            <span className='text-purple-600'>{dataInfo.title}</span>
+            <span className="text-purple-600">{dataInfo.title}</span>
           </>
         }
         subTitle={'Data Use'}
       >
         {/* <Cursor /> */}
         <p
-          className='absolute mb-8 text-xl text-justify text-gray-400 text-indent-2 top-[20rem] max-w-7xl pr-8 sm:pr-12 box-border pointer-events-none select-none'
+          className="absolute mb-8 text-xl text-justify text-gray-400 text-indent-2 top-[20rem] max-w-7xl pr-8 sm:pr-12 box-border pointer-events-none select-none"
           style={{
             textIndent: '2.5rem',
           }}
         >
           {dataInfo.description}
         </p>
-        <div className='container relative'>
-          <svg width='600' height='600' id='svg-container'>
+        <div className="container relative">
+          <svg width="600" height="600" id="svg-container">
             <defs>
-              <linearGradient id='border-gradient' x2='1' y2='1'>
-                <stop offset='0%' stopColor='#665cfc66' />
-                <stop offset='100%' stopColor='#9708cc66' />
+              <linearGradient id="border-gradient" x2="1" y2="1">
+                <stop offset="0%" stopColor="#665cfc66" />
+                <stop offset="100%" stopColor="#9708cc66" />
               </linearGradient>
-              <linearGradient id='content-gradient' x2='1' y2='1'>
-                <stop offset='0%' stopColor='#3d298cee' />
-                <stop offset='100%' stopColor='#2a0845ee' />
+              <linearGradient id="content-gradient" x2="1" y2="1">
+                <stop offset="0%" stopColor="#3d298cee" />
+                <stop offset="100%" stopColor="#2a0845ee" />
               </linearGradient>
-              <linearGradient id='content-gradient-2' x2='1' y2='1'>
-                <stop offset='0%' stopColor='#23185266' />
-                <stop offset='100%' stopColor='#11111166' />
+              <linearGradient id="content-gradient-2" x2="1" y2="1">
+                <stop offset="0%" stopColor="#23185266" />
+                <stop offset="100%" stopColor="#11111166" />
               </linearGradient>
-              <g id='puzzle-1' transform='rotate(45)'>
+              <g id="puzzle-1" transform="rotate(45)">
                 <svg
-                  t='1680919590915'
-                  className='piece piece-1 piece-fixed'
-                  viewBox='0 0 1024 1024'
-                  version='1.1'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='200'
-                  height='200'
-                  fill='url(#content-gradient-2)'
+                  t="1680919590915"
+                  className="piece piece-1 piece-fixed"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  fill="url(#content-gradient-2)"
                 >
                   <path
-                    d='M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z'
-                    p-id='9317'
-                    stroke='url(#border-gradient)'
+                    d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                    p-id="9317"
+                    stroke="url(#border-gradient)"
                     strokeWidth={10}
                   ></path>
                   {/* <text x={200} y={500} fontSize={150} className="puzzle-text">
@@ -329,21 +379,21 @@ function Puzzle() {
             </g> */}
               {modelList.map(({ title, id }) => {
                 return (
-                  <g id={id} transform='rotate(135)' key={id}>
+                  <g id={id} transform="rotate(135)" key={id}>
                     <svg
-                      t='1680919590915'
-                      className='piece piece-2'
-                      viewBox='0 0 1024 1024'
-                      version='1.1'
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='200'
-                      height='200'
-                      fill='url(#content-gradient)'
+                      t="1680919590915"
+                      className="piece piece-2"
+                      viewBox="0 0 1024 1024"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="200"
+                      height="200"
+                      fill="url(#content-gradient)"
                     >
                       <path
-                        d='M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z'
-                        p-id='9317'
-                        stroke='url(#border-gradient)'
+                        d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                        p-id="9317"
+                        stroke="url(#border-gradient)"
                         strokeWidth={10}
                       ></path>
                       {getTextNode(title)}
@@ -351,41 +401,41 @@ function Puzzle() {
                   </g>
                 );
               })}
-              <g id='puzzle-2-empty' transform='rotate(135)'>
+              <g id="puzzle-2-empty" transform="rotate(135)">
                 <svg
-                  t='1680919590915'
-                  className='piece piece-2 piece-fixed'
-                  viewBox='0 0 1024 1024'
-                  version='1.1'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='200'
-                  height='200'
-                  fill='#ffffff00'
+                  t="1680919590915"
+                  className="piece piece-2 piece-fixed"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  fill="#ffffff00"
                 >
                   <path
-                    d='M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z'
-                    p-id='9317'
-                    stroke='#ffffffee'
+                    d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                    p-id="9317"
+                    stroke="#ffffffee"
                     strokeDasharray={80}
                     strokeWidth={20}
                   ></path>
                 </svg>
               </g>
-              <g id='puzzle-3' transform='rotate(225)'>
+              <g id="puzzle-3" transform="rotate(225)">
                 <svg
-                  t='1680919590915'
-                  className='piece piece-3 piece-fixed'
-                  viewBox='0 0 1024 1024'
-                  version='1.1'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='200'
-                  height='200'
-                  fill='url(#content-gradient-2)'
+                  t="1680919590915"
+                  className="piece piece-3 piece-fixed"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  fill="url(#content-gradient-2)"
                 >
                   <path
-                    d='M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z'
-                    p-id='9317'
-                    stroke='url(#border-gradient)'
+                    d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                    p-id="9317"
+                    stroke="url(#border-gradient)"
                     strokeWidth={10}
                   ></path>
                   {/* <text x={200} y={500} fontSize={150} className="puzzle-text">
@@ -393,21 +443,21 @@ function Puzzle() {
                 </text> */}
                 </svg>
               </g>
-              <g id='puzzle-4' transform='rotate(315)'>
+              <g id="puzzle-4" transform="rotate(315)">
                 <svg
-                  t='1680919590915'
-                  className='piece piece-4 piece-fixed'
-                  viewBox='0 0 1024 1024'
-                  version='1.1'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='200'
-                  height='200'
-                  fill='url(#content-gradient-2)'
+                  t="1680919590915"
+                  className="piece piece-4 piece-fixed"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  fill="url(#content-gradient-2)"
                 >
                   <path
-                    d='M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z'
-                    p-id='9317'
-                    stroke='url(#border-gradient)'
+                    d="M874.666667 469.333333 810.666667 469.333333 810.666667 298.666667C810.666667 251.306667 772.266667 213.333333 725.333333 213.333333L554.666667 213.333333 554.666667 149.333333C554.666667 90.453333 506.88 42.666667 448 42.666667 389.12 42.666667 341.333333 90.453333 341.333333 149.333333L341.333333 213.333333 170.666667 213.333333C123.733333 213.333333 85.333333 251.733333 85.333333 298.666667L85.333333 460.8 149.333333 460.8C213.333333 460.8 264.533333 512 264.533333 576 264.533333 640 213.333333 691.2 149.333333 691.2L85.333333 691.2 85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L332.8 938.666667 332.8 874.666667C332.8 810.666667 384 759.466667 448 759.466667 512 759.466667 563.2 810.666667 563.2 874.666667L563.2 938.666667 725.333333 938.666667C772.266667 938.666667 810.666667 900.266667 810.666667 853.333333L810.666667 682.666667 874.666667 682.666667C933.546667 682.666667 981.333333 634.88 981.333333 576 981.333333 517.12 933.546667 469.333333 874.666667 469.333333Z"
+                    p-id="9317"
+                    stroke="url(#border-gradient)"
                     strokeWidth={10}
                   ></path>
                   {/* <text x={200} y={500} fontSize={150} className="puzzle-text">
@@ -416,9 +466,9 @@ function Puzzle() {
                 </svg>
               </g>
             </defs>
-            <use xlinkHref='#puzzle-1' x={pos[0].x} y={pos[0].y}></use>
-            <use xlinkHref='#puzzle-3' x={pos[2].x} y={pos[2].y}></use>
-            <use xlinkHref='#puzzle-4' x={pos[3].x} y={pos[3].y}></use>
+            <use xlinkHref="#puzzle-1" x={pos[0].x} y={pos[0].y}></use>
+            <use xlinkHref="#puzzle-3" x={pos[2].x} y={pos[2].y}></use>
+            <use xlinkHref="#puzzle-4" x={pos[3].x} y={pos[3].y}></use>
 
             {/* others */}
             {modelList.map(({ id }, index) => {
@@ -428,7 +478,7 @@ function Puzzle() {
                   xlinkHref={`#${id}`}
                   x={randomPos[index].x}
                   y={randomPos[index].y}
-                  className='move'
+                  className="move"
                   onMouseDown={selectElement}
                   onMouseMove={moveElement}
                   onMouseUp={deSelectElement}
@@ -438,39 +488,96 @@ function Puzzle() {
               );
             })}
             {!model && (
-              <use xlinkHref='#puzzle-2-empty' x={pos[1].x} y={pos[1].y}></use>
+              <use xlinkHref="#puzzle-2-empty" x={pos[1].x} y={pos[1].y}></use>
             )}
           </svg>
-          <div className='fixed pointer-events-none select-none right-1/3 bottom-1/3'>
-            <div className='filter-bg'></div>
+          <div className="fixed pointer-events-none select-none right-1/3 bottom-1/3">
+            <div className="filter-bg"></div>
           </div>
-          <canvas className='fireworks'></canvas>
-          <div className='absolute pointer-events-none select-none right-[22rem] top-[30rem] w-[36rem] text-center'>
-            <h4 className='h4'> {dataInfo.title}</h4>
+          <canvas className="fireworks"></canvas>
+          <div className="absolute pointer-events-none select-none right-[22rem] top-[30rem] w-[36rem] text-center">
+            <h4 className="h4"> {dataInfo.title}</h4>
           </div>
-          <div className='absolute right-[20rem] top-[13rem] flex gap-1 pointer-events-none select-none'>
-            <img src={arrowImg} alt='' className='w-20 h-20 mt-1' />
-            <span className='h3 font-architects-daughter'>Drop Here</span>
+          <div className="absolute right-[20rem] top-[13rem] flex gap-1 pointer-events-none select-none">
+            <img src={arrowImg} alt="" className="w-20 h-20 mt-1" />
+            <span className="h3 font-architects-daughter">Drop Here</span>
           </div>
         </div>
       </PageTemplate>
       <Modal
-        id='modal'
-        ariaLabel='modal-headline'
+        id="modal"
+        ariaLabel="modal-headline"
         show={resultModalOpen}
         handleClose={() => setResultModalOpen(false)}
       >
-        <SuccessCard>
-          <div className='flex flex-col gap-4'>
-            <h3 className='h5'>运行结果:</h3>
-            <p className='ml-2 leading-10'>
-              <span className='font-bold'>运行状态：</span>
-              <span className='text-green-500'>{result.status}</span> <br />
-              <span className='font-bold'>运行时间：</span>
-              <span>{result.time}</span> <br />
-              <span className='font-bold'>输出：</span> <br />
-              <span>{result.output}</span>
-            </p>
+        <SuccessCard status={status === 2}>
+          <div className="flex flex-col gap-4 select-none">
+            {status === 2 ? (
+              <>
+                <h3 className="h5">运行结果:</h3>
+                <p className="ml-2 leading-10">
+                  <span className="font-bold">运行状态：</span>
+                  <span className="text-green-500">{result.status}</span> <br />
+                  <span className="font-bold">运行时间：</span>
+                  <span>{result.time}</span> <br />
+                  <span className="font-bold">输出：</span> <br />
+                  <div className="grid justify-center grid-cols-2 gap-2">
+                    <div>
+                      <Bar
+                        options={chartConfig('Masked MAE')}
+                        data={chart3}
+                      ></Bar>
+                    </div>
+                    <div>
+                      <Bar
+                        options={chartConfig('Masked RMSE')}
+                        data={chart4}
+                      ></Bar>
+                    </div>
+                    <div>
+                      <Line
+                        options={chartConfig('三阶段Loss曲线')}
+                        data={{
+                          labels: Array(chart1[0].data.length)
+                            .fill(0)
+                            .map((_, index) => index),
+                          datasets: chart1,
+                        }}
+                      ></Line>
+                    </div>
+                    <div>
+                      <Line
+                        options={chartConfig('三阶段MAE曲线')}
+                        data={{
+                          labels: Array(chart2[0].data.length)
+                            .fill(0)
+                            .map((_, index) => index),
+                          datasets: chart2,
+                        }}
+                      ></Line>
+                    </div>
+                  </div>
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="h4">已选择数据源:</h3>
+                <span className="text-purple-600 h5">{dataInfo.title}</span>
+                <h3 className="h4">已选择算法：</h3>
+                <span className="text-purple-600 h5"> Ada-STNet </span>
+                <button
+                  className="absolute w-64 bg-purple-600 border-purple-600 cursor-pointer bottom-10 right-10 btn hover:bg-purple-700 hover:text-white"
+                  onClick={() => {
+                    setStatus(1);
+                    setTimeout(() => {
+                      setStatus(2);
+                    }, 2000);
+                  }}
+                >
+                  {status === 1 ? <Spin visible={true} /> : '点击运行'}
+                </button>
+              </>
+            )}
           </div>
         </SuccessCard>
       </Modal>

@@ -66,7 +66,7 @@ const AchieveIntro = () => {
       subTitle={'Achievement Introduction'}
     >
       <p
-        className="mb-8 text-xl text-justify text-gray-400 text-indent-2"
+        className="mb-8 text-justify text-gray-400 para text-indent-2"
         data-aos="fade-up"
         data-aos-delay="200"
         style={{
@@ -85,7 +85,7 @@ const AchieveIntro = () => {
           <div className="animate-scale">
             <h3 className="h3">主要创新点</h3>
             <div className="mt-3 mb-8">
-              <p className="mt-3 text-gray-400">
+              <p className="mt-3 text-gray-400 para">
                 {achieveInfo?.innovationInfo}
               </p>
             </div>
@@ -96,7 +96,7 @@ const AchieveIntro = () => {
             </h3>
             <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
               <a
-                className="text-gray-400 whitespace-pre-wrap"
+                className="text-gray-400 whitespace-pre-wrap para"
                 href={achieveInfo?.onlineHref}
               >
                 {achieveInfo?.onlineHref}
@@ -109,7 +109,7 @@ const AchieveIntro = () => {
               被引次数
             </h3>
             <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
-              <p className="text-gray-400 whitespace-pre-wrap ">
+              <p className="text-gray-400 whitespace-pre-wrap para">
                 {achieveInfo?.quoteCount}
               </p>
             </div>
@@ -127,7 +127,7 @@ const AchieveIntro = () => {
           实验设计和结果分析
         </h3>
         <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
-          <p className="text-gray-400 whitespace-pre-wrap ">
+          <p className="text-gray-400 whitespace-pre-wrap para">
             {achieveInfo?.methodInfo}
           </p>
         </div>
@@ -138,7 +138,7 @@ const AchieveIntro = () => {
           可能延续的研究点
         </h3>
         <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
-          <p className="text-gray-400 whitespace-pre-wrap ">
+          <p className="text-gray-400 whitespace-pre-wrap para">
             {achieveInfo?.futureInfo}
           </p>
         </div>

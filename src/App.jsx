@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     AOS.init({
-      once: true,
+      // once: true,
       disable: 'phone',
       duration: 600,
       easing: 'ease-out-sine',

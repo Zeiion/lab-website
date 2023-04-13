@@ -78,7 +78,7 @@ const DataIntro = () => {
       subTitle={'Data Introduction'}
     >
       <p
-        className="mb-8 text-xl text-justify text-gray-400 text-indent-2"
+        className="mb-8 text-justify text-gray-400 para text-indent-2"
         data-aos="fade-up"
         data-aos-delay="200"
         style={{
@@ -89,7 +89,7 @@ const DataIntro = () => {
       </p>
 
       <div
-        className="flex flex-col items-center content-between gap-4 mt-6 md:flex-row"
+        className="flex flex-col items-center content-between gap-6 mt-6 md:flex-row"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -98,34 +98,34 @@ const DataIntro = () => {
             <h3 className="h3">来源介绍</h3>
             <div className="mt-3 mb-8">
               <TagList list={[dataInfo?.sourceInfo?.tag]}></TagList>
-              <p className="mt-3 text-gray-400">
+              <p className="mt-3 overflow-auto text-gray-400 para max-h-24">
                 {dataInfo?.sourceInfo?.description}
               </p>
             </div>
           </div>
           <div className="animate-scale">
-            <h3 className="mt-4 h3">格式介绍</h3>
+            <h3 className="mt-2 h3">格式介绍</h3>
             <div className="mt-3 mb-8">
               <TagList list={[dataInfo?.formatInfo?.tag]}></TagList>
-              <p className="mt-3 text-gray-400 whitespace-pre-wrap">
+              <p className="mt-3 overflow-auto text-gray-400 para max-h-24">
                 {dataInfo?.formatInfo?.description}
               </p>
             </div>
           </div>
         </div>
         <img
-          className="object-cover w-full h-full md:w-7/12 animate-scale"
+          className="object-cover w-full h-96 md:w-7/12 animate-scale"
           src={dataInfo?.imgSrc}
           alt="-"
         />
       </div>
 
       <div className="animate-scale">
-        <h3 className="mt-6 h3" data-aos="fade-up" data-aos-delay="200">
+        <h3 className="mt-2 h3" data-aos="fade-up" data-aos-delay="200">
           数据的处理和清洗方法
         </h3>
         <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
-          <p className="text-gray-400 whitespace-pre-wrap ">
+          <p className="text-gray-400 whitespace-pre-wrap para">
             {dataInfo?.methodInfo}
           </p>
         </div>
@@ -136,7 +136,7 @@ const DataIntro = () => {
           数据的评估指标和标注方法
         </h3>
         <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
-          <p className="text-gray-400 whitespace-pre-wrap ">
+          <p className="text-gray-400 whitespace-pre-wrap para">
             {dataInfo?.evaluationInfo}
           </p>
         </div>

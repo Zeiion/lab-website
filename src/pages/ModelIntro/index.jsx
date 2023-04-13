@@ -67,7 +67,7 @@ const ModelIntro = () => {
       subTitle={'Model Introduction'}
     >
       <p
-        className="mb-8 text-xl text-justify text-gray-400 text-indent-2"
+        className="mb-8 text-justify text-gray-400 para text-indent-2"
         data-aos="fade-up"
         data-aos-delay="200"
         style={{
@@ -78,7 +78,7 @@ const ModelIntro = () => {
       </p>
 
       <div
-        className="flex flex-col items-center content-between gap-4 mt-6 h-fit md:flex-row"
+        className="flex flex-col items-center content-between gap-6 mt-6 h-fit md:flex-row"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -87,7 +87,7 @@ const ModelIntro = () => {
             <h3 className="h3">主要创新点</h3>
             <div className="mt-3 mb-8">
               <TagList list={[modelInfo?.innovationInfo?.tag]}></TagList>
-              <p className="mt-3 text-gray-400">
+              <p className="mt-3 overflow-auto text-gray-400 para max-h-48">
                 {modelInfo?.innovationInfo?.description}
               </p>
             </div>
@@ -96,14 +96,14 @@ const ModelIntro = () => {
             <h3 className="mt-4 h3">主要解决的场景问题</h3>
             <div className="mt-3 mb-8">
               <TagList list={[modelInfo?.sceneInfo?.tag]}></TagList>
-              <p className="mt-3 text-gray-400 whitespace-pre-wrap">
+              <p className="mt-3 text-gray-400 whitespace-pre-wrap para">
                 {modelInfo?.sceneInfo?.description}
               </p>
             </div>
           </div>
         </div>
         <img
-          className="object-contain w-full h-full md:w-5/12 animate-scale"
+          className="object-contain w-full h-96 md:w-6/12 animate-scale"
           src={modelInfo?.imgSrc}
           alt="-"
         />
@@ -114,7 +114,7 @@ const ModelIntro = () => {
           实验流程简介
         </h3>
         <div className="mt-4 mb-8 " data-aos="fade-up" data-aos-delay="200">
-          <p className="text-gray-400 whitespace-pre-wrap ">
+          <p className="text-gray-400 whitespace-pre-wrap para">
             {modelInfo?.processInfo}
           </p>
         </div>

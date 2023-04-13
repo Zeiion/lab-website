@@ -76,7 +76,7 @@ function Home() {
         <HeroHome />
 
         <TeamSection />
-
+        <div className="h-16"></div>
         <Carousel>
           {projectList.map(({ title, imgSrc, description, href }, index) => (
             <ProjectCard
@@ -88,6 +88,7 @@ function Home() {
             />
           ))}
         </Carousel>
+        <div className="h-16"></div>
         {/* <TopicSection
           title="机构介绍"
           description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui

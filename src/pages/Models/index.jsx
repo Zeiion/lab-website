@@ -50,7 +50,7 @@ const Models = () => {
     ></input>
   );
   return (
-    <PageTemplate title={'典型模型'} subTitle={'Models'}>
+    <PageTemplate title={'知识协同'} subTitle={'Models'}>
       <CardWall
         list={[
           {

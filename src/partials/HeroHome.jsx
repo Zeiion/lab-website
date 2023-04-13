@@ -112,7 +112,7 @@ function HeroHome() {
                 <>
                   <img
                     className="w-full h-full mx-auto opacity-70"
-                    src={HeroImage}
+                    src="https://i2.100024.xyz/2023/04/14/jozbu.webp"
                     width="1920"
                     height="1080"
                     alt="Hero"

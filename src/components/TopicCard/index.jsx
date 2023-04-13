@@ -40,10 +40,12 @@ const TopicCard = ({
           <div className="mb-2 text-xl text-purple-600 font-architects-daughter">
             {slogan}
           </div>
-          <a className="h3" href={href}>
+          <a className="h3" href={href} target="_blank">
             {title}
           </a>
-          <p className="mt-3 mb-4 text-xl text-gray-400">{description}</p>
+          <p className="mt-3 mb-4 text-xl text-gray-400 whitespace-pre-wrap">
+            {description}
+          </p>
           <ul className="-mb-2 text-lg text-gray-400">
             {list.map(({ text }) => (
               <li className="flex items-center mb-2" key={text}>

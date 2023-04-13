@@ -15,6 +15,9 @@ const TeamIntro = () => {
   //   title: '北航计算机学院交通大数据组',
   //   description: `北京航空航天大学（简称北航）成立于1952年，是新中国第一所航空航天高等学府，现隶属于工业和信息化部，位列首批国家“双一流”A类、“985工程”、“211工程.主要针对我国综合交通跨行业、跨地域管理服务能力不足等问题，建设综合交通大数据应用技术创新平台，支撑开展交通运输大数据采集处理、分析挖掘、管理决策、融合应用等技术的研发和工程化。为大数据驱动的综合交通运输规划、大型综合交通枢纽协同运行组织与优化、城市群综合交通系统运行监测与服务、综合交通智慧出行协同运行研发、综合交通系统能耗排放分析与节能服务、综合交通系统运行安全与应急保障等综合交通大数据应用提供技术、平台支撑；产出各类科技专利、标准、建议与工程产品原型；在国家层面提高支撑开展综合交通大数据应用的研究、服务和应用推广工作的能力；积极进行产业合作，包括软硬件销售、集成开发及公益服务；培养综合交通大数据应用技术和管理人才。    `,
   //   researchDirections: ['研究方向1', '研究方向2'],
+  //   collaborationIntro:
+  //     '我们团队由两位经验丰富的技术专家担任领头人，拥有丰富的科研经验，多年的软件开发和技术管理能力。团队成员结构包括10位博士、40余位硕士和90余位本科生，涵盖了软件开发、交通大数据科学、人工智能等多个领域。我们团队成员均来自北京航空航天大学的优秀学生，拥有各种专业技能和技术能力，包括程序设计、算法开发、数据库设计和管理等。我们的团队成员拥有的各种头衔，包括但不限于教授、高级工程师、架构师等。我们的团队注重技术创新和学习，积极研究新技术、新方法和新工具，以提供更优秀的解决方案。',
+  //   contactInfo: 'xxx@buaa.edu.cn',
   //   members: [
   //     {
   //       name: '杜博文',
@@ -250,6 +253,26 @@ const TeamIntro = () => {
             ),
           )}
       </div>
+
+      {teamInfo?.collaborationIntro && (
+        <div className="animate-scale">
+          <h3 className="h3">国内外合作介绍</h3>
+          <div className="mt-3 mb-8">
+            <p className="mt-5 text-gray-400 indent-8">
+              {teamInfo?.collaborationIntro}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {teamInfo?.contactInfo && (
+        <div className="animate-scale">
+          <h3 className="h3">联系方式</h3>
+          <div className="mt-3 mb-8">
+            <p className="mt-5 text-gray-400">{teamInfo?.contactInfo}</p>
+          </div>
+        </div>
+      )}
 
       <Timeline list={teamInfo?.timeline} />
       <VCardList title="Lateset Works" list={teamInfo?.works}></VCardList>

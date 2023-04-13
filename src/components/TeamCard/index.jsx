@@ -1,25 +1,20 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const TeamCard = ({
-  id,
-  title,
-  icon,
-  description,
-}) => {
+const TeamCard = ({ id, title, icon, description }) => {
   return (
     <div
       className="relative flex flex-col items-center"
       data-aos="fade-up"
       data-aos-anchor="[data-aos-id-blocks]"
     >
-      <div
-      className="w-16 h-16 mb-4"
-      viewBox="0 0 64 64"
-      >
-        <img src={icon} style={{borderRadius:"32px", width:"64px", height:"64px"}}></img>
+      <div className="w-16 h-16 mb-4" viewBox="0 0 64 64">
+        <img
+          src={icon}
+          style={{ borderRadius: '32px', width: '64px', height: '64px' }}
+        ></img>
       </div>
-      <Link className="mb-2 h4" to={'/team/' + id}>
+      <Link className="mb-2 h4" to={'/teams'}>
         {title}
       </Link>
       <p className="text-lg text-center text-gray-400">{description}</p>

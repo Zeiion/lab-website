@@ -49,9 +49,9 @@ function App() {
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/models" element={<Models />} />
         <Route path="/scenes" element={<Scenes />} />
-        <Route path="/data" element={<DataPage />} />
+        <Route path="/datas" element={<DataPage />} />
         <Route path="/datause" element={<DataUsePage />} />
-        <Route path="/ins" element={<Teams />} />
+        <Route path="/teams" element={<Teams />} />
         <Route path="/team/:id" element={<TeamIntro />} />
         <Route path="/data/:id" element={<DataIntro />} />
         <Route path="/model/:id" element={<ModelIntro />} />

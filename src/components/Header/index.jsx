@@ -52,14 +52,14 @@ function Header() {
             {/* Desktop sign in links */}
             <ul className="flex flex-wrap items-center justify-end grow">
               {/* TODO css effect */}
-              {navList.map(({ title, href }) => (
+              {navList.map(({ title, href, blank = false }) => (
                 <li key={href}>
-                  <HeaderLink title={title} href={href} />
+                  <HeaderLink title={title} href={href} blank={blank} />
                 </li>
               ))}
               <li className="ml-4">
                 <Link
-                  to="https://github.com"
+                  to="https://github.com/Feiyunpublic"
                   target="_blank"
                   className="flex items-center justify-center text-purple-600 transition duration-150 ease-in-out bg-gray-800 rounded-full hover:text-gray-100 hover:bg-purple-600"
                   aria-label="Github"

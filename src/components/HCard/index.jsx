@@ -29,7 +29,7 @@ const HCard = ({
                 src={imgSrc}
                 width="540"
                 height="303"
-                alt="Blog post"
+                alt="-"
               />
             </figure>
           </a>

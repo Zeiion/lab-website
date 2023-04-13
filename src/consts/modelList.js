@@ -208,4 +208,3 @@ export const modelList = [
     tags: ['交通', '预测', '交通事故'],
   },
 ];
-console.log('model', modelList.length);

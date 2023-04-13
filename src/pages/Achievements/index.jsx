@@ -8,9 +8,24 @@ import VCardList from '~/components/VCardList';
 
 import { parseAchieveList } from '~/consts/achieveList';
 
-const achieveList = parseAchieveList();
+import { useRequest } from '~/utils/useRequest';
+import { getAchieveList } from '~/request/achieve';
 
 const Achievements = () => {
+  const { data: achieveList = [] } = useRequest(
+    () => getAchieveList(),
+    [],
+    (list) => {
+      return list.map((item) => {
+        return {
+          ...item,
+          href: `/achieve/${item.id}`,
+        };
+      });
+    },
+  );
+
+  // TODO
   const prizeList = [
     {
       title: '智能客服系统获得人工智能应用大赛一等奖',
@@ -39,7 +54,7 @@ const Achievements = () => {
     <PageTemplate title={'成果共享'} subTitle={'Achievements'}>
       {achieveList && achieveList.length > 0 && (
         <>
-          <div className='mt-10'>
+          <div className="mt-10">
             <HCard
               title={achieveList[0].title}
               description={achieveList[0].description}
@@ -52,12 +67,12 @@ const Achievements = () => {
             />
           </div>
           <VCardList
-            title='Latest articles'
+            title="Latest articles"
             list={achieveList.slice(1)}
           ></VCardList>
         </>
       )}
-      <VCardList title='Recent Prizes' list={prizeList} />
+      <VCardList title="Recent Prizes" list={prizeList} />
     </PageTemplate>
   );
 };

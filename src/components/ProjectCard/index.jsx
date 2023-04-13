@@ -39,7 +39,7 @@ const ProjectCard = ({ title, description, imgSrc, href }) => {
     //       src={imgSrc}
     //       width="540"
     //       height="303"
-    //       alt="Blog post"
+    //       alt="-"
     //     />
     //   </figure>
     //   <div className="flex flex-col justify-between p-6 w-96">

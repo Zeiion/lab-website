@@ -49,8 +49,8 @@ const calcHref = ({ name = '', id = '' }) => {
     return 'http://www.feiyun.tech/#/manage/faculty/detail?facultyId=' + id;
   }
 };
-export const parseInsList = () => {
-  return insList.map((item) => {
+export const parseTeamList = () => {
+  return teamList.map((item) => {
     return {
       id: item.node_id,
       title: item.name,
@@ -65,7 +65,7 @@ export const parseInsList = () => {
   });
 };
 
-export const insList = [
+export const teamList = [
   {
     support_faculty: 40,
     data_detail_id: [2, 7, 10, 13, 14, 16, 19, 20, 22],

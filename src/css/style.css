@@ -11,6 +11,7 @@
 
 @import 'tailwindcss/utilities';
 @import 'additional-styles/magic-card.scss';
+@import 'additional-styles/cursor.scss';
 
 /* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
 @layer utilities {
@@ -26,6 +27,7 @@
 
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;

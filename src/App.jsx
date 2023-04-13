@@ -12,8 +12,13 @@ import Models from './pages/Models';
 import Scenes from './pages/Scenes';
 import TeamIntro from './pages/TeamIntro';
 import TopicIntro from './pages/TopicIntro';
+import DataIntro from './pages/DataIntro';
+import ModelIntro from './pages/ModelIntro';
+import AchieveIntro from './pages/AchieveIntro';
 import DataPage from './pages/DataPage';
+import DataUsePage from './pages/DataUsePage';
 import InsPage from './pages/InsPage';
+import AboutPage from './pages/AboutPage';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -40,19 +45,28 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/achievements" element={<Achievements />} />
-        <Route path="/models" element={<Models />} />
-        <Route path="/scenes" element={<Scenes />} />
-        <Route path="/data" element={<DataPage />} />
-        <Route path="/ins" element={<InsPage />} />
-        <Route path="/team/:id" element={<TeamIntro />} />
-        <Route path="/topic/:id" element={<TopicIntro />} />
+        <Route exact path='/' element={<Home />} />
+        <Route path='/achievements' element={<Achievements />} />
+        <Route path='/models' element={<Models />} />
+        <Route path='/scenes' element={<Scenes />} />
+        <Route path='/data' element={<DataPage />} />
+        <Route path='/datause' element={<DataUsePage />} />
+        <Route path='/ins' element={<InsPage />} />
+        <Route path='/team/:id' element={<TeamIntro />} />
+        <Route path='/data/:id' element={<DataIntro />} />
+        <Route path='/model/:id' element={<ModelIntro />} />
+        <Route path='/achieve/:id' element={<AchieveIntro />} />
+        <Route path='/topic/:id' element={<TopicIntro />} />
+        <Route path='/about' element={<AboutPage />} />
 
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
       </Routes>
+      <div className='starsec'></div>
+      <div className='starthird'></div>
+      <div className='starfourth'></div>
+      <div className='starfifth'></div>
     </>
   );
 }

@@ -30,34 +30,34 @@ function Modal({ children, id, ariaLabel, show, handleClose }) {
     <>
       {/* Modal backdrop */}
       <Transition
-        className="fixed inset-0 z-50 bg-black bg-opacity-75 transition-opacity"
+        className='fixed inset-0 z-50 transition-opacity bg-black bg-opacity-75'
         show={show}
-        enter="transition ease-out duration-200"
-        enterStart="opacity-0"
-        enterEnd="opacity-100"
-        leave="transition ease-out duration-100"
-        leaveStart="opacity-100"
-        leaveEnd="opacity-0"
-        aria-hidden="true"
+        enter='transition ease-out duration-200'
+        enterStart='opacity-0'
+        enterEnd='opacity-100'
+        leave='transition ease-out duration-100'
+        leaveStart='opacity-100'
+        leaveEnd='opacity-0'
+        aria-hidden='true'
       />
 
       {/* Modal dialog */}
       <Transition
         id={id}
-        className="fixed inset-0 z-50 overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
-        role="dialog"
-        aria-modal="true"
+        className='fixed inset-0 z-50 flex items-center justify-center px-4 overflow-hidden transform sm:px-6'
+        role='dialog'
+        aria-modal='true'
         aria-labelledby={ariaLabel}
         show={show}
-        enter="transition ease-out duration-200"
-        enterStart="opacity-0 scale-95"
-        enterEnd="opacity-100 scale-100"
-        leave="transition ease-out duration-200"
-        leaveStart="opacity-100 scale-100"
-        leaveEnd="opacity-0 scale-95"
+        enter='transition ease-out duration-200'
+        enterStart='opacity-0 scale-95'
+        enterEnd='opacity-100 scale-100'
+        leave='transition ease-out duration-200'
+        leaveStart='opacity-100 scale-100'
+        leaveEnd='opacity-0 scale-95'
       >
         <div
-          className="bg-white overflow-auto max-w-7xl w-full max-h-full"
+          className='w-full max-h-full overflow-auto bg-transparent max-w-7xl'
           ref={modalContent}
         >
           {children}

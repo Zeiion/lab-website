@@ -14,81 +14,62 @@ import VCard from '~/components/VCard';
 import Carousel from '~/components/Carousel';
 import ProjectCard from '~/components/ProjectCard';
 import IconCard from '~/components/IconCard';
+import { parseHomeInsList } from '~/consts/homeInsList';
 
 function Home() {
   const projectList = [
     {
-      title: '智慧物流管理系统',
+      title: 'AI引擎平台',
       description:
-        '该系统集成了人工智能、物联网、云计算等技术，实现对物流全链路的监控、调度和优化，提高了物流效率和准确性，降低了成本和误差率。系统支持多种物流方式，如陆运、海运、航空、快递等，适用于各种规模的企业和组织。',
-      imgSrc:
-        'https://img2.baidu.com/it/u=1296226479,2546842574&fm=253&fmt=auto&app=138&f=PNG?w=554&h=237',
-      href: '/achievements/3',
+        'AI 引擎平台是一种用于构建和部署人工智能应用程序的软件平台。它提供了一种将数据转化为智能模型的方法，使开发人员能够使用机器学习和深度学习算法来处理大规模数据集，并提供预测、分类、聚类、推荐等功能。',
+      imgSrc: 'https://i2.100024.xyz/2023/04/03/123vmt7.webp',
+      href: '/achieve/3',
     },
     {
-      title: '智慧医疗平台',
+      title: '地下基础设施智慧化管理平台',
       description:
-        '该平台整合了医疗设备、医疗信息、医疗资源等多种资源，实现了医疗数据的共享和整合，提供了包括远程医疗、智能诊断、病例分析等在内的多种医疗服务，有效提升了医疗水平和效率。',
-      imgSrc:
-        'https://img2.baidu.com/it/u=1296226479,2546842574&fm=253&fmt=auto&app=138&f=PNG?w=554&h=237',
-      href: '/achievements/4',
-    },
-    {
-      title: '智能客服系统',
-      description:
-        '该系统通过人工智能技术，实现了自然语言处理、智能问答、情感识别等功能，能够智能地解答用户的问题和需求，提升了客户满意度和忠诚度。系统还支持多种渠道的接入，如电话、短信、社交媒体等，满足了多种客户服务的需求。',
-      imgSrc:
-        'https://img2.baidu.com/it/u=1296226479,2546842574&fm=253&fmt=auto&app=138&f=PNG?w=554&h=237',
-      href: '/achievements/5',
+        '地下基础设施智慧化管理平台是一种利用物联网、大数据、云计算等技术，对地下基础设施进行智能化管理和监控的平台。其主要功能包括数据分析和预警、智能诊断和预测、可视化和交互式展示，可以对地下基础设施设备进行火灾、地震、损裂、爆炸、变形、渗漏等病害的智能诊断和分析。',
+      imgSrc: 'https://i2.100024.xyz/2023/04/03/1266ch3.webp',
+      href: 'http://81.70.246.244:9002/',
     },
     {
       title: '飞云集智——城市大数据开放共享平台',
       description: `全国种类最全、数量最大的交通大数据平台，一站式服务从idea到应用场景,一个平台搞定所有资源问题；数据的深度挖掘和分析提供强大算力；跨领域、跨地域的数据融汇、综合、联系`,
       imgSrc: 'http://www.feiyun.tech/img/homepage_background.fe6132fb.png',
-      href: 'http://www.feiyun.tech/',
+      href: 'http://www.feiyun.tech/#/about',
+    },
+    {
+      title: 'AI引擎平台',
+      description:
+        'AI 引擎平台是一种用于构建和部署人工智能应用程序的软件平台。它提供了一种将数据转化为智能模型的方法，使开发人员能够使用机器学习和深度学习算法来处理大规模数据集，并提供预测、分类、聚类、推荐等功能。',
+      imgSrc: 'https://i2.100024.xyz/2023/04/03/123vmt7.webp',
+      href: '/achieve/3',
+    },
+    {
+      title: '地下基础设施智慧化管理平台',
+      description:
+        '地下基础设施智慧化管理平台是一种利用物联网、大数据、云计算等技术，对地下基础设施进行智能化管理和监控的平台。其主要功能包括数据分析和预警、智能诊断和预测、可视化和交互式展示，可以对地下基础设施设备进行火灾、地震、损裂、爆炸、变形、渗漏等病害的智能诊断和分析。',
+      imgSrc: 'https://i2.100024.xyz/2023/04/03/1266ch3.webp',
+      href: 'http://81.70.246.244:9002/',
     },
     {
       title: '飞云集智——城市大数据开放共享平台',
       description: `全国种类最全、数量最大的交通大数据平台，一站式服务从idea到应用场景,一个平台搞定所有资源问题；数据的深度挖掘和分析提供强大算力；跨领域、跨地域的数据融汇、综合、联系`,
       imgSrc: 'http://www.feiyun.tech/img/homepage_background.fe6132fb.png',
-      href: 'http://www.feiyun.tech/',
-    },
-    {
-      title: '智慧农业物联网平台',
-      description:
-        '该平台通过物联网技术，实现了对农业生产全链路的监控和管理，包括土壤湿度、气象参数、植物生长情况等多种数据的采集和分析，提供了精准的农业生产决策和服务，有效提升了农业生产效率和质量。',
-      imgSrc:
-        'https://img2.baidu.com/it/u=1296226479,2546842574&fm=253&fmt=auto&app=138&f=PNG?w=554&h=237',
-      href: '/achievements/6',
-    },
-    {
-      title: '智慧教育管理平台',
-      description:
-        '该平台集成了人工智能、大数据、云计算等技术，实现了对学生学习、教师教学、校园管理等多个方面的全面监控和管理，提供了个性化的学习和教学服务，有效提升了教育质量和效率。',
-      imgSrc:
-        'https://img2.baidu.com/it/u=1296226479,2546842574&fm=253&fmt=auto&app=138&f=PNG?w=554&h=237',
-      href: '/achievements/7',
-    },
-    {
-      title: '智能电网管理系统',
-      description:
-        '该系统通过物联网、大数据、云计算等技术，实现了对电网全链路的监控和管理，包括电力生产、传输、配送等多个环节的数据采集和分析，提供了智能化的电网管理和调度服务，有效提高了电力系统的稳定性和安全性。',
-      imgSrc:
-        'https://img2.baidu.com/it/u=1296226479,2546842574&fm=253&fmt=auto&app=138&f=PNG?w=554&h=237',
-      href: '/achievements/8',
+      href: 'http://www.feiyun.tech/#/about',
     },
   ];
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className='flex flex-col min-h-screen overflow-hidden'>
       {/*  Site header */}
       <Header />
 
       {/*  Page content */}
-      <main className="grow">
+      <main className='grow'>
         {/*  Page illustration */}
         <div
-          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
-          aria-hidden="true"
+          className='relative h-0 mx-auto pointer-events-none max-w-7xl'
+          aria-hidden='true'
         >
           <PageIllustration />
         </div>
@@ -108,10 +89,11 @@ function Home() {
           ))}
         </Carousel>
         <TopicSection
-          title="机构介绍"
-          description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit laborum — semper quis lectus nulla."
-          subTitle="Topic Intro"
+          title='机构介绍'
+          description='Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit laborum — semper quis lectus nulla.'
+          subTitle='Topic Intro'
+          list={parseHomeInsList()}
         />
         {/* <Testimonials /> */}
         {/* <Timeline /> */}

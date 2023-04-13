@@ -2,7 +2,7 @@ import VCard from '~/components/VCard';
 import TagFilterList from '~/components/TagFilterList';
 import { useMemo, useState } from 'react';
 
-const VCardList = ({ title, list }) => {
+const VCardList = ({ title, list, headerInput }) => {
   const tags = list.map((item) => item.tags).flat(2);
   const [uniqueTags, setUniqueTags] = useState(
     [...new Set(tags)].map((text) => {
@@ -28,6 +28,7 @@ const VCardList = ({ title, list }) => {
         data-aos="fade-up"
       >
         <h4 className="h4">{title}</h4>
+        {headerInput}
         <div>
           <TagFilterList
             list={uniqueTags}
@@ -58,6 +59,7 @@ const VCardList = ({ title, list }) => {
               authorImgSrc,
               date,
               href,
+              action = null,
             },
             index,
           ) => (
@@ -71,6 +73,7 @@ const VCardList = ({ title, list }) => {
               date={date}
               key={index}
               href={href}
+              action={action}
             />
           ),
         )}

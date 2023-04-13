@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import TagList from '~/components/TagList';
+import Tag from '../Tag';
 
 const VCard = ({
   title = '',
@@ -10,20 +11,19 @@ const VCard = ({
   author = '',
   authorImgSrc = '',
   date = '',
+  action = null,
 }) => {
   return (
     <section
       className="flex flex-col justify-center max-w-sm antialiased text-gray-200 bg-gray-900"
       data-aos="fade-up"
     >
-      <div className="flex flex-col w-full h-full mx-auto">
+      <div className="relative flex flex-col w-full h-full mx-auto">
         <a className="relative block mb-6 group" href={href}>
           <figure className="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden transform transition duration-700 ease-out">
             <img
-              className="absolute inset-0 object-cover w-full h-full transition duration-700 ease-out transform hover:scale-105"
+              className="absolute inset-0 object-cover w-full h-64 transition duration-700 ease-out transform hover:scale-105"
               src={imgSrc}
-              width="540"
-              height="303"
               alt="Blog post"
             />
           </figure>
@@ -32,6 +32,7 @@ const VCard = ({
           <header>
             <div className="mb-3">
               <TagList list={tags} />
+              {action && <>{action}</>}
             </div>
             <h3 className="mb-2 overflow-hidden text-xl font-bold leading-tight lg:text-2xl text-ellipsis whitespace-nowrap">
               <a
@@ -42,7 +43,7 @@ const VCard = ({
               </a>
             </h3>
           </header>
-          <p className="flex-grow overflow-auto text-lg text-gray-400 max-h-48">
+          <p className="flex-grow overflow-auto text-lg text-gray-400 h-48">
             {description}
           </p>
           <footer className="flex items-center mt-4">

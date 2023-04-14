@@ -11,11 +11,11 @@ function Banner() {
             <div className="inline-flex text-slate-500">
               <a
                 className="font-medium hover:underline text-slate-50"
-                href="https://feiyun.tech"
+                href="http://www.feiyun.tech/#/about"
                 target="_blank"
                 rel="noreferrer"
               >
-                Contact<span className="hidden sm:inline"> us</span>
+                Contact<span className="hidden sm:inline"> Feiyun</span>
               </a>{' '}
               <span className="italic px-1.5">or</span>{' '}
               <a

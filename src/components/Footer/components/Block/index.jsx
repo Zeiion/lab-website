@@ -10,6 +10,7 @@ const Block = ({ list, title }) => {
           <li className="mb-1" key={href}>
             <Link
               to={href}
+              target="_blank"
               className="text-gray-400 transition duration-150 ease-in-out hover:text-gray-100"
             >
               {title}

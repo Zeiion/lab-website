@@ -50,7 +50,7 @@ function App() {
         <Route path="/models" element={<Models />} />
         <Route path="/scenes" element={<Scenes />} />
         <Route path="/datas" element={<DataPage />} />
-        <Route path="/datause" element={<DataUsePage />} />
+        <Route path="/datause/:id" element={<DataUsePage />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/team/:id" element={<TeamIntro />} />
         <Route path="/data/:id" element={<DataIntro />} />

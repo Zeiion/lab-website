@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useRequest } from '~/utils/useRequest';
+import { getData } from '~/request/data';
 
 import PageTemplate from '~/components/PageTemplate';
 import Cursor from '~/components/Cursor';
@@ -134,52 +136,53 @@ function Puzzle() {
   };
 
   const { id } = useParams();
-  const dataInfo = {
-    title: 'Large-scale Traffic Speed Data Set',
-    description:
-      'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
-    imgSrc: 'https://i2.100024.xyz/2023/04/07/1ywd3k.webp',
-    tags: ['Openits'],
-    author: 'OpenITs',
-    authorImgSrc:
-      'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/9527fc2d434b052852ae152a8d40f9a4.jpg',
-    date: '2022-10-26',
-    href: 'http://www.feiyun.tech/#/manage/data/dataDetail/53',
-    action: {
-      type: 'a',
-      key: null,
-      ref: null,
-      props: {
-        href: 'http://81.70.246.244:9898/scene/create/3',
-        target: '_blank',
-        className:
-          'absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200',
-        children: '数据使用',
-      },
-      _owner: null,
-      _store: {},
-    },
-    // 规模介绍
-    sizeInfo: {
-      tag: '文件大小：1.2GB',
-      description: `当前数据集包含 214 个匿名路段，每个路段包含 2016 年 8 月 1 日至 2016 年 9 月 30 日的 10 分钟间隔的速度数据。`,
-    },
-    // 格式介绍
-    formatInfo: {
-      tag: '文件后缀：csv',
-      description: `每个路段的字段如下：
-  - segment_id: 路段 ID
-  - date: 日期
-  - time: 时间
-  - speed: 速度
-  - travel_time: 行驶时间`,
-    },
-    // 注意事项
-    attentionInfo: `1. 本数据集仅供学术研究使用，不得用于商业用途。
-2. 本数据集仅供学术研究使用，不得用于商业用途。
-3. 本数据集仅供学术研究使用，不得用于商业用途。
-    `,
-  };
+  const { data: dataInfo } = useRequest(()=>getData(id), [id]);
+//   const dataInfo = {
+//     title: 'Large-scale Traffic Speed Data Set',
+//     description:
+//       'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
+//     imgSrc: 'https://i2.100024.xyz/2023/04/07/1ywd3k.webp',
+//     tags: ['Openits'],
+//     author: 'OpenITs',
+//     authorImgSrc:
+//       'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/9527fc2d434b052852ae152a8d40f9a4.jpg',
+//     date: '2022-10-26',
+//     href: 'http://www.feiyun.tech/#/manage/data/dataDetail/53',
+//     action: {
+//       type: 'a',
+//       key: null,
+//       ref: null,
+//       props: {
+//         href: 'http://81.70.246.244:9898/scene/create/3',
+//         target: '_blank',
+//         className:
+//           'absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200',
+//         children: '数据使用',
+//       },
+//       _owner: null,
+//       _store: {},
+//     },
+//     // 规模介绍
+//     sizeInfo: {
+//       tag: '文件大小：1.2GB',
+//       description: `当前数据集包含 214 个匿名路段，每个路段包含 2016 年 8 月 1 日至 2016 年 9 月 30 日的 10 分钟间隔的速度数据。`,
+//     },
+//     // 格式介绍
+//     formatInfo: {
+//       tag: '文件后缀：csv',
+//       description: `每个路段的字段如下：
+//   - segment_id: 路段 ID
+//   - date: 日期
+//   - time: 时间
+//   - speed: 速度
+//   - travel_time: 行驶时间`,
+//     },
+//     // 注意事项
+//     attentionInfo: `1. 本数据集仅供学术研究使用，不得用于商业用途。
+// 2. 本数据集仅供学术研究使用，不得用于商业用途。
+// 3. 本数据集仅供学术研究使用，不得用于商业用途。
+//     `,
+//   };
   const modelList = [
     {
       id: '0002',
@@ -298,7 +301,7 @@ function Puzzle() {
           <>
             {/* TODO color */}
             数据使用 ——{' '}
-            <span className="text-purple-600">{dataInfo.title}</span>
+            <span className="text-purple-600">{dataInfo?.title}</span>
           </>
         }
         subTitle={'Data Use'}
@@ -310,7 +313,7 @@ function Puzzle() {
             textIndent: '2.5rem',
           }}
         >
-          {dataInfo.description}
+          {dataInfo?.description}
         </p>
         <div className="container relative">
           <svg width="600" height="600" id="svg-container">
@@ -496,7 +499,7 @@ function Puzzle() {
           </div>
           <canvas className="fireworks"></canvas>
           <div className="absolute pointer-events-none select-none right-[22rem] top-[30rem] w-[36rem] text-center">
-            <h4 className="h4"> {dataInfo.title}</h4>
+            <h4 className="h4"> {dataInfo?.title}</h4>
           </div>
           <div className="absolute right-[20rem] top-[13rem] flex gap-1 pointer-events-none select-none">
             <img src={arrowImg} alt="" className="w-20 h-20 mt-1" />
@@ -562,7 +565,7 @@ function Puzzle() {
             ) : (
               <>
                 <h3 className="h4">已选择数据源:</h3>
-                <span className="text-purple-600 h5">{dataInfo.title}</span>
+                <span className="text-purple-600 h5">{dataInfo?.title}</span>
                 <h3 className="h4">已选择算法：</h3>
                 <span className="text-purple-600 h5"> Ada-STNet </span>
                 <button

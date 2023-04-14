@@ -10,6 +10,8 @@ import IconCard from '~/components/IconCard';
 import { parseModelList } from '~/consts/modelList';
 import { useRequest } from '../../utils/useRequest';
 import { getModelList } from '../../request/model';
+import { getAuthorImgSrc, getTrafficPic } from '../../utils/GetRandomPic';
+
 
 const Models = () => {
   const [keyword, setKeyword] = useState('');
@@ -17,10 +19,12 @@ const Models = () => {
     () => getModelList(),
     [],
     (list) => {
-      return list.map((item) => {
+      return list.map((item, index) => {
         return {
           ...item,
           href: `/model/${item.id}`,
+          imgSrc: getTrafficPic(index),
+          authorImgSrc: getAuthorImgSrc(item.author),
         };
       });
     },

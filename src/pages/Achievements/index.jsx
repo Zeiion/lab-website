@@ -7,10 +7,13 @@ import PageTemplate from '~/components/PageTemplate';
 import VCardList from '~/components/VCardList';
 
 import { parseAchieveList } from '~/consts/achieveList';
-
+import { getAuthorImgSrc } from '~/utils/GetRandomPic';
 import { useRequest } from '~/utils/useRequest';
 import { getAchieveList } from '~/request/achieve';
-
+const getAuthorFromDesc = (desc) => {
+  const authors = desc.split(',')
+  return authors[0] + ',' + authors[1]
+}
 const Achievements = () => {
   const { data: achieveList = [] } = useRequest(
     () => getAchieveList(),
@@ -20,6 +23,8 @@ const Achievements = () => {
         return {
           ...item,
           href: `/achieve/${item.id}`,
+          authorImgSrc: getAuthorImgSrc(item.author),
+          author: getAuthorFromDesc(item.description)
         };
       });
     },

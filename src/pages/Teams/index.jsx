@@ -18,6 +18,7 @@ const Teams = () => {
         return {
           ...item,
           href: `/team/${item.id}`,
+          authorImgSrc: item.iconUrl,
         };
       });
     },
@@ -33,7 +34,7 @@ const Teams = () => {
               imgSrc={teamList[0].imgSrc}
               tags={teamList[0].tags}
               author={teamList[0].author}
-              authorImgSrc={teamList[0].authorImgSrc}
+              authorImgSrc={teamList[0].iconUrl}
               date={teamList[0].date}
               href={teamList[0].href}
             />

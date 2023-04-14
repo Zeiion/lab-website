@@ -5,7 +5,7 @@ import HCard from '~/components/HCard';
 import VCard from '~/components/VCard';
 import PageTemplate from '~/components/PageTemplate';
 import VCardList from '~/components/VCardList';
-
+import { getTrafficPic } from '../../utils/GetRandomPic';
 import { parseDataList } from '~/consts/dataList';
 import { useRequest } from '~/utils/useRequest';
 import { getDataList } from '../../request/data';
@@ -15,9 +15,10 @@ const DataPage = () => {
     () => getDataList(),
     [],
     (list) => {
-      return list.map((item) => ({
+      return list.map((item, index) => ({
         ...item,
         href: '/data/' + item.id,
+        imgSrc: getTrafficPic(index),
         action: (
           <a
             href={'/datause'}

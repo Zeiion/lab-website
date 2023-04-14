@@ -25,7 +25,17 @@ const Achievements = () => {
           href: `/achieve/${item.id}`,
           authorImgSrc: getAuthorImgSrc(item.author),
           author: getAuthorFromDesc(item.description)
-        };
+        }
+      }).sort((a,b)=>{
+        const aHas = a.description?.includes('Le Yu') && a.description?.includes('KDD');
+        const bHas = b.description?.includes('Le Yu') && b.description?.includes('KDD');
+        if(aHas && !bHas){
+          return -1;
+        }
+        if(!aHas && bHas){
+          return 1;
+        }
+        return 0;
       });
     },
   );

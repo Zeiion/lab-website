@@ -11,7 +11,7 @@ function Banner() {
             <div className="inline-flex text-slate-500">
               <a
                 className="font-medium hover:underline text-slate-50"
-                href="http://www.feiyun.tech/#/about"
+                href="http://www.feiyun.tech:82/#/about"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -50,7 +50,7 @@ export const parseDataList = () => {
       author: item.organizationName,
       authorImgSrc: item.img,
       date: item.date,
-      // href: `http://www.feiyun.tech/#/manage/data/dataDetail/${item.id}`,
+      // href: `http://www.feiyun.tech:82/#/manage/data/dataDetail/${item.id}`,
       href: `/data/${item.id}`,
       action: (
         <a

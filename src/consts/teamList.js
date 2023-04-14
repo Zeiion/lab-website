@@ -46,7 +46,7 @@ const calcHref = ({ name = '', id = '' }) => {
   } else if (name == 'Libcity交通大数据组') {
     return 'https://libcity.ai/#/about';
   } else {
-    return 'http://www.feiyun.tech/#/manage/faculty/detail?facultyId=' + id;
+    return 'http://www.feiyun.tech:82/#/manage/faculty/detail?facultyId=' + id;
   }
 };
 export const parseTeamList = () => {

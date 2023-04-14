@@ -41,7 +41,7 @@ export const navList = [
   },
   {
     title: '飞云集智',
-    href: 'http://www.feiyun.tech/#/about',
+    href: 'http://www.feiyun.tech:82/#/about',
     blank: true,
   },
 ];

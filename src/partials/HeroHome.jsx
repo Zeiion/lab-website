@@ -65,7 +65,7 @@ function HeroHome() {
           {/* Section header */}
           <div className="max-w-4xl pb-6 mx-auto text-center md:pb-12">
             <h1 className="mb-10 h1" data-aos="fade-up">
-              共享平台介绍
+              平台简介
             </h1>
             <p
               className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
@@ -90,7 +90,7 @@ function HeroHome() {
               <div data-aos="fade-up" data-aos-delay="600">
                 <a
                   className="w-full text-white bg-gray-700 cursor-pointer btn hover:bg-gray-800 sm:w-auto sm:ml-4"
-                  href="http://www.feiyun.tech/#/about"
+                  href="http://www.feiyun.tech:82/#/about"
                 >
                   更多
                 </a>

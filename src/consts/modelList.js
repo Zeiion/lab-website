@@ -10,7 +10,7 @@ export const parseModelList = () => {
       author: item.author,
       authorImgSrc: 'http://placekitten.com/300/300',
       date: item.publish,
-      // href:`http://www.feiyun.tech/#/manage/model/detail/${item.id}`,
+      // href:`http://www.feiyun.tech:82/#/manage/model/detail/${item.id}`,
       href: '/model/' + item.id,
       source: item.source,
     };

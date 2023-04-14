@@ -7,7 +7,7 @@ const calcHref = ({ name = '', id = '' }) => {
   } else if (name === "中山大学交通大数据组") {
     return 'https://www.sysu.edu.cn/';
   } else {
-    return 'http://www.feiyun.tech/#/manage/faculty/detail?facultyId=' + id;
+    return 'http://www.feiyun.tech:82/#/manage/faculty/detail?facultyId=' + id;
   }
 };
 export const parseHomeInsList = () => {

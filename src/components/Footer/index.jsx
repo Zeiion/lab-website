@@ -71,8 +71,7 @@ function Footer() {
                 <Logo />
               </div>
               <div className="text-gray-400">
-                全国种类最全、数量最大的交通大数据平台，一站式服务,
-                从idea到应用场景, 一个平台搞定所有资源问题
+                飞云城市交通大数据平台，从idea到应用场景, 一站式服务               
               </div>
             </div>
 

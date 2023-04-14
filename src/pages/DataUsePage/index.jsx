@@ -30,7 +30,7 @@ ChartJS.register(
   Tooltip,
   Legend,
   PointElement,
-  LineElement,
+  LineElement
 );
 const chartConfig = (title) => {
   return {
@@ -50,6 +50,7 @@ const chartConfig = (title) => {
 import { usePuzzle } from './usePuzzle';
 
 import './style.scss';
+import { useChartTransition } from '../../utils/useChartTransition';
 
 const yOffset = 130;
 
@@ -136,53 +137,53 @@ function Puzzle() {
   };
 
   const { id } = useParams();
-  const { data: dataInfo } = useRequest(()=>getData(id), [id]);
-//   const dataInfo = {
-//     title: 'Large-scale Traffic Speed Data Set',
-//     description:
-//       'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
-//     imgSrc: 'https://i2.100024.xyz/2023/04/07/1ywd3k.webp',
-//     tags: ['Openits'],
-//     author: 'OpenITs',
-//     authorImgSrc:
-//       'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/9527fc2d434b052852ae152a8d40f9a4.jpg',
-//     date: '2022-10-26',
-//     href: 'http://www.feiyun.tech:82/#/manage/data/dataDetail/53',
-//     action: {
-//       type: 'a',
-//       key: null,
-//       ref: null,
-//       props: {
-//         href: 'http://81.70.246.244:9898/scene/create/3',
-//         target: '_blank',
-//         className:
-//           'absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200',
-//         children: '数据使用',
-//       },
-//       _owner: null,
-//       _store: {},
-//     },
-//     // 规模介绍
-//     sizeInfo: {
-//       tag: '文件大小：1.2GB',
-//       description: `当前数据集包含 214 个匿名路段，每个路段包含 2016 年 8 月 1 日至 2016 年 9 月 30 日的 10 分钟间隔的速度数据。`,
-//     },
-//     // 格式介绍
-//     formatInfo: {
-//       tag: '文件后缀：csv',
-//       description: `每个路段的字段如下：
-//   - segment_id: 路段 ID
-//   - date: 日期
-//   - time: 时间
-//   - speed: 速度
-//   - travel_time: 行驶时间`,
-//     },
-//     // 注意事项
-//     attentionInfo: `1. 本数据集仅供学术研究使用，不得用于商业用途。
-// 2. 本数据集仅供学术研究使用，不得用于商业用途。
-// 3. 本数据集仅供学术研究使用，不得用于商业用途。
-//     `,
-//   };
+  const { data: dataInfo } = useRequest(() => getData(id), [id]);
+  //   const dataInfo = {
+  //     title: 'Large-scale Traffic Speed Data Set',
+  //     description:
+  //       'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
+  //     imgSrc: 'https://i2.100024.xyz/2023/04/07/1ywd3k.webp',
+  //     tags: ['Openits'],
+  //     author: 'OpenITs',
+  //     authorImgSrc:
+  //       'http://8.140.124.245:8129/mnt/deploy/resource/datafile-logo/9527fc2d434b052852ae152a8d40f9a4.jpg',
+  //     date: '2022-10-26',
+  //     href: 'http://www.feiyun.tech:82/#/manage/data/dataDetail/53',
+  //     action: {
+  //       type: 'a',
+  //       key: null,
+  //       ref: null,
+  //       props: {
+  //         href: 'http://81.70.246.244:9898/scene/create/3',
+  //         target: '_blank',
+  //         className:
+  //           'absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200',
+  //         children: '数据使用',
+  //       },
+  //       _owner: null,
+  //       _store: {},
+  //     },
+  //     // 规模介绍
+  //     sizeInfo: {
+  //       tag: '文件大小：1.2GB',
+  //       description: `当前数据集包含 214 个匿名路段，每个路段包含 2016 年 8 月 1 日至 2016 年 9 月 30 日的 10 分钟间隔的速度数据。`,
+  //     },
+  //     // 格式介绍
+  //     formatInfo: {
+  //       tag: '文件后缀：csv',
+  //       description: `每个路段的字段如下：
+  //   - segment_id: 路段 ID
+  //   - date: 日期
+  //   - time: 时间
+  //   - speed: 速度
+  //   - travel_time: 行驶时间`,
+  //     },
+  //     // 注意事项
+  //     attentionInfo: `1. 本数据集仅供学术研究使用，不得用于商业用途。
+  // 2. 本数据集仅供学术研究使用，不得用于商业用途。
+  // 3. 本数据集仅供学术研究使用，不得用于商业用途。
+  //     `,
+  //   };
   const modelList = [
     {
       id: '0002',
@@ -209,7 +210,13 @@ function Puzzle() {
     if (droppedId == null) return null;
     return modelList.find(({ id }) => id === droppedId);
   }, [droppedId, modelList]);
-
+  const getModelTitle = (model) => {
+    if (!model) return '-';
+    if (Array.isArray(model.title)) {
+      return model.title.join('');
+    }
+    return model.title;
+  };
   const getTextNode = (title) => {
     if (Array.isArray(title)) {
       return (
@@ -293,6 +300,42 @@ function Puzzle() {
   };
 
   const [status, setStatus] = useState(false);
+
+  const { dataState: chartData1 } = useChartTransition(
+    {
+      labels: Array(chart1[0].data.length)
+        .fill(0)
+        .map((_, index) => index),
+      datasets: chart1,
+    },
+    20,
+    [status],
+    status === 2
+  );
+  const { dataState: chartData2 } = useChartTransition(
+    {
+      labels: Array(chart2[0].data.length)
+        .fill(0)
+        .map((_, index) => index),
+      datasets: chart2,
+    },
+    40,
+    [status],
+    status === 2
+  );
+
+  const { dataState: chartData3 } = useChartTransition(
+    chart3,
+    100,
+    [status],
+    status === 2
+  );
+  const { dataState: chartData4 } = useChartTransition(
+    chart4,
+    200,
+    [status],
+    status === 2
+  );
 
   return (
     <>
@@ -528,35 +571,25 @@ function Puzzle() {
                     <div>
                       <Bar
                         options={chartConfig('Masked MAE')}
-                        data={chart3}
+                        data={chartData3}
                       ></Bar>
                     </div>
                     <div>
                       <Bar
                         options={chartConfig('Masked RMSE')}
-                        data={chart4}
+                        data={chartData4}
                       ></Bar>
                     </div>
                     <div>
                       <Line
                         options={chartConfig('三阶段Loss曲线')}
-                        data={{
-                          labels: Array(chart1[0].data.length)
-                            .fill(0)
-                            .map((_, index) => index),
-                          datasets: chart1,
-                        }}
+                        data={chartData1}
                       ></Line>
                     </div>
                     <div>
                       <Line
                         options={chartConfig('三阶段MAE曲线')}
-                        data={{
-                          labels: Array(chart2[0].data.length)
-                            .fill(0)
-                            .map((_, index) => index),
-                          datasets: chart2,
-                        }}
+                        data={chartData2}
                       ></Line>
                     </div>
                   </div>
@@ -567,7 +600,10 @@ function Puzzle() {
                 <h3 className="h4">已选择数据源:</h3>
                 <span className="text-purple-600 h5">{dataInfo?.title}</span>
                 <h3 className="h4">已选择算法：</h3>
-                <span className="text-purple-600 h5"> Ada-STNet </span>
+                <span className="text-purple-600 h5">
+                  {' '}
+                  {getModelTitle(model)}{' '}
+                </span>
                 <button
                   className="absolute w-64 bg-purple-600 border-purple-600 cursor-pointer bottom-10 right-10 btn hover:bg-purple-700 hover:text-white"
                   onClick={() => {

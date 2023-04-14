@@ -12,7 +12,16 @@ import { getTeamList } from '~/request/team';
 
 const teamList = parseTeamList();
 const Teams = () => {
-  const { data: teamList = [] } = useRequest(() => getTeamList(), []);
+  const { data: teamList = [] } = useRequest(() => getTeamList(), [],
+    (list) => {
+      return list.map((item) => {
+        return {
+          ...item,
+          href: `/team/${item.id}`,
+        };
+      });
+    },
+  );
   return (
     <PageTemplate title={'合作团队'} subTitle={'Collaborative Team'}>
       {teamList && teamList.length > 0 && (

@@ -12,7 +12,11 @@ import { useRequest } from '../../utils/useRequest';
 import { getModelList } from '../../request/model';
 import { getAuthorImgSrc, getTrafficPic } from '../../utils/GetRandomPic';
 
-
+const dealAuthorName = (name) => {
+  if (name.substr(-2, 2) == '大学' || name.substr(-1, 1) == '所')
+    name += '交通大数据组';
+  return name;
+}
 const Models = () => {
   const [keyword, setKeyword] = useState('');
   const { data: fullModels = [] } = useRequest(
@@ -23,8 +27,8 @@ const Models = () => {
         return {
           ...item,
           href: `/model/${item.id}`,
-          imgSrc: getTrafficPic(index),
           authorImgSrc: getAuthorImgSrc(item.author),
+          author: dealAuthorName(item.author),
         };
       });
     },

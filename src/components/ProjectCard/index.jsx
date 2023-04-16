@@ -11,7 +11,7 @@
  */
 import './index.scss';
 
-const ProjectCard = ({ title, description, imgSrc, href }) => {
+const ProjectCard = ({ title, description, imgSrc, href, readmore="Read More" }) => {
   return (
     <div className="pro-card">
       <div className="card">
@@ -20,7 +20,7 @@ const ProjectCard = ({ title, description, imgSrc, href }) => {
           <p className="copy">{description}</p>
           <button className="btn">
             <a href={href}>
-              <span>Read More</span>
+              <span>{readmore}</span>
             </a>
           </button>
         </div>

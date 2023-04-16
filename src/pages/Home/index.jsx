@@ -85,6 +85,7 @@ function Home() {
               imgSrc={imgSrc}
               title={title}
               href={href}
+              readmore="进入系统"
             />
           ))}
         </Carousel>

@@ -16,7 +16,7 @@ export const teams = [
     data_detail_id: [2, 7, 10, 13, 14, 16, 19, 20, 22],
     owner_name: '北航计算机学院交通大数据组',
     description:
-      '北京航空航天大学（简称北航）成立于1952年，是新中国第一所航空航天高等学府，现隶属于工业和信息化部。建校以来，北航一直是国家重点建设的高校，是全国第一批16所重点高校之一。',
+      '主要针对我国综合交通跨行业、跨地域管理服务能力不足等问题，建设综合交通大数据应用技术创新平台，支撑开展交通运输大数据采集处理、分析挖掘、管理决策、融合应用等技术的研发和工程化。',
     owner_phone: '12345678910',
     register_time: '2022-07-04 18:30:29',
     merit_count: 0,
@@ -38,7 +38,7 @@ export const teams = [
     data_detail_id: [1, 4, 8, 11, 12],
     owner_name: '中山大学超算中心',
     description:
-      '中山大学，由中华人民共和国教育部直属，是教育部、国家国防科技工业局和广东省共建的综合性全国重点大学，位列首批国家“双一流”A类、“985工程”、“211工程”。',
+      '依托中山大学人机物智能融合实验室，在多模态认知计算、机器人与嵌入式系统、元宇宙与数字人、可控内容生成等领域开展体系化研究，实验室承担或者已完成各级科研项目60余项。',
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:25',
     merit_count: 6,
@@ -59,9 +59,9 @@ export const teams = [
   {
     support_faculty: 5,
     data_detail_id: [],
-    owner_name: '大连理工大学交通大数据组',
+    owner_name: 'Libcity',
     description:
-      '大连理工大学（Dalian University of Technology）简称”大工“，坐落于辽宁省大连市，是中华人民共和国教育部直属的全国重点大学，国家“双一流”建设高校，国家“985工程”、“211工程”建设高校。',
+      'LibCity 采用模块化框架结构，通过整合 30 多个时空数据集与 50 多个时空算法模型，覆盖了包括交通状态预测、路网匹配、轨迹位置预测等 9 类任务来支持城市场景演化规律挖掘，并向用户提供标准可信的算法评估功能。',
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:43',
     merit_count: 0,
@@ -70,10 +70,10 @@ export const teams = [
     node_type: '公司-数据节点',
     user_count: 1,
     model_count: 0,
-    name: '大连理工大学交通大数据组',
+    name: 'Libcity',
     contract_count: 5,
     iconUrl:
-      'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/cddeae82421d840057200465882765bc.png',
+      'https://i2.100024.xyz/2023/04/14/1266lc6.webp',
     index_identify_id: '',
     data_count: 0,
     support_app: 0,
@@ -84,7 +84,7 @@ export const teams = [
     data_detail_id: [],
     owner_name: '北京工业大学交通大数据组',
     description:
-      '北京工业大学是一所以工为主，工、理、经、管、文、法、艺术、教育相结合的多科性市属重点大学，是国家“世界一流学科建设高校”、国家“211工程”建设高校。',
+      '依托北京工业大学北京人工智能研究院和多媒体与智能软件技术北京市重点实验室，重点进行大数据挖掘和智能交通应用以及脑影像数据挖掘与智能分析等方向的研究工作。',
     owner_phone: '12345678910',
     register_time: '2021-09-07 22:25:31',
     merit_count: 0,
@@ -107,7 +107,7 @@ export const teams = [
     data_detail_id: [15, 17],
     owner_name: '中科大交通大数据组',
     description:
-      '中国科学院自动化研究所成立于1956年，以智能科学与技术为主要定位，是中国科学院率先布局成立的“人工智能创新研究院”的总体牵头单位。',
+      '依托中国科学院自动化研究所复杂系统管理与控制国家重点实验室，是国际知名的智能交通系统研究团队，提出平行交通系统、社会交通、社会物理信息系统等一系列原创性理论',
     owner_phone: '12345678910',
     register_time: '2021-11-22 18:22:08',
     merit_count: 0,
@@ -130,7 +130,7 @@ export const teams = [
     data_detail_id: [
       36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,
     ],
-    owner_name: 'OpenITs',
+    owner_name: 'OpenITs国际研究联盟',
     description:
       '广东省智能交通系统重点实验室提出了OpenITS研究的设想, 在第14届CICTP国际会议上作了题为《基于大数据的智能交通研究与OpenITS计划》的报告。',
     owner_phone: '18811591037',
@@ -141,7 +141,7 @@ export const teams = [
     node_type: '公司-混合节点',
     user_count: 1,
     model_count: 6,
-    name: 'OpenITs',
+    name: 'OpenITs国际研究联盟',
     contract_count: 13,
     iconUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/faculty-logo/83f24c212fe29c3b0c6d1839c908acdd.png',

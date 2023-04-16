@@ -12,7 +12,7 @@ const StatisticOverview = () => {
           to="/datas"
         >
           数据集规模：{' '}
-          <NumberAnimation value={2111} delay={400}></NumberAnimation>
+          <NumberAnimation value={121} delay={400}></NumberAnimation>
         </Link>
         <Link
           className="w-64 py-2 bg-purple-700 border-2 rounded-md border-purple-700/50 outline outline-offset-4 outline-purple-600/80"
@@ -21,7 +21,7 @@ const StatisticOverview = () => {
           to="/models"
         >
           模型数量：{' '}
-          <NumberAnimation value={1213} delay={700}></NumberAnimation>
+          <NumberAnimation value={232} delay={700}></NumberAnimation>
         </Link>
         <Link
           className="w-64 py-2 bg-purple-700 border-2 rounded-md border-purple-700/50 outline outline-offset-4 outline-purple-600/80"
@@ -30,7 +30,7 @@ const StatisticOverview = () => {
           to="/achievements"
         >
           成果数量：{' '}
-          <NumberAnimation value={1267} delay={1000}></NumberAnimation>
+          <NumberAnimation value={97} delay={1000}></NumberAnimation>
         </Link>
       </div>
     </>

@@ -24,7 +24,7 @@ const VCard = ({
             <img
               className="absolute inset-0 object-cover w-full h-64 transition duration-700 ease-out transform hover:scale-105"
               src={imgSrc}
-              alt="Blog post"
+              alt="-"
             />
           </figure>
         </a>

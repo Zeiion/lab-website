@@ -17,7 +17,7 @@ export const navList = [
   },
   {
     title: '合作团队',
-    href: '/ins',
+    href: '/teams',
   },
   {
     title: '成果共享',
@@ -25,7 +25,7 @@ export const navList = [
   },
   {
     title: '数据共享',
-    href: '/data',
+    href: '/datas',
   },
   {
     title: '知识协同',
@@ -41,6 +41,7 @@ export const navList = [
   },
   {
     title: '飞云集智',
-    href: 'http://www.feiyun.tech/#/about'
-  }
+    href: 'http://www.feiyun.tech:82/#/about',
+    blank: true,
+  },
 ];

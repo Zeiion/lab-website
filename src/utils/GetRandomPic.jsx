@@ -44,6 +44,14 @@ export const getIndexPic = (index) => {
   return imgList[idx];
 };
 
+export const getAuthorImgSrc = (author) => {
+  if (author === '中山大学') return 'https://www.sysu.edu.cn/images/logo.png';
+  if (author === '北京工业大学') return 'https://th.bing.com/th/id/OIP.atQ5roc3bgb8kvHNJB0whgAAAA?pid=ImgDet&rs…';
+  if (author === '中国科学院自动化研究所') return 'http://www.ia.cas.cn/images/logo.png';
+  else return 'https://i2.100024.xyz/2023/04/14/bygr9.webp'
+};
+
+
 export const getRandomPic = () => {
   const idx = Math.floor(Math.random() * imgList.length);
   return imgList[idx];

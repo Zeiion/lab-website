@@ -3,6 +3,8 @@ import Modal from '../utils/Modal';
 import videoURL from '~/assets/video.mp4';
 
 import HeroImage from '../images/video-bg.jpg';
+import NumberAnimation from '~/components/NumberAnimation';
+import StatisticOverview from '~/partials/StatisticOverview';
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -13,11 +15,10 @@ function HeroHome() {
   }, [videoModalOpen]);
 
   function toBottom() {
-    window.scrollTo(
-      0,
-      document.documentElement.scrollHeight -
-        document.documentElement.clientHeight,
-    );
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   }
   return (
     <section>
@@ -62,9 +63,9 @@ function HeroHome() {
         {/* Hero content */}
         <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
           {/* Section header */}
-          <div className="max-w-4xl pb-12 mx-auto text-center md:pb-16">
+          <div className="max-w-4xl pb-6 mx-auto text-center md:pb-12">
             <h1 className="mb-10 h1" data-aos="fade-up">
-              集成平台介绍
+              平台简介
             </h1>
             <p
               className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
@@ -74,26 +75,30 @@ function HeroHome() {
                 textIndent: '2.5rem',
               }}
             >
-              飞云集智——城市交通大数据集成平台是一个集成多种数据源、丰富模型、多样应用场景的智慧平台。
+              飞云集智——城市交通大数据共享平台是一个集成多种数据源、丰富模型、多样应用场景的智慧平台。
               本平台共享了大量来自不同机构的高质量数据集，并提供算法辅助使用；同时展示了丰富的由多团队开发的高性能、应用广泛的优质典型模型；
               并列举大量典型应用场景，在智慧城市交通管理应用中巧妙发挥大数据的作用。
             </p>
+
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400" onClick={toBottom}>
-                <a className="w-full mb-4 text-white bg-purple-600 btn hover:bg-purple-700 sm:w-auto sm:mb-0">
+                <a className="w-full mb-4 text-purple-600 border-purple-600 cursor-pointer btn hover:bg-purple-700 hover:text-white sm:w-auto sm:mb-0">
                   联系我们
                 </a>
               </div>
 
               <div data-aos="fade-up" data-aos-delay="600">
                 <a
-                  className="w-full text-white bg-gray-700 btn hover:bg-gray-800 sm:w-auto sm:ml-4"
-                  href="http://www.feiyun.tech/#/about"
+                  className="w-full text-white bg-gray-700 cursor-pointer btn hover:bg-gray-800 sm:w-auto sm:ml-4"
+                  href="http://www.feiyun.tech:82/#/about"
                 >
                   更多
                 </a>
               </div>
             </div>
+          </div>
+          <div className="pb-12">
+            <StatisticOverview />
           </div>
 
           {/* Hero image */}
@@ -107,7 +112,7 @@ function HeroHome() {
                 <>
                   <img
                     className="w-full h-full mx-auto opacity-70"
-                    src={HeroImage}
+                    src="https://i2.100024.xyz/2023/04/14/jozbu.webp"
                     width="1920"
                     height="1080"
                     alt="Hero"

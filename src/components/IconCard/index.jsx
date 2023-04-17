@@ -1,6 +1,13 @@
 import PropsType from 'prop-types';
 
-const IconCard = ({ title, description, author = '', source = '', imgSrc }) => {
+const IconCard = ({
+  title,
+  description,
+  author = '',
+  source = '',
+  imgSrc,
+  href,
+}) => {
   return (
     <div
       className="flex flex-col w-[32em] h-full p-6 bg-gray-800"
@@ -10,10 +17,12 @@ const IconCard = ({ title, description, author = '', source = '', imgSrc }) => {
       <div>
         <div className="relative inline-flex items-center gap-3 mb-4">
           <img className="rounded-full" src={imgSrc} width="48" height="48" />
-          <h4 className="h4">{title}</h4>
+          <a className="h4" href={href}>
+            {title}
+          </a>
         </div>
       </div>
-      <blockquote className="text-lg text-gray-400 grow max-h-48 flex-grow overflow-auto">
+      <blockquote className="overflow-auto text-lg text-gray-400 grow max-h-48">
         {description}
       </blockquote>
       <div className="pt-5 mt-6 font-medium text-gray-700 border-t border-gray-700">

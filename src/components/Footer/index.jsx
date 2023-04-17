@@ -10,15 +10,15 @@ function Footer() {
       list: [
         {
           title: 'AI引擎平台',
-          href: '/#1',
+          href: 'http://81.70.246.244:9898/',
         },
         {
-          title: '安全监控系统',
-          href: '/#2',
+          title: '地下基础设施智慧化管理平台',
+          href: 'http://81.70.246.244:9002/',
         },
         {
-          title: '智慧交通系统',
-          href: '/#2',
+          title: '交通拥堵预测平台',
+          href: 'http://8.140.124.245:38080/#/',
         },
       ],
     },
@@ -26,16 +26,16 @@ function Footer() {
       title: 'Resources',
       list: [
         {
-          title: '博客',
-          href: '/#3',
+          title: 'Repositories',
+          href: 'https://github.com/orgs/Feiyunpublic/repositories',
         },
         {
-          title: '客户支持 ',
-          href: '/#4',
+          title: 'FyCloud',
+          href: 'https://e.gitee.com/fycloud',
         },
         {
           title: '资源库',
-          href: '/#4',
+          href: '/datas',
         },
       ],
     },
@@ -44,15 +44,15 @@ function Footer() {
       list: [
         {
           title: '基本情况',
-          href: '/#5',
+          href: '/about',
         },
         {
           title: '发展历程',
-          href: '/#6',
+          href: '/about',
         },
         {
           title: '联系方式',
-          href: '/#6',
+          href: '/about',
         },
       ],
     },
@@ -71,11 +71,11 @@ function Footer() {
                 <Logo />
               </div>
               <div className="text-gray-400">
-                项目集成平台嘻嘻嘻嘻嘻嘻嘻嘻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻
+                飞云城市交通大数据平台，从idea到应用场景, 一站式服务               
               </div>
             </div>
 
-            <div className="grid gap-8 md:col-span-8 lg:col-span-7 sm:grid-cols-3">
+            <div className="grid gap-8 md:col-span-8 lg:col-span-7 sm:grid-cols-3 ">
               {blockList.map(({ title, list }) => (
                 <Block key={title} title={title} list={list} />
               ))}

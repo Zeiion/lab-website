@@ -1,14 +1,5 @@
 const calcHref = ({ name = '', id = '' }) => {
   return '/team/5'
-  if (name == 'OpenITs') {
-    return 'https://www.openits.cn/openITSjs/index.jhtml';
-  } else if (name == 'Libcity交通大数据组') {
-    return 'https://libcity.ai/#/about';
-  } else if (name === "中山大学交通大数据组") {
-    return 'https://www.sysu.edu.cn/';
-  } else {
-    return 'http://www.feiyun.tech/#/manage/faculty/detail?facultyId=' + id;
-  }
 };
 export const parseHomeInsList = () => {
   const tagsToList = (tags) => {

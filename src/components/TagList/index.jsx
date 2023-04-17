@@ -1,6 +1,6 @@
 import Tag from '../Tag';
 
-const TagList = ({ list, size }) => {
+const TagList = ({ list = [], size }) => {
   const style = ''; // TODO style map
   return (
     <ul className="flex flex-wrap -m-1 text-xs font-medium">

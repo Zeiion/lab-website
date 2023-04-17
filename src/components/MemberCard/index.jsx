@@ -17,7 +17,7 @@ const MemberCard = ({ name, imgSrc, description, tags, works }) => {
         <p className="overflow-auto max-h-12">
           {works.map(({ title, href }, index) => (
             <>
-              <a key={index} className="h5" herf={href}>
+              <a key={index} herf={href}>
                 {title}
               </a>
               {index !== works.length - 1 && <span>,</span>}

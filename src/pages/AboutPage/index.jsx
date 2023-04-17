@@ -322,11 +322,12 @@ const AboutPage = () => {
                     textIndent: '2.5rem',
                   }}
                 >
-                  TODO 鸣谢 First of all, I would like to give my heartfelt
-                  thanks to all the people who have ever helped First of all, I
-                  would like to give my heartfelt thanks to all the people who
-                  have ever helped First of all, I would like to give my
-                  heartfelt thanks to all the people who have ever helped
+                  在此鸣谢感谢所有为城市交通大数据集成平台所做出的贡献的合作伙伴和团队，包括但不限于：
+各大数据源提供者，他们为我们提供了海量、高质量的城市交通数据；
+各位专业的应用场景开发者，他们基于平台提供的数据和工具，开发了各种实用的、创新的交通应用场景；
+各位模型开发者，他们通过对数据的深入挖掘和分析，开发出了一系列高效、准确的交通预测、优化模型；
+平台开发及维护团队，他们投入了大量心血，精益求精地打造了这个平台，并且持续保障着平台的稳定运行。
+正是由于以上各方的努力和支持，才让城市交通大数据集成平台得以不断壮大和完善，从而更好地为广大用户服务。
                 </p>
               </div>
               <div className="relative max-w-4xl mx-auto text-center h-[36rem]">
@@ -343,8 +344,8 @@ const AboutPage = () => {
                 })}
               </div>
               <div className="max-w-4xl pb-12 mx-auto text-center md:pb-16">
-                <h1 className="mb-10 h1" data-aos="fade-up">
-                  xxx
+                <h1 className="mt-10 mb-10 h3" data-aos="fade-up">
+                  Acknowledgements
                 </h1>
                 <p
                   className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
@@ -354,7 +355,7 @@ const AboutPage = () => {
                     textIndent: '2.5rem',
                   }}
                 >
-                  xxxxxx
+                  Thank you to all partners and teams who have made contributions to the urban transportation big data integration platform, including but not limited to: major data source providers who have provided us with massive and high-quality urban transportation data; Professional application scenario developers have developed various practical and innovative transportation application scenarios based on the data and tools provided by the platform; Dear model developers, they have developed a series of efficient and accurate traffic prediction and optimization models through in-depth mining and analysis of data; The platform development and maintenance team has invested a lot of effort and excellence to build this platform, and continuously ensures its stable operation. It is precisely due to the efforts and support of all parties mentioned above that the urban transportation big data integration platform has been continuously strengthened and improved, thereby better serving the vast number of users.
                 </p>
               </div>
             </div>

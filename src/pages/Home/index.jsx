@@ -36,7 +36,7 @@ function Home() {
       title: '飞云集智——城市大数据开放共享平台',
       description: `全国种类最全、数量最大的交通大数据平台，一站式服务从idea到应用场景,一个平台搞定所有资源问题；数据的深度挖掘和分析提供强大算力；跨领域、跨地域的数据融汇、综合、联系`,
       imgSrc: 'http://www.feiyun.tech/img/homepage_background.fe6132fb.png',
-      href: 'http://www.feiyun.tech/#/about',
+      href: 'http://www.feiyun.tech:82/#/about',
     },
     {
       title: 'AI引擎平台',
@@ -56,27 +56,27 @@ function Home() {
       title: '飞云集智——城市大数据开放共享平台',
       description: `全国种类最全、数量最大的交通大数据平台，一站式服务从idea到应用场景,一个平台搞定所有资源问题；数据的深度挖掘和分析提供强大算力；跨领域、跨地域的数据融汇、综合、联系`,
       imgSrc: 'http://www.feiyun.tech/img/homepage_background.fe6132fb.png',
-      href: 'http://www.feiyun.tech/#/about',
+      href: 'http://www.feiyun.tech:82/#/about',
     },
   ];
   return (
-    <div className='flex flex-col min-h-screen overflow-hidden'>
+    <div className="flex flex-col min-h-screen overflow-hidden">
       {/*  Site header */}
       <Header />
-
       {/*  Page content */}
-      <main className='grow'>
+      <main className="grow">
         {/*  Page illustration */}
         <div
-          className='relative h-0 mx-auto pointer-events-none max-w-7xl'
-          aria-hidden='true'
+          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
+          aria-hidden="true"
         >
           <PageIllustration />
         </div>
-
         {/*  Page sections */}
         <HeroHome />
+
         <TeamSection />
+        <div className="h-16"></div>
         <Carousel>
           {projectList.map(({ title, imgSrc, description, href }, index) => (
             <ProjectCard
@@ -85,16 +85,18 @@ function Home() {
               imgSrc={imgSrc}
               title={title}
               href={href}
+              readmore="进入系统"
             />
           ))}
         </Carousel>
-        <TopicSection
-          title='机构介绍'
-          description='Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit laborum — semper quis lectus nulla.'
-          subTitle='Topic Intro'
+        <div className="h-16"></div>
+        {/* <TopicSection
+          title="机构介绍"
+          description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit laborum — semper quis lectus nulla."
+          subTitle="Topic Intro"
           list={parseHomeInsList()}
-        />
+        /> */}
         {/* <Testimonials /> */}
         {/* <Timeline /> */}
 

@@ -85,3 +85,7 @@
 .animate-scale {
   @apply transition duration-700 ease-out transform hover:scale-105;
 }
+
+.para {
+  @apply text-xl leading-8;
+}

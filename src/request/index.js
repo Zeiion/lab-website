@@ -1,13 +1,13 @@
 import { BASE_URL, DEFAULT_LIMIT } from '../consts';
 
-export const get = (
-  url,
-  params = {
-    limit: DEFAULT_LIMIT,
-  },
-) => {
-  const query = Object.keys(params)
-    .map((key) => `${key}=${params[key]}`)
+const defaultParams = {
+  limit: DEFAULT_LIMIT,
+};
+
+export const get = (url, params = defaultParams) => {
+  const newParams = { ...defaultParams, ...params };
+  const query = Object.keys(newParams)
+    .map((key) => `${key}=${newParams[key]}`)
     .join('&');
   return fetch(BASE_URL + url + '?' + query, {
     method: 'GET',

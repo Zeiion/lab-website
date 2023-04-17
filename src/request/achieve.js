@@ -7,5 +7,7 @@ export const getAchieve = (id) => {
 };
 
 export const getAchieveList = () => {
-  return get(PREFIX_URL + '/list');
+  return get(PREFIX_URL + '/list', {
+    sortBy: '_id:desc',
+  });
 };

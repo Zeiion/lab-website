@@ -26,6 +26,7 @@ const TeamSection = () => {
                 data-aos-anchor="[data-aos-id-blocks]"
                 data-aos-delay={index * 400}
                 data-aos-duration="1000"
+                key={id}
               >
                 <TeamCard
                   id={id}

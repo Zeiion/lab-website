@@ -38,7 +38,7 @@ export const navList = [
   },
   {
     title: '飞云集智',
-    href: {FEIYUN_URL},
+    href: FEIYUN_URL,
     blank: true,
   },
 ];

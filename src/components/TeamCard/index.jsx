@@ -20,6 +20,5 @@ export default TeamCard;
 TeamCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  icon: PropTypes.element.isRequired,
   description: PropTypes.string.isRequired,
 };

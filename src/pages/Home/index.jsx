@@ -4,6 +4,7 @@ import Header from '~/components/Header';
 import PageIllustration from '~/partials/PageIllustration';
 import HeroHome from '~/partials/HeroHome';
 import TeamSection from '~/partials/TeamSection';
+import ScrollSection from '~/partials/ScrollSection';
 import TopicSection from '~/partials/TopicSection';
 import Testimonials from '~/partials/Testimonials';
 import Newsletter from '~/partials/Newsletter';
@@ -61,7 +62,7 @@ function Home() {
     },
   ];
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen">
       {/*  Site header */}
       <Header />
       {/*  Page content */}
@@ -78,6 +79,8 @@ function Home() {
 
         <TeamSection />
         <div className="h-16"></div>
+        <ScrollSection />
+        <div className="h-32"></div>
         <Carousel>
           {projectList.map(({ title, imgSrc, description, href }, index) => (
             <ProjectCard

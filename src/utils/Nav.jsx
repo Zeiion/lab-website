@@ -26,7 +26,7 @@ export const navList = [
   },
   {
     title: '知识协同',
-    href: '/ac',
+    href: '/achievements',
   },
   {
     title: '典型场景',

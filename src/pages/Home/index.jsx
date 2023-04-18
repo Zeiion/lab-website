@@ -15,6 +15,7 @@ import Carousel from '~/components/Carousel';
 import ProjectCard from '~/components/ProjectCard';
 import IconCard from '~/components/IconCard';
 import { parseHomeInsList } from '~/consts/homeInsList';
+import { FEIYUN_URL } from '~/consts/index';
 
 function Home() {
   const projectList = [
@@ -36,7 +37,7 @@ function Home() {
       title: '飞云集智——城市大数据开放共享平台',
       description: `全国种类最全、数量最大的交通大数据平台，一站式服务从idea到应用场景,一个平台搞定所有资源问题；数据的深度挖掘和分析提供强大算力；跨领域、跨地域的数据融汇、综合、联系`,
       imgSrc: 'http://www.feiyun.tech/img/homepage_background.fe6132fb.png',
-      href: 'http://www.feiyun.tech:82/#/about',
+      href: { FEIYUN_URL },
     },
     {
       title: 'AI引擎平台',
@@ -56,7 +57,7 @@ function Home() {
       title: '飞云集智——城市大数据开放共享平台',
       description: `全国种类最全、数量最大的交通大数据平台，一站式服务从idea到应用场景,一个平台搞定所有资源问题；数据的深度挖掘和分析提供强大算力；跨领域、跨地域的数据融汇、综合、联系`,
       imgSrc: 'http://www.feiyun.tech/img/homepage_background.fe6132fb.png',
-      href: 'http://www.feiyun.tech:82/#/about',
+      href: { FEIYUN_URL },
     },
   ];
   return (

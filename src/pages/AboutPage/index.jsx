@@ -2,9 +2,13 @@ import PageTemplate from '~/components/PageTemplate';
 import React, { useState, useRef, useEffect } from 'react';
 import Modal from '~/utils/Modal';
 import Header from '~/components/Header';
-
+import MemberCard from '../../components/MemberCard';
+import Page from '~/components/PageTemplate';
+import VCardList from '~/components/VCardList';
+import Timeline from '~/components/Timeline';
+import TagList from '~/components/TagList';
 import HeroImage from '~/images/hero-image-01.jpg';
-
+import { teamInfo } from '~/consts/teamInfo'
 // TODO reuse
 const insList = [
   {
@@ -296,41 +300,94 @@ const pos = [
 
 const AboutPage = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      {/*  Site header */}
-      <Header />
+    <div>
       <img
-        className="absolute top-0 left-0 hidden object-cover w-screen pointer-events-none h-[30rem] lg:block opacity-30"
+        className="absolute top-0 left-0 hidden object-cover w-screen pointer-events-none h-[34rem] lg:block opacity-30"
         src="https://preview.cruip.com/open-pro/images/team-mosaic-01.jpg"
         alt=""
       />
-      <main className="grow">
-        <section>
-          <div className="relative px-4 mx-auto max-w-7xl sm:px-6">
-            {/* Hero content */}
-            <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
-              {/* Section header */}
-              <div className="max-w-4xl pb-12 mx-auto text-center md:pb-16">
-                <h1 className="mb-10 h1" data-aos="fade-up">
-                  关于我们
-                </h1>
-                <p
-                  className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  style={{
-                    textIndent: '2.5rem',
-                  }}
-                >
-                  在此鸣谢感谢所有为城市交通大数据集成平台所做出的贡献的合作伙伴和团队，包括但不限于：
-各大数据源提供者，他们为我们提供了海量、高质量的城市交通数据；
-各位专业的应用场景开发者，他们基于平台提供的数据和工具，开发了各种实用的、创新的交通应用场景；
-各位模型开发者，他们通过对数据的深入挖掘和分析，开发出了一系列高效、准确的交通预测、优化模型；
-平台开发及维护团队，他们投入了大量心血，精益求精地打造了这个平台，并且持续保障着平台的稳定运行。
-正是由于以上各方的努力和支持，才让城市交通大数据集成平台得以不断壮大和完善，从而更好地为广大用户服务。
-                </p>
-              </div>
-              <div className="relative max-w-4xl mx-auto text-center h-[36rem]">
+      <PageTemplate
+        title={
+          <>
+            {/* TODO color */}
+            关于我们
+          </>
+        }
+        subTitle={'About Us'}
+      >
+        <p
+          className="mb-14 text-xl text-justify text-gray-200 text-indent-2 "
+          data-aos="fade-up"
+          data-aos-delay="200"
+          style={{
+            textIndent: '2.5rem',
+          }}
+        >
+          {teamInfo?.description}
+        </p>
+
+        <h3 className="h3 mt-20">研究方向</h3>
+        <div className="mt-5 mb-16">
+          <TagList list={teamInfo?.researchDirections || []} size="medium" />
+        </div>
+
+        <h3 className="h3">团队成员</h3>
+        <div className="grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4">
+          {teamInfo?.members &&
+            teamInfo?.members?.map(
+              ({ name, imgSrc, description, works, tags }) => (
+                <MemberCard
+                  key={name}
+                  name={name}
+                  imgSrc={imgSrc}
+                  description={description}
+                  works={works}
+                  tags={tags}
+                />
+              ),
+            )}
+        </div>
+
+        {teamInfo?.collaborationIntro && (
+          <div className="animate-scale">
+            <h3 className="h3">国内外合作介绍</h3>
+            <div className="mt-3 mb-8">
+              <p className="mt-5 text-gray-400 indent-8">
+                {teamInfo?.collaborationIntro}
+              </p>
+            </div>
+          </div>
+        )}
+
+        <Timeline list={teamInfo?.timeline} />
+        <VCardList title="Lateset Works" list={teamInfo?.works}></VCardList>
+        <h3 className="h3 mt-20 mb-8">鸣谢</h3>
+          <p
+            className="mb-16 text-xl text-justify text-gray-400 text-indent-2 "
+            data-aos="fade-up"
+            data-aos-delay="200"
+            style={{
+              textIndent: '2.5rem',
+            }}
+          >
+            在此鸣谢感谢所有为城市交通大数据集成平台所做出的贡献的合作伙伴和团队，包括但不限于：
+              各大数据源提供者，他们为我们提供了海量、高质量的城市交通数据；
+              各位专业的应用场景开发者，他们基于平台提供的数据和工具，开发了各种实用的、创新的交通应用场景；
+              各位模型开发者，他们通过对数据的深入挖掘和分析，开发出了一系列高效、准确的交通预测、优化模型；
+              平台开发及维护团队，他们投入了大量心血，精益求精地打造了这个平台，并且持续保障着平台的稳定运行。
+              正是由于以上各方的努力和支持，才让城市交通大数据集成平台得以不断壮大和完善，从而更好地为广大用户服务。
+          </p>
+          <p
+            className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
+            data-aos="fade-up"
+            data-aos-delay="200"
+            style={{
+              textIndent: '2.5rem',
+            }}
+          >
+            Thank you to all partners and teams who have made contributions to the urban transportation big data integration platform, including but not limited to: major data source providers who have provided us with massive and high-quality urban transportation data; Professional application scenario developers have developed various practical and innovative transportation application scenarios based on the data and tools provided by the platform; Dear model developers, they have developed a series of efficient and accurate traffic prediction and optimization models through in-depth mining and analysis of data; The platform development and maintenance team has invested a lot of effort and excellence to build this platform, and continuously ensures its stable operation. It is precisely due to the efforts and support of all parties mentioned above that the urban transportation big data integration platform has been continuously strengthened and improved, thereby better serving the vast number of users.
+          </p>
+          <div className="relative max-w-4xl mx-auto text-center h-[36rem] mt-20">
                 {pos.map((p, index) => {
                   return (
                     <img
@@ -343,25 +400,7 @@ const AboutPage = () => {
                   );
                 })}
               </div>
-              <div className="max-w-4xl pb-12 mx-auto text-center md:pb-16">
-                <h1 className="mt-10 mb-10 h3" data-aos="fade-up">
-                  Acknowledgements
-                </h1>
-                <p
-                  className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  style={{
-                    textIndent: '2.5rem',
-                  }}
-                >
-                  Thank you to all partners and teams who have made contributions to the urban transportation big data integration platform, including but not limited to: major data source providers who have provided us with massive and high-quality urban transportation data; Professional application scenario developers have developed various practical and innovative transportation application scenarios based on the data and tools provided by the platform; Dear model developers, they have developed a series of efficient and accurate traffic prediction and optimization models through in-depth mining and analysis of data; The platform development and maintenance team has invested a lot of effort and excellence to build this platform, and continuously ensures its stable operation. It is precisely due to the efforts and support of all parties mentioned above that the urban transportation big data integration platform has been continuously strengthened and improved, thereby better serving the vast number of users.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+      </PageTemplate>
     </div>
   );
 };

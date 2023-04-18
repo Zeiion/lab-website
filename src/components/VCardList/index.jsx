@@ -2,7 +2,8 @@ import VCard from '~/components/VCard';
 import TagFilterList from '~/components/TagFilterList';
 import { useMemo, useState } from 'react';
 
-const VCardList = ({ title, list = [], headerInput }) => {
+const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
+  console.log(list)
   const tags = list.map((item) => item.tags).flat(2);
   const [uniqueTags, setUniqueTags] = useState(
     [...new Set(tags)].map((text) => {
@@ -21,7 +22,7 @@ const VCardList = ({ title, list = [], headerInput }) => {
       return item.tags.some((tag) => activeTags.includes(tag));
     });
   }, [uniqueTags, list]);
-
+  console.log(computedList)
   return (
     <>
       <div
@@ -60,13 +61,14 @@ const VCardList = ({ title, list = [], headerInput }) => {
               tags,
               author,
               authorImgSrc,
-              date,
+              date = null,
               href,
               action = null,
             },
             index,
-          ) => (
-            <VCard
+          ) => {
+            console.log(index)
+            return (<VCard
               title={title}
               description={description}
               imgSrc={imgSrc}
@@ -77,8 +79,9 @@ const VCardList = ({ title, list = [], headerInput }) => {
               key={index}
               href={href}
               action={action}
+              withButton={withButton}
             />
-          ),
+          )},
         )}
       </div>
     </>

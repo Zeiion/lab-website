@@ -1,19 +1,22 @@
 import PropTypes from 'prop-types';
 import TagList from '~/components/TagList';
 import Tag from '../Tag';
+import './index.scss'
 
 const VCard = ({
   title = '',
   description = '',
   imgSrc = '',
-  href = '#0',
+  href = '',
   tags = [],
   author = '',
   authorImgSrc = '',
   date = '',
   action = null,
+  withButton = false,
 }) => {
   return (
+    <div className='vcard'>
     <section
       className="flex flex-col justify-center max-w-sm antialiased text-gray-200 bg-gray-900"
       data-aos="fade-up"
@@ -47,7 +50,15 @@ const VCard = ({
             {description}
           </p>
           <footer className="flex items-center mt-4">
-            <a href="#0">
+            
+            { withButton  ? 
+            <button className="btn">
+              <a href={href}>
+                <span>查看</span>
+              </a>
+            </button>
+            :<div>
+              <a href="#0">
               <img
                 className="flex-shrink-0 mr-4 rounded-full"
                 src={authorImgSrc}
@@ -56,20 +67,21 @@ const VCard = ({
                 alt="Author 04"
               />
             </a>
-            <div>
               <a
                 className="font-medium text-gray-200 transition duration-150 ease-in-out hover:text-gray-100"
                 href="#0"
               >
                 {author}
               </a>
-              <span className="text-gray-700"> - </span>
-              <span className="text-gray-500">{date}</span>
             </div>
+            }
+            <span className="text-gray-700"> - </span>
+            <span className="text-gray-500">{date}</span>
           </footer>
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

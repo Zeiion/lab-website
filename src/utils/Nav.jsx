@@ -9,6 +9,7 @@
 //   const Module = lazy(() => import(`~/pages/${name}.jsx`));
 //   return <Module />;
 // };
+import { FEIYUN_URL } from '~/consts/index';
 
 export const navList = [
   {
@@ -20,16 +21,12 @@ export const navList = [
     href: '/teams',
   },
   {
-    title: '成果共享',
-    href: '/achievements',
-  },
-  {
     title: '数据共享',
     href: '/datas',
   },
   {
     title: '知识协同',
-    href: '/models',
+    href: '/ac',
   },
   {
     title: '典型场景',
@@ -41,7 +38,7 @@ export const navList = [
   },
   {
     title: '飞云集智',
-    href: 'http://www.feiyun.tech:82/#/about',
+    href: {FEIYUN_URL},
     blank: true,
   },
 ];

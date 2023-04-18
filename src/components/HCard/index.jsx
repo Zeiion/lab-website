@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import TagList from '~/components/TagList';
+import './index.scss'
 
 const HCard = ({
   title = '',
@@ -10,8 +11,10 @@ const HCard = ({
   author = '',
   authorImgSrc = '',
   date = '',
+  withButton = false,
 }) => {
   return (
+    <div className='hcard'>
     <section
       className="flex flex-col justify-center antialiased text-gray-200 bg-gray-900"
       data-aos="fade-up"
@@ -51,7 +54,10 @@ const HCard = ({
               {description}
             </p>
             <footer className="flex items-center mt-4">
-              <a href="#0">
+              { withButton ? 
+              <button className="btn">查看</button>
+              :
+              <><a href="#0">
                 <img
                   className="flex-shrink-0 mr-4 rounded-full"
                   src={authorImgSrc}
@@ -67,14 +73,17 @@ const HCard = ({
                 >
                   {author}
                 </a>
+              </div>
+              </>
+              }
                 <span className="text-gray-700"> - </span>
                 <span className="text-gray-500">{date}</span>
-              </div>
             </footer>
           </div>
         </article>
       </div>
     </section>
+    </div>
   );
 };
 

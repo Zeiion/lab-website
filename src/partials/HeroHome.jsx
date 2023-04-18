@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Modal from '../utils/Modal';
 import videoURL from '~/assets/video.mp4';
-
+import { FEIYUN_URL } from '~/consts/index';
 import HeroImage from '../images/video-bg.jpg';
 import NumberAnimation from '~/components/NumberAnimation';
 import StatisticOverview from '~/partials/StatisticOverview';

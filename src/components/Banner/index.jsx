@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FEIYUN_URL } from '~/consts/index';
 
 function Banner() {
   const [bannerOpen, setBannerOpen] = useState(true);
@@ -11,7 +12,7 @@ function Banner() {
             <div className="inline-flex text-slate-500">
               <a
                 className="font-medium hover:underline text-slate-50"
-                href="http://www.feiyun.tech:82/#/about"
+                href={FEIYUN_URL}
                 target="_blank"
                 rel="noreferrer"
               >

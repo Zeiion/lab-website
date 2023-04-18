@@ -5,15 +5,22 @@ import HCard from '~/components/HCard';
 import VCard from '~/components/VCard';
 import PageTemplate from '~/components/PageTemplate';
 import VCardList from '~/components/VCardList';
-
+import { getModelList } from '../../request/model';
 import { parseAchieveList } from '~/consts/achieveList';
 import { getAuthorImgSrc } from '~/utils/GetRandomPic';
 import { useRequest } from '~/utils/useRequest';
 import { getAchieveList } from '~/request/achieve';
+import { FEIYUN_URL
+ } from '../../consts';
 const getAuthorFromDesc = (desc) => {
   const authors = desc.split(',');
   return authors[0] + ',' + authors[1];
 };
+const dealAuthorName = (name) => {
+  if (name.substr(-2, 2) == '大学' || name.substr(-1, 1) == '所')
+    name += '交通大数据组';
+  return name;
+}
 const Achievements = () => {
   const { data: achieveList = [] } = useRequest(
     () => getAchieveList(),
@@ -22,9 +29,9 @@ const Achievements = () => {
       return list.map((item) => {
         return {
           ...item,
-          href: `/achieve/${item.id}`,
           authorImgSrc: getAuthorImgSrc(item.author),
           author: getAuthorFromDesc(item.description),
+          href: item.href !== "" ? item.href: FEIYUN_URL,
         };
       });
       // .sort((a,b)=>{
@@ -40,7 +47,22 @@ const Achievements = () => {
       // });
     },
   );
-
+  const { data: modelList = [] } = useRequest(
+    () => getModelList(),
+    [],
+    (list) => {
+      return list.map((item, index) => {
+        return {
+          ...item,
+          authorImgSrc: getAuthorImgSrc(item.author),
+          author: dealAuthorName(item.author),
+          href: item.href !== "" ? item.href: FEIYUN_URL,
+        };
+      });
+    },
+  );
+  console.log(achieveList);
+  console.log(modelList);
   // TODO
   // const prizeList = [
   //   {
@@ -67,8 +89,9 @@ const Achievements = () => {
   //   },
   // ];
   return (
-    <PageTemplate title={'成果共享'} subTitle={'Achievements'}>
-      {achieveList && achieveList.length > 0 && (
+    <PageTemplate title={'知识协同'} subTitle={'Achievements'}>
+      {achieveList && modelList && achieveList.length > 0 && modelList.length > 0 &&
+      (
         <>
           <div className="mt-10">
             <HCard
@@ -80,11 +103,18 @@ const Achievements = () => {
               authorImgSrc={achieveList[0].authorImgSrc}
               date={achieveList[0].date}
               href={achieveList[0].href}
+              withButton={true}
             />
           </div>
           <VCardList
             title="Latest achievements"
             list={achieveList.slice(1)}
+            withButton={true}
+          ></VCardList>
+          <VCardList
+            title="models"
+            list={modelList}
+            withButton={true}
           ></VCardList>
         </>
       )}

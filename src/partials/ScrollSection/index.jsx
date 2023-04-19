@@ -2,6 +2,7 @@ import { Expo, gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 
 import './index.scss';
+import { getRandomPic } from '../../utils/GetRandomPic';
 
 const ScrollSection = () => {
   const cardViewFn = () => {
@@ -13,10 +14,9 @@ const ScrollSection = () => {
       const cardsNumber = cards.length;
       if (!cardsNumber) {
         // TODO extract
-        const text = section.querySelector('.show-text');
         const headline = section.querySelector('.section-headline-wrapper');
         const img = section.querySelector('.section-img-wrapper');
-        gsap.to(text, {
+        gsap.to('.show-text', {
           scrollTrigger: {
             trigger: headline,
             start: 'top 65',
@@ -135,7 +135,7 @@ const ScrollSection = () => {
                           </div>
                         </div>
                         <img
-                          src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456__340.jpg"
+                          src={getRandomPic()}
                           alt=""
                           className="object-cover w-2/3 h-[40vh]"
                         />
@@ -151,7 +151,7 @@ const ScrollSection = () => {
                           </div>
                         </div>
                         <img
-                          src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456__340.jpg"
+                          src={getRandomPic()}
                           alt=""
                           className="object-cover w-2/3 h-[40vh]"
                         />
@@ -166,12 +166,27 @@ const ScrollSection = () => {
                 <div className="sticky-content">
                   <div className="section-headline-wrapper">
                     <img
-                      src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456__340.jpg"
+                      src={getRandomPic()}
                       alt=""
                       className="object-cover w-2/3 h-[40vh] section-img-wrapper"
                     />
                     <h1 className="h1">Test Text</h1>
                     <h2 className="h2 show-text">阿巴阿巴</h2>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section className="section-connect-4 section-card-view">
+              <div className="sticky-wrapper">
+                <div className="sticky-content">
+                  <div className="section-headline-wrapper">
+                    <h1 className="h1 show-text-2">交通大数据共享开放平台</h1>
+                    <h2 className="h2 show-text-3">交通大数据共享开放平台</h2>
+                    <img
+                      src={getRandomPic()}
+                      alt=""
+                      className="object-cover w-full h-[40vh]"
+                    />
                   </div>
                 </div>
               </div>
@@ -190,7 +205,7 @@ const ScrollSection = () => {
                           </div>
                         </div>
                         <img
-                          src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456__340.jpg"
+                          src={getRandomPic()}
                           alt=""
                           className="object-cover w-2/3 h-[40vh]"
                         />
@@ -206,7 +221,7 @@ const ScrollSection = () => {
                           </div>
                         </div>
                         <img
-                          src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456__340.jpg"
+                          src={getRandomPic()}
                           alt=""
                           className="object-cover w-2/3 h-[40vh]"
                         />

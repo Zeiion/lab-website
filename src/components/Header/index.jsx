@@ -63,6 +63,7 @@ function Header() {
                   target="_blank"
                   className="flex items-center justify-center text-purple-600 transition duration-150 ease-in-out bg-gray-800 rounded-full hover:text-gray-100 hover:bg-purple-600"
                   aria-label="Github"
+                  title="访问飞云仓库"
                 >
                   <svg
                     className="w-8 h-8 fill-current"

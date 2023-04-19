@@ -13,13 +13,13 @@ import { FEIYUN_URL } from '~/consts/index';
 
 export const navList = [
   {
-    title: '平台概览',
-    href: '/',
+    title: '进入飞云',
+    href: FEIYUN_URL,
   },
-  {
-    title: '合作团队',
-    href: '/teams',
-  },
+  // {
+  //   title: '合作团队',
+  //   href: '/teams',
+  // },
   {
     title: '数据共享',
     href: '/datas',
@@ -29,16 +29,16 @@ export const navList = [
     href: '/achievements',
   },
   {
-    title: '典型场景',
+    title: '场景适配',
     href: '/scenes',
   },
   {
     title: '关于我们',
     href: '/about',
   },
-  {
-    title: '飞云集智',
-    href: {FEIYUN_URL},
-    blank: true,
-  },
+  // {
+  //   title: '飞云集智',
+  //   href: {FEIYUN_URL},
+  //   blank: true,
+  // },
 ];

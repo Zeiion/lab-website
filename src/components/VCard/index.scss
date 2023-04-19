@@ -1,24 +1,24 @@
-.vcard{    
-    .btn {
-        cursor: pointer;
-        padding: 0.5rem 1.5rem;
-        font-size: 0.2rem;
-        font-weight: bold;
-        letter-spacing: 0.025rem;
-        text-transform: uppercase;
-        color: white;
-        background-color: #665cfc;
-        border: none;
-        border-radius: 5px;
-        margin-right: 10px;
+.v-card {
+  .btn {
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.2rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: #665cfc;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
 
-        &:hover {
-        background-color: lighten(#665cfc, 5%);
-        }
-
-        &:focus {
-        outline: 1px dashed yellow;
-        outline-offset: 3px;
-        }
+    &:hover {
+      background-color: lighten(#665cfc, 5%);
     }
+
+    &:focus {
+      outline: 1px dashed yellow;
+      outline-offset: 3px;
+    }
+  }
 }

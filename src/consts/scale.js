@@ -6,7 +6,7 @@ const addDate = (time)=>{
     return time;
 }
 
-//获取最近六个日期（间隔七天）
+//获取最近五个日期（间隔七天）
 const getdays = () => {
     let days = [];
     const today = new Date(Date.now());

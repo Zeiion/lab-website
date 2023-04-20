@@ -74,10 +74,10 @@ const HCard = ({
                   {author}
                 </a>
               </div>
+              <span className="text-gray-700"> - </span>
               </>
               }
-                <span className="text-gray-700"> - </span>
-                <span className="text-gray-500">{date}</span>
+              <span className="text-gray-500">{date}</span>
             </footer>
           </div>
         </article>

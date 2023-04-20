@@ -57,7 +57,7 @@ const VCard = ({
                 <span>查 看</span>
               </a>
             </button>
-            :<div>
+            :<>
               <a href="#0">
               <img
                 className="flex-shrink-0 mr-4 rounded-full"
@@ -73,9 +73,9 @@ const VCard = ({
               >
                 {author}
               </a>
-            </div>
+            <span className="text-gray-700 ml-1 mr-1"> - </span>
+            </>
             }
-            <span className="text-gray-700 mr-2"> - </span>
             <span className="text-gray-500">{date}</span>
           </footer>
         </div>

@@ -23,28 +23,6 @@
     padding: 80px;
   }
 
-  .filled-text {
-    position: absolute;
-    top: 200px;
-    left: 10vw;
-    z-index: 1;
-    font-size: 100px;
-    font-weight: 600;
-    color: #d9e3ea;
-  }
-
-  .outline-text {
-    position: absolute;
-    top: 200px;
-    left: 10vw;
-    z-index: 3;
-    font-size: 100px;
-    font-weight: 600;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #d9e3ea;
-    color: transparent;
-  }
-
   img {
     z-index: 2;
     height: 50vh;

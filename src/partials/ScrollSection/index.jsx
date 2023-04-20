@@ -4,7 +4,8 @@ import './index.scss';
 import { getRandomPic } from '~/utils/GetRandomPic';
 import StickyCard from './components/StickyCard';
 import OutlineText from './components/OutlineText';
-import StickyText from './components/StickyText';
+import StickyTextImg from './components/StickyTextImg';
+import StickyTexts from './components/StickyTexts';
 
 const ScrollSection = () => {
   const cardViewFn = () => {
@@ -57,7 +58,7 @@ const ScrollSection = () => {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="pb-12 mx-auto text-center md:pb-20 scroll-wrapper">
-            <StickyText
+            <StickyTextImg
               text="飞云集智"
               subText="交通大数据共享开放平台"
               imgSrc="http://www.feiyun.tech:82/img/homepage_background.fe6132fb.png "
@@ -135,7 +136,7 @@ const ScrollSection = () => {
                 },
               ]}
             />
-            <StickyText
+            <StickyTextImg
               text="智能算法，智慧互联"
               subText="Artificial Intelligence, Incredible Interconnection"
               imgSrc="https://cdn.pixabay.com/photo/2019/07/11/07/20/industry-4330186__340.jpg"
@@ -172,6 +173,13 @@ const ScrollSection = () => {
               text="持续共享数据，学术资源发布"
               imgSrc="https://cdn.pixabay.com/photo/2018/03/10/09/45/businessman-3213659__340.jpg"
             />
+
+            <StickyTexts text="敬请关注" subText="..." />
+            {/* <StickyTexts
+              headText={<div>'text'</div>}
+              text="敬请关注"
+              subText="Artificial Intelligence, Incredible Interconnection"
+            /> */}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { getRandomPic } from '~/utils/GetRandomPic';
 
 import './index.scss';
 
-const StickyText = ({ text, subText, imgSrc }) => {
+const StickyTextImg = ({ text, subText, imgSrc }) => {
   const wrapperRef = useRef(null);
   const imgRef = useRef(null);
   const text1Ref = useRef(null);
@@ -58,7 +58,7 @@ const StickyText = ({ text, subText, imgSrc }) => {
             <h1 className="opacity-0 h1 show-text-1" ref={text1Ref}>
               {text}
             </h1>
-            <h2 className="mt-40 h2 show-text-2 opacity-5" ref={text2Ref}>
+            <h2 className="mt-40 opacity-0 h2 show-text-2" ref={text2Ref}>
               {subText}
             </h2>
           </div>
@@ -68,4 +68,4 @@ const StickyText = ({ text, subText, imgSrc }) => {
   );
 };
 
-export default StickyText;
+export default StickyTextImg;

@@ -6,11 +6,11 @@
 
 :root {
   --card-top: 2em;
-  --card-color-1: #5ddcff;
-  --card-color-2: #3c67e3;
+  --card-color-1: #6d5dff;
+  --card-color-2: #743ce3;
   --card-color-3: #4e00c2;
 
-  --card-bg-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  --card-bg-image: linear-gradient(-45deg, #8534fe 50%, #b847ff 50%);
   --card-bg-filter: blur(72px);
 }
 
@@ -35,18 +35,14 @@
 }
 
 .m-c {
-  background: #191c29;
+  background: #3d435e;
   padding: 3px;
   position: relative;
-  border-radius: 6px;
+  border-radius: 1.5rem;
   justify-content: center;
   align-items: center;
   text-align: center;
   display: flex;
-  font-size: 1.5em;
-  color: rgb(88 199 250 / 0%);
-  cursor: pointer;
-  font-family: cursive;
 }
 
 .m-c:hover {
@@ -61,9 +57,9 @@
 
 .m-c::before {
   content: '';
-  width: 104%;
+  width: 101%;
   height: 102%;
-  border-radius: 8px;
+  border-radius: 1.5rem;
   background-image: linear-gradient(
     var(--rotate),
     var(--card-color-1),
@@ -73,7 +69,7 @@
   position: absolute;
   z-index: -1;
   top: -1%;
-  left: -2%;
+  left: -0.5%;
   animation: spin 2.5s linear infinite;
 }
 

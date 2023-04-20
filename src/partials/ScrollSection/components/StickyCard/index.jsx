@@ -78,13 +78,11 @@ const StickyCard = ({ list = [] }) => {
               return (
                 <div className="section-card" key={index}>
                   <div className="flex gap-6 overflow-hidden section-card-content bg-purple-500/20 rounded-3xl ">
-                    <div className="flex-1 p-4 h2">
-                      <div className="section-group">{children}</div>
-                    </div>
+                    <div className="flex-1 p-4 h2">{children}</div>
                     <img
                       src={imgSrc || getRandomPic()}
                       alt=""
-                      className="object-cover w-2/3 h-[40vh]"
+                      className="object-cover w-2/3 h-[40vh] brightness-90 "
                     />
                   </div>
                 </div>

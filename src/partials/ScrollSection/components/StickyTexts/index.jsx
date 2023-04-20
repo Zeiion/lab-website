@@ -37,7 +37,7 @@ const StickyTexts = ({ headText, text, subText }) => {
         end: 'bottom+=200',
         scrub: 1,
       },
-      y: -420,
+      y: -520,
       opacity: 0.3,
     });
   };
@@ -49,15 +49,15 @@ const StickyTexts = ({ headText, text, subText }) => {
       <div className="sticky-wrapper">
         <div className="sticky-content" ref={wrapperRef}>
           <div className="section-wrapper">
-            <h1 className="opacity-0 h1 show-text-0" ref={text0Ref}>
+            <h1 className="opacity-0 h1 show-text" ref={text0Ref}>
               {headText}
             </h1>
-            <h1 className="opacity-0 h1 show-text-1" ref={text1Ref}>
+            <h2 className="opacity-0 h2 show-text" ref={text1Ref}>
               {text}
-            </h1>
-            <h2 className="mt-48 opacity-0 h2 show-text-2" ref={text2Ref}>
-              {subText}
             </h2>
+            <h3 className="mt-48 opacity-0 h3 show-text" ref={text2Ref}>
+              {subText}
+            </h3>
           </div>
         </div>
       </div>

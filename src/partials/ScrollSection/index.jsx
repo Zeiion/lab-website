@@ -6,6 +6,7 @@ import StickyCard from './components/StickyCard';
 import OutlineText from './components/OutlineText';
 import StickyTextImg from './components/StickyTextImg';
 import StickyTexts from './components/StickyTexts';
+import ImgGallery from './components/ImgGallery';
 
 const ScrollSection = () => {
   const cardViewFn = () => {
@@ -174,12 +175,19 @@ const ScrollSection = () => {
               imgSrc="https://cdn.pixabay.com/photo/2018/03/10/09/45/businessman-3213659__340.jpg"
             />
 
-            <StickyTexts text="敬请关注" subText="..." />
-            {/* <StickyTexts
-              headText={<div>'text'</div>}
-              text="敬请关注"
-              subText="Artificial Intelligence, Incredible Interconnection"
-            /> */}
+            <StickyTexts headText="敬请关注" text="..." />
+
+            <ImgGallery
+              imgList={Array(7)
+                .fill(0)
+                .map(() => getRandomPic())}
+            />
+
+            <StickyTexts
+              headText="开发团队介绍"
+              text="博士4名，硕士12名，本科生20名"
+              subText="Feiyun"
+            />
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ specifiers:
   aos: ^3.0.0-beta.6
   autoprefixer: ^10.4.13
   chart.js: ^4.2.1
+  gsap: ^3.11.5
   postcss: ^8.4.21
   prop-types: ^15.8.1
   react: ^18.2.0
@@ -21,6 +22,7 @@ dependencies:
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
   aos: 3.0.0-beta.6
   chart.js: 4.2.1
+  gsap: 3.11.5
   prop-types: 15.8.1
   react: 18.2.0
   react-chartjs-2: 5.2.0_t5yjg6ab35jnsudnh2qdighszm
@@ -844,6 +846,10 @@ packages:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
     engines: {node: '>=4'}
     dev: true
+
+  /gsap/3.11.5:
+    resolution: {integrity: sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==}
+    dev: false
 
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}

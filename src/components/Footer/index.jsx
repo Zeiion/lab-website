@@ -44,11 +44,11 @@ function Footer() {
       list: [
         {
           title: '基本情况',
-          href: '/about',
+          href: '/about/#',
         },
         {
           title: '发展历程',
-          href: '/about',
+          href: '/about/##',
         },
         {
           title: '联系方式',
@@ -71,7 +71,7 @@ function Footer() {
                 <Logo />
               </div>
               <div className="text-gray-400">
-                飞云城市交通大数据平台，从idea到应用场景, 一站式服务               
+                飞云城市交通大数据平台，从idea到应用场景, 一站式服务
               </div>
             </div>
 

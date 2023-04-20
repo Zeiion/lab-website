@@ -7,7 +7,7 @@ function Banner() {
   return (
     <>
       {bannerOpen && (
-        <div className="fixed bottom-0 right-0 w-full md:bottom-8 md:right-12 md:w-auto z-60">
+        <div className="fixed bottom-0 right-0 z-50 w-full md:bottom-8 md:right-12 md:w-auto">
           <div className="flex justify-between p-3 text-sm shadow-lg bg-slate-800 text-slate-50 md:rounded">
             <div className="inline-flex text-slate-500">
               <a

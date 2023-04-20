@@ -2,18 +2,18 @@ import './index.scss';
 
 const Timeline = ({ list = [] }) => {
   return (
-    <section className="cd-container">
+    <section className="tl-container">
       {list.map(
         ({ title, type, date, dateRange, description, tags }, index) => {
           return (
             <div
-              className="cd-timeline-block"
+              className="tl-timeline-block"
               data-aos="fade-up"
               data-aos-delay={100 * index}
               key={index}
             >
-              <div className="cd-timeline-img cd-picture"></div>
-              <div className="cd-timeline-content">
+              <div className="tl-timeline-img tl-picture"></div>
+              <div className="tl-timeline-content">
                 <h2>{title}</h2>
                 <div className="timeline-content-info">
                   <span className="timeline-content-info-title">
@@ -26,7 +26,7 @@ const Timeline = ({ list = [] }) => {
                   </span>
                 </div>
                 <p>{description}</p>
-                <span className="cd-date">{date}</span>
+                <span className="tl-date">{date}</span>
                 <ul className="content-skills">
                   {tags.map((tag, index) => (
                     <li key={index}>{tag}</li>

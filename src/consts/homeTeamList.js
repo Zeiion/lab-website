@@ -3,7 +3,7 @@ export const teamDescription =
 export const parseCards = () => {
   return teams.map((card) => {
     return {
-      id: card.node_id,
+      id: String(card.node_id),
       title: card.name,
       description: card.description,
       icon: card.iconUrl,
@@ -72,8 +72,7 @@ export const teams = [
     model_count: 0,
     name: 'Libcity',
     contract_count: 5,
-    iconUrl:
-      'https://i2.100024.xyz/2023/04/14/1266lc6.webp',
+    iconUrl: 'https://i2.100024.xyz/2023/04/14/1266lc6.webp',
     index_identify_id: '',
     data_count: 0,
     support_app: 0,

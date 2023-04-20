@@ -52,9 +52,9 @@ const VCard = ({
           <footer className="flex items-center mt-4">
             
             { withButton  ? 
-            <button className="btn">
+            <button className="btn text-lg">
               <a href={href}>
-                <span>查看</span>
+                <span>查 看</span>
               </a>
             </button>
             :<div>
@@ -75,7 +75,7 @@ const VCard = ({
               </a>
             </div>
             }
-            <span className="text-gray-700"> - </span>
+            <span className="text-gray-700 mr-2"> - </span>
             <span className="text-gray-500">{date}</span>
           </footer>
         </div>

@@ -55,7 +55,7 @@ const HCard = ({
             </p>
             <footer className="flex items-center mt-4">
               { withButton ? 
-              <button className="btn">查看</button>
+              <button className="btn">查 看</button>
               :
               <><a href="#0">
                 <img

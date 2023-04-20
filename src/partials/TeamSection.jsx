@@ -28,7 +28,7 @@ const TeamSection = () => {
                 data-aos-duration="1000"
               >
                 <TeamCard
-                  id={id}
+                  id={index}
                   icon={icon}
                   title={title}
                   description={description}

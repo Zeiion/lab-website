@@ -1,6 +1,6 @@
 import TagList from '../TagList';
 
-const MemberCard = ({ name, imgSrc, description, tags, works }) => {
+const MemberCard = ({ name, imgSrc, description, tags, works, }) => {
   return (
     <div className="flex justify-between gap-2 md:gap-8">
       <img

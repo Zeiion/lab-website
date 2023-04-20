@@ -29,7 +29,7 @@ const TeamSection = () => {
                 key={id}
               >
                 <TeamCard
-                  id={id}
+                  id={index}
                   icon={icon}
                   title={title}
                   description={description}

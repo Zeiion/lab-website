@@ -335,7 +335,7 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 mt-8 mb-16 sm:grid-cols-2 gap-y-10 gap-x-4">
           {teamInfo?.members &&
             teamInfo?.members?.map(
-              ({ name, imgSrc, description, works, tags }) => (
+              ({ name, imgSrc, description, works, tags }, index) => (
                 <MemberCard
                   key={name}
                   name={name}

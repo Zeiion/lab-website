@@ -3,7 +3,6 @@ import TagFilterList from '~/components/TagFilterList';
 import { useMemo, useState } from 'react';
 
 const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
-  console.log(list)
   const tags = list.map((item) => item.tags).flat(2);
   const [uniqueTags, setUniqueTags] = useState(
     [...new Set(tags)].map((text) => {
@@ -67,7 +66,6 @@ const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
             },
             index,
           ) => {
-            console.log(index)
             return (<VCard
               title={title}
               description={description}

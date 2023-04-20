@@ -17,7 +17,6 @@ const StickyTexts = ({ imgList = [] }) => {
         start: '0% 0%',
         end: '100% 0%',
         scrub: 2.2,
-        markers: true,
       },
     });
     LandingPageScrollTrigger.to(

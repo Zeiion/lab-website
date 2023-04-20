@@ -6,6 +6,7 @@ import StickyCard from './components/StickyCard';
 import OutlineText from './components/OutlineText';
 import StickyTextImg from './components/StickyTextImg';
 import StickyTexts from './components/StickyTexts';
+import TeamInfo from './components/TeamInfo';
 import ImgGallery from './components/ImgGallery';
 
 const ScrollSection = () => {
@@ -142,6 +143,9 @@ const ScrollSection = () => {
               subText="Artificial Intelligence, Incredible Interconnection"
               imgSrc="https://cdn.pixabay.com/photo/2019/07/11/07/20/industry-4330186__340.jpg"
             />
+             <div>
+
+             </div>
             {/* <StickyCard
               list={[
                 {
@@ -183,10 +187,10 @@ const ScrollSection = () => {
                 .map(() => getRandomPic())}
             />
 
-            <StickyTexts
-              headText="开发团队介绍"
-              text="博士4名，硕士12名，本科生20名"
-              subText="Feiyun"
+            <TeamInfo
+              headText="团队领头人"
+              text=""
+              subText="博士生20人，研究生12人，本科生40人"
             />
           </div>
         </div>

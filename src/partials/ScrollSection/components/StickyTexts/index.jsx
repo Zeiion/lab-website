@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Expo, gsap } from 'gsap';
 import { getRandomPic } from '~/utils/GetRandomPic';
 
-import './index.scss';
+import '../TeamInfo/index.scss';
 
 const StickyTexts = ({ headText, text, subText }) => {
   const wrapperRef = useRef(null);

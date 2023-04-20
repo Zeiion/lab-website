@@ -45,7 +45,7 @@ const StickyTextImg = ({ text, subText, imgSrc }) => {
     init();
   }, []);
   return (
-    <section className="section-text-view" data-component="sticky-text">
+    <section className="section-text-view" data-component="sticky-text-img">
       <div className="sticky-wrapper">
         <div className="sticky-content" ref={wrapperRef}>
           <div className="section-wrapper">

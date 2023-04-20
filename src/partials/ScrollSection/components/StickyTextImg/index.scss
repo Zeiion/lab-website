@@ -1,4 +1,4 @@
-[data-component='sticky-text'].section-text-view {
+[data-component='sticky-text-img'].section-text-view {
   padding-top: 10vh;
   margin-bottom: -20vh;
   .sticky-wrapper {
@@ -9,7 +9,7 @@
     position: sticky;
     width: 100%;
     height: auto;
-    top: 310px;
+    top: 20vh;
   }
   .section-wrapper {
     display: flex;

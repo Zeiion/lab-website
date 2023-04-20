@@ -45,7 +45,7 @@ const StickyTexts = ({ headText, text, subText }) => {
     init();
   }, []);
   return (
-    <section className="section-text-view" data-component="sticky-text">
+    <section className="section-text-view" data-component="sticky-texts">
       <div className="sticky-wrapper">
         <div className="sticky-content" ref={wrapperRef}>
           <div className="section-wrapper">

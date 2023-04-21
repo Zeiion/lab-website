@@ -68,13 +68,13 @@ const HChart = ({
           data-aos-delay='400'
           to='/datas'
         >
-          {data.title}：{' '}
+          {data.title}:{' '}
           <span className='text-xl font-bold'>
             <NumberAnimation value={121} delay={400}></NumberAnimation>
           </span>
           {data.unit ? data.unit : ''}
         </Link>
-        <div className='float-right mr-5'>
+        <div className='float-right mr-4'>
           较上周变化 ↑{' '}
           <span className='ml-2 text-xl font-bold'>
             <NumberAnimation

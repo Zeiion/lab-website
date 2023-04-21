@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-
+import MemberCard from "~/components/MemberCard";
 import './index.scss';
 import { getRandomPic } from '~/utils/GetRandomPic';
 import StickyCard from './components/StickyCard';
@@ -185,12 +185,15 @@ const ScrollSection = () => {
                 .map(() => getRandomPic())}
             />
             <StickyTexts
-              headText="团队领头人"
+              headText="团队带头人"
               text={
-                <img
-                  src="http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg"
-                  className="object-cover w-24 h-24 rounded-full sm:w-40 sm:h-40"
-                />
+                  <div>
+                    <img
+                      src="http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg"
+                      className="flex flex-col center rounded-full w-24 h-24"
+                    />
+                      <div className="h4 opacity-80">杜博文，男，教授，博士生导师，国家自然科学基金委优秀青年基金获得者。2013年博士毕业于北京航空航天大学，曾在美国新泽西州立大学(Rutgers)做访问学者，现就职于软件开发环境国家重点实验室、综合交通大数据应用技术国家工程实验室及北京脑科学高精尖中心，主要研究方向为时空大数据挖掘、人工智能与工程大数据。现是IEEE computational Intelligence Society TC Member，SIGKDD、AAAI等多个CCF A类会议SPC/PC，TKDE、TITS等Q1期刊审稿人，是中国土木工程学会轨道交通分会青年专家委员、中国铁道学会高速铁路委员会青年专家委员。围绕所研究方向，主持了包括国家自然科学基金（含优秀青年基金、重大项目课题等）、国家重点研发计划课题等项目10余项，共发表包括KDD、AAAI、SIGMOD、TKDE、Networks、TC等国际期刊/会议学术论文70余篇，其中CCF A类（或JCR Q1）论文30余篇，授权发明专利10余项，荣获国家科技发明二等奖1项（排名3），国家技术进步二等奖1项（排名3），省部级科技奖项5项</div>
+                  </div>
               }
               subText="博士生20人，研究生12人，本科生40人"
             />

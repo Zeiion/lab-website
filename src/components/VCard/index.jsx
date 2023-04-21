@@ -59,12 +59,14 @@ const VCard = ({
               ) : (
                 <>
                   <a href="#0">
-                    <img
-                      className="absolute inset-0 object-cover w-full h-64 transition duration-700 ease-out transform hover:scale-105"
-                      src={imgSrc}
-                      alt="-"
-                    />
-                  </a>
+                      <img
+                        className="flex-shrink-0 mr-4 rounded-full"
+                        src={authorImgSrc}
+                        width="40"
+                        height="40"
+                        alt="Author 04"
+                      />
+                    </a>
                   <a
                     className="font-medium text-gray-200 transition duration-150 ease-in-out hover:text-gray-100"
                     href="#0"

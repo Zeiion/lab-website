@@ -62,25 +62,25 @@ function Home() {
     },
   ];
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className='flex flex-col min-h-screen'>
       {/*  Site header */}
       <Header />
       {/*  Page content */}
-      <main className="grow">
+      <main className='grow'>
         {/*  Page illustration */}
         <div
-          className="relative h-0 mx-auto pointer-events-none max-w-7xl"
-          aria-hidden="true"
+          className='relative h-0 mx-auto pointer-events-none max-w-7xl'
+          aria-hidden='true'
         >
           <PageIllustration />
         </div>
         {/*  Page sections */}
         <HeroHome />
 
-        <TeamSection />
-        <div className="h-16"></div>
+        {/* <TeamSection /> */}
+        <div className='h-16'></div>
         <ScrollSection />
-        <div className="h-32"></div>
+        <div className='h-32'></div>
         <Carousel>
           {projectList.map(({ title, imgSrc, description, href }, index) => (
             <ProjectCard
@@ -89,11 +89,11 @@ function Home() {
               imgSrc={imgSrc}
               title={title}
               href={href}
-              readmore="进入系统"
+              readmore='进入系统'
             />
           ))}
         </Carousel>
-        <div className="h-16"></div>
+        <div className='h-16'></div>
         {/* <TopicSection
           title="机构介绍"
           description="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui

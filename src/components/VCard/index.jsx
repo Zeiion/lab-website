@@ -14,6 +14,7 @@ const VCard = ({
   date = '',
   action = null,
   withButton = false,
+  onlineHref = '',
 }) => {
   return (
     <div className="vcard">
@@ -51,8 +52,8 @@ const VCard = ({
             </p>
             <footer className="flex items-center mt-4">
               {withButton ? (
-                <button className="text-lg btn">
-                  <a href={href}>
+                <button className="btn">
+                  <a href={onlineHref}>
                     <span>查 看</span>
                   </a>
                 </button>

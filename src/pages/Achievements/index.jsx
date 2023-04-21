@@ -31,7 +31,8 @@ const Achievements = () => {
           ...item,
           authorImgSrc: getAuthorImgSrc(item.author),
           author: getAuthorFromDesc(item.description),
-          href: item.href !== "" ? item.href: FEIYUN_URL,
+          href: '/achieve/' + item.id,
+          onlineHref: item.onlineHref ? item.onlineHref : FEIYUN_URL,
         };
       });
       // .sort((a,b)=>{
@@ -56,7 +57,8 @@ const Achievements = () => {
           ...item,
           authorImgSrc: getAuthorImgSrc(item.author),
           author: dealAuthorName(item.author),
-          href: item.href !== "" ? item.href: FEIYUN_URL,
+          href: '/achieve/' + item.id,
+          onlineHref: item.onlineHref ? item.onlineHref : FEIYUN_URL,
         };
       });
     },
@@ -104,6 +106,7 @@ const Achievements = () => {
               date={achieveList[0].date}
               href={achieveList[0].href}
               withButton={true}
+              onlineHref={achieveList[0].onlineHref}
             />
           </div>
           <VCardList

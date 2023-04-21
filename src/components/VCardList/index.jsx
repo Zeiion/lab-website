@@ -63,6 +63,7 @@ const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
               date = null,
               href,
               action = null,
+              onlineHref,
             },
             index,
           ) => {
@@ -78,6 +79,7 @@ const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
               href={href}
               action={action}
               withButton={withButton}
+              onlineHref={onlineHref}
             />
           )},
         )}

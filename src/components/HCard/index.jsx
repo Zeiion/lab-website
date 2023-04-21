@@ -12,6 +12,7 @@ const HCard = ({
   authorImgSrc = '',
   date = '',
   withButton = false,
+  onlineHref = '',
 }) => {
   return (
     <div className="h-card">
@@ -55,7 +56,11 @@ const HCard = ({
               </p>
               <footer className="flex items-center mt-4">
                 {withButton ? (
-                  <button className="btn">查看</button>
+                  <button className="btn">
+                    <a href={onlineHref}>
+                      <span>查 看</span>
+                    </a>
+                  </button>
                 ) : (
                   <>
                     <a href="#0">
@@ -75,9 +80,9 @@ const HCard = ({
                         {author}
                       </a>
                     </div>
+                  <span className="text-gray-700 mx-1"> - </span>
                   </>
                 )}
-                <span className="text-gray-700"> - </span>
                 <span className="text-gray-500">{date}</span>
               </footer>
             </div>

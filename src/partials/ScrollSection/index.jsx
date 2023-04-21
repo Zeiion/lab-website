@@ -143,9 +143,7 @@ const ScrollSection = () => {
               subText="Artificial Intelligence, Incredible Interconnection"
               imgSrc="https://cdn.pixabay.com/photo/2019/07/11/07/20/industry-4330186__340.jpg"
             />
-             <div>
-
-             </div>
+            <div></div>
             {/* <StickyCard
               list={[
                 {
@@ -186,12 +184,22 @@ const ScrollSection = () => {
                 .fill(0)
                 .map(() => getRandomPic())}
             />
+            <StickyTexts
+              headText="团队领头人"
+              text={
+                <img
+                  src="http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg"
+                  className="object-cover w-24 h-24 rounded-full sm:w-40 sm:h-40"
+                />
+              }
+              subText="博士生20人，研究生12人，本科生40人"
+            />
 
-            <TeamInfo
+            {/* <TeamInfo
               headText="团队领头人"
               text=""
               subText="博士生20人，研究生12人，本科生40人"
-            />
+            /> */}
           </div>
         </div>
       </div>

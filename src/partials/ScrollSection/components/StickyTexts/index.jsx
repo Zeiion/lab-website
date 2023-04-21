@@ -13,7 +13,7 @@ const StickyTexts = ({ headText, text, subText }) => {
     gsap.to(text0Ref.current, {
       scrollTrigger: {
         trigger: text0Ref.current,
-        start: 'top-=800',
+        start: 'top-=1000',
         end: 'bottom+=1',
         scrub: 1,
       },

@@ -15,6 +15,7 @@ export const navList = [
   {
     title: '进入飞云',
     href: FEIYUN_URL,
+    blank: true,
   },
   // {
   //   title: '合作团队',
@@ -36,9 +37,9 @@ export const navList = [
     title: '关于我们',
     href: '/about',
   },
-  {
-    title: '飞云集智',
-    href: FEIYUN_URL,
-    blank: true,
-  },
+  // {
+  //   title: '飞云集智',
+  //   href: FEIYUN_URL,
+  //   blank: true,
+  // },
 ];

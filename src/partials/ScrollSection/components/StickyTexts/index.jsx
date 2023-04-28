@@ -27,7 +27,7 @@ const StickyTexts = ({ headText, text, subText }) => {
         end: 'bottom+=100',
         scrub: 1,
       },
-      y: -210,
+      y: -225,
       opacity: 0.8,
     });
     gsap.to(text2Ref.current, {
@@ -45,17 +45,17 @@ const StickyTexts = ({ headText, text, subText }) => {
     init();
   }, []);
   return (
-    <section className="section-text-view" data-component="sticky-texts">
-      <div className="sticky-wrapper">
-        <div className="sticky-content" ref={wrapperRef}>
-          <div className="section-wrapper">
-            <h1 className="opacity-0 h1 show-text" ref={text0Ref}>
+    <section className='section-text-view' data-component='sticky-texts'>
+      <div className='sticky-wrapper'>
+        <div className='sticky-content' ref={wrapperRef}>
+          <div className='section-wrapper'>
+            <h1 className='opacity-0 h1 show-text' ref={text0Ref}>
               {headText}
             </h1>
-            <h2 className="opacity-0 h2 show-text" ref={text1Ref}>
+            <h2 className='opacity-0 h2 show-text' ref={text1Ref}>
               {text}
             </h2>
-            <h3 className="mt-48 opacity-0 h3 show-text" ref={text2Ref}>
+            <h3 className='mt-48 opacity-0 h3 show-text' ref={text2Ref}>
               {subText}
             </h3>
           </div>

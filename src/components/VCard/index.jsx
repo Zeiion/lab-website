@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import TagList from '~/components/TagList';
 import Tag from '../Tag';
 import './index.scss';
+import { FaQuoteRight, FaDownload } from 'react-icons/fa';
 
 const VCard = ({
   title = '',
@@ -15,6 +16,8 @@ const VCard = ({
   action = null,
   withButton = false,
   onlineHref = '',
+  quoteCount = Math.ceil(Math.random()*10),
+  downloadCount = Math.ceil(Math.random()*300+100),  
 }) => {
   return (
     <div className="vcard">
@@ -52,11 +55,17 @@ const VCard = ({
             </p>
             <footer className="flex items-center mt-4">
               {withButton ? (
-                <button className="btn">
-                  <a href={onlineHref}>
-                    <span>查 看</span>
-                  </a>
-                </button>
+                <>
+                  <button className="btn">
+                    <a href={onlineHref}>
+                      <span>查 看</span>
+                    </a>
+                  </button>
+                  <span className="ml-1 mr-1 text-gray-100"><FaQuoteRight /></span>
+                  <span className="mr-4 text-gray-200 text-lg">{quoteCount}</span>
+                  <span className="ml-1 mr-1 text-gray-100"><FaDownload /></span>
+                  <span className="mr-4 text-gray-200 text-lg">{downloadCount}</span>
+                </>
               ) : (
                 <>
                   <a href="#0">

@@ -107,6 +107,8 @@ const Achievements = () => {
               href={achieveList[0].href}
               withButton={true}
               onlineHref={achieveList[0].onlineHref}
+              quoteCount={achieveList[0].quoteCount}
+              downloadCount={achieveList[0].downloadCount}
             />
           </div>
           <VCardList

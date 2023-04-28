@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const TeamCard = ({ id, title, icon, description }) => {
+const TeamCard = ({ id, title, icon, description, showDetail }) => {
   return (
     <div className="relative flex flex-col items-center animate-scale">
       <div className="w-24 h-24 mb-4" viewBox="0 0 64 64">
@@ -10,7 +10,7 @@ const TeamCard = ({ id, title, icon, description }) => {
       <Link className="mb-4 h4" to={'/teams'}>
         {title}
       </Link>
-      <p className="text-xl text-justify text-gray-400 para">{description}</p>
+      { showDetail && <p className="text-xl text-justify text-gray-400 para">{description}</p>}
     </div>
   );
 };

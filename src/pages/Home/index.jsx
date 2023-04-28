@@ -3,7 +3,6 @@ import React from 'react';
 import Header from '~/components/Header';
 import PageIllustration from '~/partials/PageIllustration';
 import HeroHome from '~/partials/HeroHome';
-import TeamSection from '~/partials/TeamSection';
 import ScrollSection from '~/partials/ScrollSection';
 import TopicSection from '~/partials/TopicSection';
 import Testimonials from '~/partials/Testimonials';

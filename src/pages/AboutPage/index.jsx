@@ -8,6 +8,7 @@ import VCardList from '~/components/VCardList';
 import Timeline from '~/components/Timeline';
 import TagList from '~/components/TagList';
 import HeroImage from '~/images/hero-image-01.jpg';
+import TeamSection from '~/partials/TeamSection';
 import { teamInfo } from '~/consts/teamInfo'
 // TODO reuse
 const insList = [
@@ -310,7 +311,7 @@ const AboutPage = () => {
         title={
           <>
             {/* TODO color */}
-            关于我们
+            关于我们——北航交通大数据组
           </>
         }
         subTitle={'About Us'}
@@ -325,7 +326,7 @@ const AboutPage = () => {
         >
           {teamInfo?.description}
         </p>
-
+        
         <h3 className="h3 mt-20">研究方向</h3>
         <div className="mt-5 mb-16">
           <TagList list={teamInfo?.researchDirections || []} size="medium" />
@@ -350,7 +351,7 @@ const AboutPage = () => {
 
         {teamInfo?.collaborationIntro && (
           <div className="animate-scale">
-            <h3 className="h3">国内外合作介绍</h3>
+            <h3 className="h3">团队介绍及成果概览</h3>
             <div className="mt-3 mb-8">
               <p className="mt-5 text-gray-400 indent-8">
                 {teamInfo?.collaborationIntro}
@@ -358,9 +359,10 @@ const AboutPage = () => {
             </div>
           </div>
         )}
-
         <Timeline list={teamInfo?.timeline} />
         <VCardList title="Lateset Works" list={teamInfo?.works}></VCardList>
+        <h3 className="h3 mt-20">合作团队</h3>
+        <TeamSection showDetail={false} />
         <h3 className="h3 mt-20 mb-8">鸣谢</h3>
           <p
             className="mb-16 text-xl text-justify text-gray-400 text-indent-2 "

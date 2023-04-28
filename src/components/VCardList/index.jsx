@@ -64,6 +64,8 @@ const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
               href,
               action = null,
               onlineHref,
+              quoteCount,
+              downloadCount,
             },
             index,
           ) => {
@@ -80,6 +82,8 @@ const VCardList = ({ title, list = [], headerInput, withButton=false }) => {
               action={action}
               withButton={withButton}
               onlineHref={onlineHref}
+              quoteCount={quoteCount}
+              downloadCount={downloadCount}
             />
           )},
         )}

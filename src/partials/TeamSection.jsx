@@ -10,7 +10,7 @@ import TagList from '~/components/TagList';
 
 import { getTeam } from '~/request/team';
 import { useRequest } from '~/utils/useRequest';
-const TeamSection = () => {
+const TeamSection = ({showDetail=true}) => {
   const { id } = useParams();
   const { data: teamInfo = {} } = useRequest(() => getTeam(id), [id]);
   // const teamInfo = {
@@ -264,6 +264,7 @@ const TeamSection = () => {
                   title={title}
                   description={description}
                   key={index}
+                  showDetail={showDetail}
                 />
               </div>
             ))}

@@ -10,8 +10,7 @@ import { parseAchieveList } from '~/consts/achieveList';
 import { getAuthorImgSrc } from '~/utils/GetRandomPic';
 import { useRequest } from '~/utils/useRequest';
 import { getAchieveList } from '~/request/achieve';
-import { FEIYUN_URL
- } from '../../consts';
+import { FEIYUN_URL } from '../../consts';
 const getAuthorFromDesc = (desc) => {
   const authors = desc.split(',');
   return authors[0] + ',' + authors[1];
@@ -20,7 +19,7 @@ const dealAuthorName = (name) => {
   if (name.substr(-2, 2) == '大学' || name.substr(-1, 1) == '所')
     name += '交通大数据组';
   return name;
-}
+};
 const Achievements = () => {
   const { data: achieveList = [] } = useRequest(
     () => getAchieveList(),
@@ -92,37 +91,39 @@ const Achievements = () => {
   // ];
   return (
     <PageTemplate title={'知识协同'} subTitle={'Achievements'}>
-      {achieveList && modelList && achieveList.length > 0 && modelList.length > 0 &&
-      (
-        <>
-          <div className="mt-10">
-            <HCard
-              title={achieveList[0].title}
-              description={achieveList[0].description}
-              imgSrc={achieveList[0].imgSrc}
-              tags={achieveList[0].tags}
-              author={achieveList[0].author}
-              authorImgSrc={achieveList[0].authorImgSrc}
-              date={achieveList[0].date}
-              href={achieveList[0].href}
+      {achieveList &&
+        modelList &&
+        achieveList.length > 0 &&
+        modelList.length > 0 && (
+          <>
+            <div className="mt-10">
+              <HCard
+                title={achieveList[0].title}
+                description={achieveList[0].description}
+                imgSrc={achieveList[0].imgSrc}
+                tags={achieveList[0].tags}
+                author={achieveList[0].author}
+                authorImgSrc={achieveList[0].authorImgSrc}
+                date={achieveList[0].date}
+                href={achieveList[0].href}
+                withButton={true}
+                onlineHref={achieveList[0].onlineHref}
+                quoteCount={achieveList[0].quoteCount}
+                downloadCount={achieveList[0].downloadCount}
+              />
+            </div>
+            <VCardList
+              title="Latest Achievements"
+              list={achieveList.slice(1)}
               withButton={true}
-              onlineHref={achieveList[0].onlineHref}
-              quoteCount={achieveList[0].quoteCount}
-              downloadCount={achieveList[0].downloadCount}
-            />
-          </div>
-          <VCardList
-            title="Latest achievements"
-            list={achieveList.slice(1)}
-            withButton={true}
-          ></VCardList>
-          <VCardList
-            title="models"
-            list={modelList}
-            withButton={true}
-          ></VCardList>
-        </>
-      )}
+            ></VCardList>
+            <VCardList
+              title="Latest Models"
+              list={modelList}
+              withButton={true}
+            ></VCardList>
+          </>
+        )}
       {/* <VCardList title="Recent Prizes" list={prizeList} /> */}
     </PageTemplate>
   );

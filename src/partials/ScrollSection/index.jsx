@@ -55,25 +55,25 @@ const ScrollSection = () => {
     cardViewFn();
   });
   return (
-    <section data-component='scroll-section'>
-      <div className='px-4 mx-auto overflow-visible sm:px-6'>
-        <div className='py-12 md:py-20'>
+    <section data-component="scroll-section">
+      <div className="px-4 mx-auto overflow-visible sm:px-6">
+        <div className="py-12 md:py-20">
           {/* Section header */}
-          <div className='pb-12 mx-auto text-center md:pb-20 scroll-wrapper'>
+          <div className="pb-12 mx-auto text-center md:pb-20 scroll-wrapper">
             <StickyTextImg
-              text='飞云集智'
-              subText='交通大数据共享开放平台'
-              imgSrc='http://www.feiyun.tech:82/img/homepage_background.fe6132fb.png '
+              text="飞云集智"
+              subText="交通大数据共享开放平台"
+              imgSrc="http://www.feiyun.tech:82/img/homepage_background.fe6132fb.png "
             />
             <StickyCard
               list={[
                 {
                   children: (
-                    <div className='flex flex-col justify-center h-full gap-8'>
+                    <div className="flex flex-col justify-center h-full gap-8">
                       <span>
                         数据-模型-应用 <br /> 一站式服务平台
                       </span>
-                      <span className='h4 opacity-80'>
+                      <span className="h4 opacity-80">
                         Data-Model-Application <br /> One stop service platform
                       </span>
                     </div>
@@ -82,13 +82,13 @@ const ScrollSection = () => {
                 },
                 {
                   children: (
-                    <div className='flex flex-col justify-center h-full gap-8'>
+                    <div className="flex flex-col justify-center h-full gap-8">
                       <span>汇聚行业优质数据</span>
-                      <span className='h4 opacity-80'>
+                      <span className="h4 opacity-80">
                         Gathering high-quality industry data
                       </span>
                       <span>动态发布公开数据</span>
-                      <span className='h4 opacity-80'>
+                      <span className="h4 opacity-80">
                         Dynamic release of public data
                       </span>
                     </div>
@@ -97,14 +97,14 @@ const ScrollSection = () => {
                 },
               ]}
             />
-            <OutlineText text='多维数据，海量汇聚' />
+            <OutlineText text="多维数据，海量汇聚" />
             <StickyCard
               list={[
                 {
                   children: (
-                    <div className='flex flex-col justify-center h-full gap-8'>
+                    <div className="flex flex-col justify-center h-full gap-8">
                       <span>打造知识流通环境</span>
-                      <span className='h4 opacity-80'>
+                      <span className="h4 opacity-80">
                         Create a knowledge circulation environment
                       </span>
                     </div>
@@ -114,9 +114,9 @@ const ScrollSection = () => {
                 },
                 {
                   children: (
-                    <div className='flex flex-col justify-center h-full gap-8'>
+                    <div className="flex flex-col justify-center h-full gap-8">
                       <span>促进模型快速落地</span>
-                      <span className='h4 opacity-80'>
+                      <span className="h4 opacity-80">
                         Promote the rapid landing of models
                       </span>
                     </div>
@@ -126,9 +126,9 @@ const ScrollSection = () => {
                 },
                 {
                   children: (
-                    <div className='flex flex-col justify-center h-full gap-8'>
+                    <div className="flex flex-col justify-center h-full gap-8">
                       <span>搭建学者交流平台</span>
-                      <span className='h4 opacity-80'>
+                      <span className="h4 opacity-80">
                         Build a platform for scholars to communicate
                       </span>
                     </div>
@@ -139,9 +139,9 @@ const ScrollSection = () => {
               ]}
             />
             <StickyTextImg
-              text='智能算法，智慧互联'
-              subText='Artificial Intelligence, Incredible Interconnection'
-              imgSrc='https://cdn.pixabay.com/photo/2019/07/11/07/20/industry-4330186__340.jpg'
+              text="智能算法，智慧互联"
+              subText="Artificial Intelligence, Incredible Interconnection"
+              imgSrc="https://cdn.pixabay.com/photo/2019/07/11/07/20/industry-4330186__340.jpg"
             />
             <div></div>
             {/* <StickyCard
@@ -173,11 +173,11 @@ const ScrollSection = () => {
               ]}
             /> */}
             <OutlineText
-              text='持续共享数据，学术资源发布'
-              imgSrc='https://cdn.pixabay.com/photo/2018/03/10/09/45/businessman-3213659__340.jpg'
+              text="持续共享数据，学术资源发布"
+              imgSrc="https://cdn.pixabay.com/photo/2018/03/10/09/45/businessman-3213659__340.jpg"
             />
 
-            <StickyTexts headText='敬请关注' text='...' />
+            <StickyTexts headText="敬请关注" text="..." />
 
             <ImgGallery
               imgList={Array(7)
@@ -185,14 +185,14 @@ const ScrollSection = () => {
                 .map(() => getRandomPic())}
             />
             <StickyTexts
-              headText='团队带头人'
+              headText="团队带头人"
               text={
-                <div className='flex items-stretch h-64 gap-16 w-[56rem]'>
+                <div className="flex items-stretch h-64 gap-16 w-[64rem]">
                   <img
-                    src='http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg'
-                    className='flex flex-col object-cover w-64 h-64 rounded-full center'
+                    src="http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg"
+                    className="flex flex-col object-cover w-64 h-64 rounded-3xl center"
                   />
-                  <div className='flex-1 overflow-auto text-justify h4 opacity-80'>
+                  <div className="flex-1 overflow-auto text-justify leading-[1.5em] h4 opacity-80">
                     杜博文，男，教授，博士生导师，国家自然科学基金委优秀青年基金获得者。2013年博士毕业于北京航空航天大学，曾在美国新泽西州立大学(Rutgers)做访问学者，现就职于软件开发环境国家重点实验室、综合交通大数据应用技术国家工程实验室及北京脑科学高精尖中心，主要研究方向为时空大数据挖掘、人工智能与工程大数据。现是IEEE
                     computational Intelligence Society TC
                     Member，SIGKDD、AAAI等多个CCF
@@ -202,7 +202,7 @@ const ScrollSection = () => {
                   </div>
                 </div>
               }
-              subText='博士16人，研究生20人，本科生40人'
+              subText="博士16人，研究生20人，本科生40人"
             />
 
             {/* <TeamInfo

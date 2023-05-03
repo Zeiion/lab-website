@@ -1,36 +1,25 @@
-/**
-   {
-      title: 'Designing a functional workflow at home.',
-      description: `Description of the card
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed euismod, nisl nec tincidunt lacinia, nunc est aliquam
-      nisl, eu aliquet nunc nunc eget lorem.`,
-      imgSrc: 'http://placekitten.com/1200/600',
-      href: 'https://www.baidu.com',
-    },
- */
-import './index.scss';
+import "./index.scss";
 
 const ProjectCard = ({
   title,
   description,
   imgSrc,
   href,
-  readmore = '进入系统',
+  readmore = "进入系统",
 }) => {
   return (
-    <div className='pro-card'>
-      <div className='card'>
-        <div className='content'>
-          <h3 className='title'>{title}</h3>
-          <p className='copy'>{description}</p>
-          <button className='btn'>
-            <a href={href}>
+    <div className="pro-card">
+      <div className="card">
+        <div className="content">
+          <h3 className="title">{title}</h3>
+          <p className="copy">{description}</p>
+          <button className="btn">
+            <a href={href} target="_blank">
               <span>{readmore}</span>
             </a>
           </button>
         </div>
-        <img className='object-cover bg' src={imgSrc} alt='图片' />
+        <img className="object-cover bg" src={imgSrc} alt="图片" />
       </div>
     </div>
     // <a

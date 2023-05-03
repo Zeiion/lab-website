@@ -63,54 +63,57 @@ const ScrollSection = () => {
             <StickyTextImg
               text="飞云集智"
               subText="交通大数据共享开放平台"
-              imgSrc="http://www.feiyun.tech:82/img/homepage_background.fe6132fb.png "
+              imgSrc="https://i2.100024.xyz/2023/05/02/12pfkjy.webp"
             />
             <StickyCard
               list={[
                 {
                   children: (
                     <div className="flex flex-col justify-center h-full gap-8">
-                      <span>
+                      <span className="h3">
                         数据-模型-应用 <br /> 一站式服务平台
                       </span>
-                      <span className="h4 opacity-80">
+                      <span className="h5 opacity-80">
                         Data-Model-Application <br /> One stop service platform
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/04/20/ze5yrh.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/02/13083ew.webp',
                 },
                 {
                   children: (
                     <div className="flex flex-col justify-center h-full gap-8">
-                      <span>汇聚行业优质数据</span>
-                      <span className="h4 opacity-80">
+                      <span className="h3">汇聚行业优质数据</span>
+                      <span className="h5 opacity-80">
                         Gathering high-quality industry data
                       </span>
-                      <span>动态发布公开数据</span>
-                      <span className="h4 opacity-80">
+                      <span className="h3">动态发布公开数据</span>
+                      <span className="h5 opacity-80">
                         Dynamic release of public data
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/04/20/zgi02w.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/03/wvb2.webp',
                 },
               ]}
             />
-            <OutlineText text="多维数据，海量汇聚" />
+            <OutlineText
+                text="多维数据，海量汇聚"
+                imgSrc="https://i2.100024.xyz/2023/05/03/6v5vq.webp"/>
+
             <StickyCard
               list={[
                 {
                   children: (
                     <div className="flex flex-col justify-center h-full gap-8">
-                      <span>打造知识流通环境</span>
-                      <span className="h4 opacity-80">
+                      <span className="h3">打造知识流通环境</span>
+                      <span className="h5 opacity-80">
                         Create a knowledge circulation environment
                       </span>
                     </div>
                   ),
                   imgSrc:
-                    'https://cdn.pixabay.com/photo/2018/06/09/15/49/technology-3464633__340.jpg',
+                    'https://i2.100024.xyz/2023/05/03/grx1s.webp',
                 },
                 {
                   children: (
@@ -122,7 +125,7 @@ const ScrollSection = () => {
                     </div>
                   ),
                   imgSrc:
-                    'https://cdn.pixabay.com/photo/2020/04/25/12/14/circle-5090539__340.jpg',
+                    'https://i2.100024.xyz/2023/05/03/hy9kw.webp',
                 },
                 {
                   children: (
@@ -134,7 +137,7 @@ const ScrollSection = () => {
                     </div>
                   ),
                   imgSrc:
-                    'https://cdn.pixabay.com/photo/2019/10/15/05/17/artificial-intelligence-4550606__340.jpg',
+                    'https://i2.100024.xyz/2023/05/03/j80cs.webp',
                 },
               ]}
             />
@@ -174,7 +177,7 @@ const ScrollSection = () => {
             /> */}
             <OutlineText
               text="持续共享数据，学术资源发布"
-              imgSrc="https://cdn.pixabay.com/photo/2018/03/10/09/45/businessman-3213659__340.jpg"
+              imgSrc="https://i2.100024.xyz/2023/04/14/jozbu.webp"
             />
 
             <StickyTexts headText="敬请关注" text="..." />

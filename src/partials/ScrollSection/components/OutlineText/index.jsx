@@ -44,7 +44,7 @@ const OutlineText = ({ text, imgSrc }) => {
         end: 'bottom top',
         scrub: 1,
       },
-      x: -250,
+      x: -150,
     });
   };
   useEffect(() => {
@@ -58,7 +58,7 @@ const OutlineText = ({ text, imgSrc }) => {
             <h2 className="filled-text">{text}</h2>
             <h2 className="outline-text">{text}</h2>
             <img
-              className="outline-text-image"
+              className="outline-text-image object-cover w-full h-[50vh]"
               src={imgSrc || 'https://i2.100024.xyz/2023/04/07/1yx48m.webp'}
             />
           </div>

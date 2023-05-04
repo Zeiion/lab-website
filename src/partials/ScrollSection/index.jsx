@@ -144,7 +144,7 @@ const ScrollSection = () => {
             <StickyTextImg
               text="智能算法，智慧互联"
               subText="Artificial Intelligence, Incredible Interconnection"
-              imgSrc="https://cdn.pixabay.com/photo/2019/07/11/07/20/industry-4330186__340.jpg"
+              imgSrc="https://i2.100024.xyz/2023/05/04/ii9ya5.webp"
             />
             <div></div>
             {/* <StickyCard

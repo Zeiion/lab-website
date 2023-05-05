@@ -16,6 +16,7 @@ import ProjectCard from '~/components/ProjectCard';
 import IconCard from '~/components/IconCard';
 import { parseHomeInsList } from '~/consts/homeInsList';
 import { FEIYUN_URL } from '~/consts/index';
+import FY_IMAGE from '~/images/fy-image.png';
 
 function Home() {
   const projectList = [
@@ -65,6 +66,11 @@ function Home() {
   ];
   return (
     <div className="flex flex-col min-h-screen">
+      <img
+        className="absolute top-0 left-0 hidden object-cover w-screen pointer-events-none h-[34rem] lg:block opacity-50"
+        src={FY_IMAGE}
+        alt=""
+      />
       {/*  Site header */}
       <Header />
       {/*  Page content */}

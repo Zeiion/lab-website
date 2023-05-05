@@ -16,8 +16,8 @@ const VCard = ({
   action = null,
   withButton = false,
   onlineHref = '',
-  quoteCount = Math.ceil(Math.random()*10),
-  downloadCount = Math.ceil(Math.random()*300+100),  
+  quoteCount = Math.ceil(Math.random() * 10),
+  downloadCount = Math.ceil(Math.random() * 300 + 100),
 }) => {
   return (
     <div className="vcard">
@@ -57,26 +57,34 @@ const VCard = ({
               {withButton ? (
                 <>
                   <button className="btn">
-                    <a href={onlineHref}>
+                    <a href={onlineHref} target="_blank">
                       <span>查 看</span>
                     </a>
                   </button>
-                  <span className="ml-1 mr-1 text-gray-100"><FaQuoteRight /></span>
-                  <span className="mr-4 text-gray-200 text-lg">{quoteCount}</span>
-                  <span className="ml-1 mr-1 text-gray-100"><FaDownload /></span>
-                  <span className="mr-4 text-gray-200 text-lg">{downloadCount}</span>
+                  <span className="ml-1 mr-1 text-gray-100">
+                    <FaQuoteRight />
+                  </span>
+                  <span className="mr-4 text-lg text-gray-200">
+                    {quoteCount}
+                  </span>
+                  <span className="ml-1 mr-1 text-gray-100">
+                    <FaDownload />
+                  </span>
+                  <span className="mr-4 text-lg text-gray-200">
+                    {downloadCount}
+                  </span>
                 </>
               ) : (
                 <>
                   <a href="#0">
-                      <img
-                        className="flex-shrink-0 mr-4 rounded-full"
-                        src={authorImgSrc}
-                        width="40"
-                        height="40"
-                        alt="Author 04"
-                      />
-                    </a>
+                    <img
+                      className="flex-shrink-0 mr-4 rounded-full"
+                      src={authorImgSrc}
+                      width="40"
+                      height="40"
+                      alt="Author 04"
+                    />
+                  </a>
                   <a
                     className="font-medium text-gray-200 transition duration-150 ease-in-out hover:text-gray-100"
                     href="#0"

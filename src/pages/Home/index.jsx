@@ -67,7 +67,7 @@ function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <img
-        className="absolute top-0 left-0 hidden object-cover w-screen pointer-events-none h-[34rem] lg:block opacity-50"
+        className="absolute top-0 left-0 hidden object-cover w-screen pointer-events-none h-[100vh] lg:block opacity-30"
         src={FY_IMAGE}
         alt=""
       />

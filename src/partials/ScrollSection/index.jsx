@@ -3,8 +3,10 @@ import MemberCard from '~/components/MemberCard';
 import './index.scss';
 import { getRandomPic } from '~/utils/GetRandomPic';
 import StickyCard from './components/StickyCard';
+import StickyTextCard from './components/StickyTextCard';
 import OutlineText from './components/OutlineText';
 import StickyTextImg from './components/StickyTextImg';
+import StickyTextImgs from './components/StickyTextImgs';
 import StickyTexts from './components/StickyTexts';
 import TeamInfo from './components/TeamInfo';
 import ImgGallery from './components/ImgGallery';
@@ -65,7 +67,8 @@ const ScrollSection = () => {
               subText="交通大数据共享开放平台"
               imgSrc="https://i2.100024.xyz/2023/05/02/12pfkjy.webp"
             />
-            <StickyCard
+            <StickyTextCard
+              title="数据共享"
               list={[
                 {
                   children: (
@@ -98,8 +101,9 @@ const ScrollSection = () => {
               ]}
             />
             <OutlineText
-                text="多维数据，海量汇聚"
-                imgSrc="https://i2.100024.xyz/2023/05/03/6v5vq.webp"/>
+              text="多维数据，海量汇聚"
+              imgSrc="https://i2.100024.xyz/2023/05/03/6v5vq.webp"
+            />
 
             <StickyCard
               list={[
@@ -112,8 +116,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc:
-                    'https://i2.100024.xyz/2023/05/03/grx1s.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/03/grx1s.webp',
                 },
                 {
                   children: (
@@ -124,8 +127,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc:
-                    'https://i2.100024.xyz/2023/05/03/hy9kw.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/03/hy9kw.webp',
                 },
                 {
                   children: (
@@ -136,15 +138,26 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc:
-                    'https://i2.100024.xyz/2023/05/03/j80cs.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/03/j80cs.webp',
                 },
               ]}
             />
-            <StickyTextImg
-              text="智能算法，智慧互联"
-              subText="Artificial Intelligence, Incredible Interconnection"
-              imgSrc="https://i2.100024.xyz/2023/05/04/ii9ya5.webp"
+            <StickyTextImgs
+              texts={[
+                '智能算法，智慧互联',
+                '合约图谱，知识互通',
+                '合约执行，资源共享',
+              ]}
+              subTexts={[
+                'Artificial Intelligence, Incredible Interconnection',
+                'Contract Diagrams, Share Knowledge',
+                'Execute Contracts, Share Resources',
+              ]}
+              imgSrc={[
+                'https://i2.100024.xyz/2023/05/04/ii9ya5.webp',
+                'https://i2.100024.xyz/2023/05/07/ql158o.webp',
+                'https://i2.100024.xyz/2023/05/07/qlh1jb.webp',
+              ]}
             />
             <div></div>
             {/* <StickyCard

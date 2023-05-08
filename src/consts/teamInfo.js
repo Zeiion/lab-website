@@ -12,9 +12,28 @@ export const teamInfo = {
     iconUrl: "https://i2.100024.xyz/2023/04/14/bygr9.webp",
     members: [
       {
+        name: "吕卫锋",
+        description: "教授、博士生导师。 1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，软件开发环境国家重点实验室副主任。目前是国家标准委员会专家组成员，国家科技平台标准化技术委员会委员，北京市信息化专家咨询委员会委员，中国电子学会理事会理事。中国软件协会副理事长、秘书长。主要研究方向：海量数据处理、算法及大型信息系统开发方法.主要从事大数据挖掘理论与智慧城市应用研究工作。近年来先后主持完成国家973计划、863计划和航空基金等国家级研究与工程项目十余项，包括国家科技部863计划智慧城市 “城市多模式数据系统互联技术与支撑环境”课题等。开展面向城市海量多源数据挖掘与应用、多领域大型信息系统开发方法及理论等方面研究，已发表SCI/EI学术论文40余篇，国家发明专利6项 。在教学方面多年担任计算机学院本科生与研究生的主讲教师，现为北航计算机学院研究生开设“程序设计语言原理与实践”学位课程，为本科生开设“离散数学”学位课程。并作为第二作者编写、出版了高等学校计算机教材丛书“程序设计语言原理”教材一部。获国家科技发明二等奖1项，国家科技进步二等奖1项，省部级科学技术一等奖3项。",
+        imgSrc: "https://i2.100024.xyz/2023/05/08/gnnfsz.webp",
+        tags: [
+          "教授",
+          "博士生导师"
+        ],
+        works: [
+          {
+            title: "Deep multi-task learning with flexible and compact architecture search",
+            href: "https://link.springer.com/article/10.1007/s41060-021-00274-0"
+          },
+          {
+            title: "Graph Sequence Neural Network with an Attention Mechanism for Traffic Speed Prediction",
+            href: "https://dl.acm.org/doi/10.1145/3470889"
+          }
+        ]
+      },
+      {
         name: "杜博文",
         description: "男，教授，博士生导师，国家自然科学基金委优秀青年基金获得者。2013年博士毕业于北京航空航天大学，曾在美国新泽西州立大学(Rutgers)做访问学者，现就职于软件开发环境国家重点实验室、综合交通大数据应用技术国家工程实验室及北京脑科学高精尖中心，主要研究方向为时空大数据挖掘、人工智能与工程大数据。现是IEEE computational Intelligence Society TC Member，SIGKDD、AAAI等多个CCF A类会议SPC/PC，TKDE、TITS等Q1期刊审稿人，是中国土木工程学会轨道交通分会青年专家委员、中国铁道学会高速铁路委员会青年专家委员。围绕所研究方向，主持了包括国家自然科学基金（含优秀青年基金、重大项目课题等）、国家重点研发计划课题等项目10余项，共发表包括KDD、AAAI、SIGMOD、TKDE、Networks、TC等国际期刊/会议学术论文70余篇，其中CCF A类（或JCR Q1）论文30余篇，授权发明专利10余项，荣获国家科技发明二等奖1项（排名3），国家技术进步二等奖1项（排名3），省部级科技奖项5项",
-        imgSrc: "http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg",
+        imgSrc: "https://i2.100024.xyz/2023/05/08/h2ncfy.webp",
         tags: [
           "教授",
           "博士生导师"
@@ -30,25 +49,25 @@ export const teamInfo = {
           }
         ]
       },
-      {
-        name: "孙磊磊",
-        description: "北京航空航天大学计算机学院副教授，博士生导师。2009年、2012年、2017年分别于大连理工大学获得工学学士、硕士、博士学位。2015年9月至2016年8月国家公派赴美国罗格斯新泽西州立大学访问学习，2017年3月至2019年4月于清华大学从事博士后研究工作。主要研究方向为机器学习与数据挖掘，具体包括深度时空学习网络、图神经网络、时序数据分析与挖掘等。已经在数据挖掘领域国际顶级学术期刊TKDE，数据挖掘领域国际顶级学术会议KDD，以及AAAI，SIGIR，WWW，ICDM，TITS等国际学术期刊会议发表学术论文60余篇，包括CCF-A类期刊/会议论文30余篇。担任KDD、AAAI、IJCAI、SIGIR、CIKM、WWW、WSDM、KSEM等国际学术会议程序委员，以及TKDE、PAMI、TKDD、TITS等国际学术期刊审稿人。主持科技部科技创新2030——“新一代人工智能” 重大项目课题，国家自然自然科学基金面上项目《动态图表示学习研究与应用》，国家自然科学基金青年基金《广义时空数据分析与挖掘》，北航青年拔尖人才支持计划项目《面向智慧交通的动态演化预测模型》，并参与国家自然科学基金联合基金，科技部重点研发计划等国家和省部级重点课题10余项。研究成果在国家路网中心等部门得到了很好地应用，获得2021年度中国公路学会科学技术奖特等奖。获得“优秀班主任”和“优秀学业导师”荣誉称号，多次指导博士/硕士研究生获得“国家奖学金”，指导本科科技竞赛，获冯如杯一等奖1项，二等奖3项，被评为“冯如杯”竞赛优秀指导教师。",
-        imgSrc: "http://scse.buaa.edu.cn/__local/F/7D/62/E576FF3F4E9B5D826AC15CC9FBB_5C73DC65_1CB0A.jpg",
-        tags: [
-          "副教授",
-          "博士生导师"
-        ],
-        works: [
-          {
-            title: "Rebalancing Bike Sharing Systems: A Multi-source Data Smart Optimization",
-            href: "https://dl.acm.org/doi/abs/10.1145/2939672.2939776"
-          },
-          {
-            title: "Extended TODIM for multi-criteria group decision making based on unbalanced hesitant fuzzy linguistic term sets",
-            href: "https://www.sciencedirect.com/science/article/abs/pii/S0360835217305168"
-          }
-        ]
-      }
+      // {
+      //   name: "孙磊磊",
+      //   description: "北京航空航天大学计算机学院副教授，博士生导师。2009年、2012年、2017年分别于大连理工大学获得工学学士、硕士、博士学位。2015年9月至2016年8月国家公派赴美国罗格斯新泽西州立大学访问学习，2017年3月至2019年4月于清华大学从事博士后研究工作。主要研究方向为机器学习与数据挖掘，具体包括深度时空学习网络、图神经网络、时序数据分析与挖掘等。已经在数据挖掘领域国际顶级学术期刊TKDE，数据挖掘领域国际顶级学术会议KDD，以及AAAI，SIGIR，WWW，ICDM，TITS等国际学术期刊会议发表学术论文60余篇，包括CCF-A类期刊/会议论文30余篇。担任KDD、AAAI、IJCAI、SIGIR、CIKM、WWW、WSDM、KSEM等国际学术会议程序委员，以及TKDE、PAMI、TKDD、TITS等国际学术期刊审稿人。主持科技部科技创新2030——“新一代人工智能” 重大项目课题，国家自然自然科学基金面上项目《动态图表示学习研究与应用》，国家自然科学基金青年基金《广义时空数据分析与挖掘》，北航青年拔尖人才支持计划项目《面向智慧交通的动态演化预测模型》，并参与国家自然科学基金联合基金，科技部重点研发计划等国家和省部级重点课题10余项。研究成果在国家路网中心等部门得到了很好地应用，获得2021年度中国公路学会科学技术奖特等奖。获得“优秀班主任”和“优秀学业导师”荣誉称号，多次指导博士/硕士研究生获得“国家奖学金”，指导本科科技竞赛，获冯如杯一等奖1项，二等奖3项，被评为“冯如杯”竞赛优秀指导教师。",
+      //   imgSrc: "https://i2.100024.xyz/2023/05/08/h3t97z.webp",
+      //   tags: [
+      //     "副教授",
+      //     "博士生导师"
+      //   ],
+      //   works: [
+      //     {
+      //       title: "Rebalancing Bike Sharing Systems: A Multi-source Data Smart Optimization",
+      //       href: "https://dl.acm.org/doi/abs/10.1145/2939672.2939776"
+      //     },
+      //     {
+      //       title: "Extended TODIM for multi-criteria group decision making based on unbalanced hesitant fuzzy linguistic term sets",
+      //       href: "https://www.sciencedirect.com/science/article/abs/pii/S0360835217305168"
+      //     }
+      //   ]
+      // }
     ],
     works: [
       {
@@ -60,7 +79,7 @@ export const teamInfo = {
           "多关系建模"
         ],
         author: "Jiejie Zhao, Bowen Du, Leilei Sun",
-        authorImgSrc: "http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg",
+        authorImgSrc: "https://i2.100024.xyz/2023/05/08/h2ncfy.webp",
         date: "2019-01",
         href: "https://dl.acm.org/doi/abs/10.1145/3292500.3330861"
       },
@@ -73,7 +92,7 @@ export const teamInfo = {
           "特征融合"
         ],
         author: "Zekun Qiu, Sun, Bowen Du",
-        authorImgSrc: "http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg",
+        authorImgSrc: "https://i2.100024.xyz/2023/05/08/h2ncfy.webp",
         date: "2023-01",
         href: "https://www.sciencedirect.com/science/article/pii/S0020025522014918"
       },
@@ -86,7 +105,7 @@ export const teamInfo = {
           "空间层次结构"
         ],
         author: "Dongjie Wang, Yanyong Huang, Leilei Sun, Bowen Du",
-        authorImgSrc: "http://scse.buaa.edu.cn/__local/4/79/41/C7E8D67ABE9448D65E35C15DDB8_41165F63_B8367.jpg",
+        authorImgSrc: "https://i2.100024.xyz/2023/05/08/h2ncfy.webp",
         date: "2022-09",
         href: "https://link.springer.com/article/10.1007/s10115-022-01801-6"
       }

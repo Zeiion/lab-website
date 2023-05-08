@@ -10,11 +10,12 @@
 //   return <Module />;
 // };
 import { FEIYUN_URL } from '~/consts/index';
+import { FEIYUN_URL_LOGIN } from '~/consts';
 
 export const navList = [
   {
     title: '进入飞云',
-    href: FEIYUN_URL,
+    href: FEIYUN_URL_LOGIN,
     blank: true,
   },
   // {

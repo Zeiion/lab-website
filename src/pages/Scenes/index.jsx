@@ -50,7 +50,7 @@ const Scenes = () => {
         <Carousel>
           {scenes.map(
             (
-              { title, heat, influence, faculty, imgSrc, user, href },
+              { title, heat, influence, faculty, imgSrc, description, href },
               index,
             ) => (
               <ProjectCard
@@ -65,8 +65,7 @@ const Scenes = () => {
                         gap: '2px',
                       }}
                     >
-                      <span data-v-6273df8a="">贡献机构: {faculty}</span>
-                      <span data-v-6273df8a="">负责用户: {user}</span>
+                      <span data-v-6273df8a="">简介: {description}</span>
                       <br />
                       <span data-v-6273df8a="">点击量: {heat}</span>
                       <span data-v-6273df8a="">影响力: {influence}</span>

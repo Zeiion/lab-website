@@ -14,8 +14,8 @@ const HCard = ({
   date = '',
   withButton = false,
   onlineHref = '',
-  quoteCount = Math.ceil(Math.random()*10),
-  downloadCount = Math.ceil(Math.random()*300+100),
+  quoteCount = Math.ceil(Math.random() * 10),
+  downloadCount = Math.ceil(Math.random() * 300 + 100),
 }) => {
   return (
     <div className="h-card">
@@ -61,14 +61,22 @@ const HCard = ({
                 {withButton ? (
                   <>
                     <button className="btn">
-                      <a href={onlineHref}>
+                      <a href={onlineHref} target="_blank">
                         <span>查 看</span>
                       </a>
                     </button>
-                    <span className="ml-1 mr-1 text-gray-100"><FaQuoteRight></FaQuoteRight></span>
-                    <span className="mr-4 text-gray-200 text-lg">{quoteCount}</span>
-                    <span className="ml-1 mr-1 text-gray-100"><FaDownload /></span>
-                    <span className="mr-4 text-gray-200 text-lg">{downloadCount}</span>
+                    <span className="ml-1 mr-1 text-gray-100">
+                      <FaQuoteRight></FaQuoteRight>
+                    </span>
+                    <span className="mr-4 text-lg text-gray-200">
+                      {quoteCount}
+                    </span>
+                    <span className="ml-1 mr-1 text-gray-100">
+                      <FaDownload />
+                    </span>
+                    <span className="mr-4 text-lg text-gray-200">
+                      {downloadCount}
+                    </span>
                   </>
                 ) : (
                   <>
@@ -89,7 +97,7 @@ const HCard = ({
                         {author}
                       </a>
                     </div>
-                  <span className="text-gray-700 mx-1"> - </span>
+                    <span className="mx-1 text-gray-700"> - </span>
                   </>
                 )}
                 <span className="text-gray-500">{date}</span>

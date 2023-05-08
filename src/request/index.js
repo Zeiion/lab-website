@@ -2,6 +2,7 @@ import { BASE_URL, DEFAULT_LIMIT } from '../consts';
 
 const defaultParams = {
   limit: DEFAULT_LIMIT,
+  sortBy: '_searchWeight:desc',
 };
 
 export const get = (url, params = defaultParams) => {

@@ -96,13 +96,13 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/03/wvb2.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kn8bd0.webp',
                 },
               ]}
             />
             <OutlineText
               text="多维数据，海量汇聚"
-              imgSrc="https://i2.100024.xyz/2023/05/03/6v5vq.webp"
+              imgSrc="https://i2.100024.xyz/2023/05/08/pglmj7.webp"
             />
 
             <StickyCard
@@ -116,7 +116,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/03/grx1s.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kg4ak8.webp',
                 },
                 {
                   children: (
@@ -127,7 +127,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/03/hy9kw.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kidpox.webp',
                 },
                 {
                   children: (
@@ -138,7 +138,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/03/j80cs.webp',
+                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kkd1yk.webp',
                 },
               ]}
             />
@@ -154,8 +154,8 @@ const ScrollSection = () => {
                 'Execute Contracts, Share Resources',
               ]}
               imgSrc={[
-                'https://i2.100024.xyz/2023/05/04/ii9ya5.webp',
-                'https://i2.100024.xyz/2023/05/07/ql158o.webp',
+                'https://i2.100024.xyz/2023/05/08/plt3wc.webp',
+                'https://i2.100024.xyz/2023/05/08/kobmji.webp',
                 'https://i2.100024.xyz/2023/05/07/qlh1jb.webp',
               ]}
             />
@@ -203,14 +203,14 @@ const ScrollSection = () => {
             <StickyTexts
               headText="团队带头人"
               text={
-                <div className="flex items-stretch h-64 gap-16 w-[64rem]">
+                <div className="flex items-stretch h-70 gap-16 w-[64rem]">
                   <img
-                    src='https://i2.100024.xyz/2023/05/08/h2ncfy.webp'
+                    src='https://i2.100024.xyz/2023/05/08/gnnfsz.webp'
                     className='flex flex-col object-cover w-64 h-64 rounded-full center'
                   />
                   <div className='flex-1 overflow-auto text-justify h4 opacity-80'>
                     吕卫锋，教授、博士生导师。 1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，软件开发环境国家重点实验室副主任。目前是国家标准委员会专家组成员，国家科技平台标准化技术委员会委员，北京市信息化专家咨询委员会委员，中国电子学会理事会理事。中国软件协会副理事长、秘书长。
-                    主要从事大数据挖掘理论与智慧城市应用研究工作。
+                    主要从事大数据挖掘理论与智慧城市应用研究工作，主要研究方向为海量数据处理、算法及大型信息系统开发方法。获国家科技发明二等奖1项，国家科技进步二等奖1项，省部级科学技术一等奖3项。
                   </div>
                 </div>
               }

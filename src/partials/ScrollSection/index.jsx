@@ -154,7 +154,7 @@ const ScrollSection = () => {
                 'Execute Contracts, Share Resources',
               ]}
               imgSrc={[
-                'https://i2.100024.xyz/2023/05/08/plt3wc.webp',
+                'https://i2.100024.xyz/2023/05/08/rbwb23.webp',
                 'https://i2.100024.xyz/2023/05/08/kobmji.webp',
                 'https://i2.100024.xyz/2023/05/07/qlh1jb.webp',
               ]}
@@ -206,7 +206,7 @@ const ScrollSection = () => {
                 <div className="flex items-stretch h-70 gap-16 w-[64rem]">
                   <img
                     src='https://i2.100024.xyz/2023/05/08/gnnfsz.webp'
-                    className='flex flex-col object-cover w-64 h-64 rounded-full center'
+                    className='flex flex-col object-cover w-64 h-64 rounded-3xl center'
                   />
                   <div className='flex-1 overflow-auto text-justify h4 opacity-80'>
                     吕卫锋，教授、博士生导师。 1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，软件开发环境国家重点实验室副主任。目前是国家标准委员会专家组成员，国家科技平台标准化技术委员会委员，北京市信息化专家咨询委员会委员，中国电子学会理事会理事。中国软件协会副理事长、秘书长。

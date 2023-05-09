@@ -10,6 +10,7 @@ import StickyTextImgs from './components/StickyTextImgs';
 import StickyTexts from './components/StickyTexts';
 import TeamInfo from './components/TeamInfo';
 import ImgGallery from './components/ImgGallery';
+    import StickyTextImgDescs from './components/StickyTextImgDescs';
 
 const ScrollSection = () => {
   const cardViewFn = () => {
@@ -142,16 +143,16 @@ const ScrollSection = () => {
                 },
               ]}
             />
-            <StickyTextImgs
+            <StickyTextImgDescs
               texts={[
                 '智能算法，智慧互联',
                 '合约图谱，知识互通',
                 '合约执行，资源共享',
               ]}
               subTexts={[
-                'Artificial Intelligence, Incredible Interconnection',
-                'Contract Diagrams, Share Knowledge',
-                'Execute Contracts, Share Resources',
+                '结合人工智能、云计算等技术，通过高效算法实现城市交通的优化调度和智能管控。平台集成了多种智慧交通算法，如路况预测、拥堵识别、优化路径规划等，可快速响应交通事件，提升路网运行效率，改善出行体验，为城市发展注入新动能。',
+                '平台突出了知识共享和沉淀，为用户提供优质、可持续的智能交通解决方案，助力智慧城市建设和交通管理优化。我们致力于打造一个开放、协作的平台，让不同领域的专家和企业间能够自由交流和共享资源，实现更好的互通和合作。',
+                '通过高效可靠的交通数据分析和预测功能提供算法合约服务，实现用户需求与算法执行的无缝衔接，同时通过资源共享的方式降低了用户使用成本，确保每个用户都能快速地获得所需结果。平台维护算法执行过程中的稳定性和可靠性，为用户提供优质的交通智能化解决方案。',
               ]}
               imgSrc={[
                 'https://i2.100024.xyz/2023/05/08/rbwb23.webp',

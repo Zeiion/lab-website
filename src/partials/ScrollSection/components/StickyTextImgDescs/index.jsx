@@ -25,7 +25,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
         scrub: 1,
       },
       scale: 0.7,
-      y: -100,
+      y: -70,
     });
     gsap.to(text1Ref.current, {
       scrollTrigger: {
@@ -121,7 +121,10 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
     init();
   }, []);
   return (
-    <section className="section-text-view" data-component="sticky-text-img-descs">
+    <section
+      className="section-text-view"
+      data-component="sticky-text-img-descs"
+    >
       <div className="sticky-wrapper">
         <div className="sticky-content" ref={wrapperRef}>
           <div className="section-wrapper">
@@ -158,8 +161,11 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
                 />
               ))}
             </div>
-            
-            <div className="opacity-0 section-text-wrapper-bottom" ref={text2Ref}>
+
+            <div
+              className="opacity-0 section-text-wrapper-bottom"
+              ref={text2Ref}
+            >
               {subTexts.map((subText, index) => (
                 <h5
                   className="opacity-0 h5 show-text-2"

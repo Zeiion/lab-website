@@ -68,12 +68,9 @@ function HeroHome() {
               平台简介
             </h1>
             <p
-              className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
+              className="mb-8 text-xl text-justify text-gray-400 indent-10"
               data-aos="fade-up"
               data-aos-delay="200"
-              style={{
-                textIndent: '2.5rem',
-              }}
             >
               飞云集智——城市交通大数据共享平台是一个集成多种数据源、丰富模型、多样应用场景的智慧平台。
               本平台共享了大量来自不同机构的高质量数据集，并提供算法辅助使用；同时展示了丰富的由多团队开发的高性能、应用广泛的优质典型模型；

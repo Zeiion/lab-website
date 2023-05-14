@@ -119,8 +119,24 @@ const ScrollSection = () => {
               text="多维数据，海量汇聚"
               imgSrc="https://i2.100024.xyz/2023/05/08/pglmj7.webp"
             />
-
-            <StickyCard
+            <StickyTextImgDescs
+              texts={[
+                '打造知识流通环境',
+                '促进模型快速落地',
+                '搭建学者交流平台',
+              ]}
+              subTexts={[
+                '集成平台汇聚多机构的交通数据和研究成果，通过知识流通的方式实现了高效协同。平台上的数据分析和预测算法可以帮助城市规划者更准确地评估和决策公共交通政策，打造一个知识流通环境，促进交流与合作，致力于推动智慧交通技术的发展。',
+                '本集成平台提供了丰富的算法模型和优质数据，支持模型落地应用于实际交通场景。通过紧密结合模型和落地，本平台为城市交通管理带来更多的价值和效益，使交通管理更加智能化、高效化和精准化。',
+                '本集成平台不仅是一个数据整合和算法优化的工具，也是一个学者交流和知识共享的平台。平台汇聚了多机构的研究成果和数据，为学术界提供了公开、透明、高质量的交通数据资源，致力于促进交通领域专业人士之间的合作和创新',
+              ]}
+              imgSrc={[
+                'https://i2.100024.xyz/2023/05/14/s5h093.webp',
+                'https://i2.100024.xyz/2023/05/14/s6l2bs.webp',
+                'https://i2.100024.xyz/2023/05/08/kkd1yk.webp'
+              ]}
+            />
+            {/* <StickyCard
               list={[
                 {
                   children: (
@@ -156,7 +172,7 @@ const ScrollSection = () => {
                   imgSrc: 'https://i2.100024.xyz/2023/05/08/kkd1yk.webp',
                 },
               ]}
-            />
+            /> */}
             <StickyTextImgDescs
               texts={[
                 '智能算法，智慧互联',
@@ -223,7 +239,7 @@ const ScrollSection = () => {
                     src='https://i2.100024.xyz/2023/05/08/gnnfsz.webp'
                     className='flex flex-col object-cover w-64 h-64 rounded-3xl center'
                   />
-                  <div className='flex-1 overflow-auto text-justify h4 opacity-80'>
+                  <div className='flex-1 overflow-auto text-justify h4 opacity-80 indent-12'>
                     吕卫锋，教授、博士生导师。 1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，软件开发环境国家重点实验室副主任。目前是国家标准委员会专家组成员，国家科技平台标准化技术委员会委员，北京市信息化专家咨询委员会委员，中国电子学会理事会理事。中国软件协会副理事长、秘书长。
                     主要从事大数据挖掘理论与智慧城市应用研究工作，主要研究方向为海量数据处理、算法及大型信息系统开发方法。获国家科技发明二等奖1项，国家科技进步二等奖1项，省部级科学技术一等奖3项。
                   </div>

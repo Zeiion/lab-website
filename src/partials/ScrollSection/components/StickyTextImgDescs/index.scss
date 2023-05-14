@@ -1,6 +1,6 @@
 [data-component='sticky-text-img-descs'].section-text-view {
   padding-top: 10vh;
-  margin-bottom: 0vh;
+  margin-bottom: 30vh;
   .sticky-wrapper {
     height: 588.333333vw;
     position: relative;
@@ -12,7 +12,7 @@
     top: 10vh;
   }
   .section-img-wrapper {
-    width: 70vw;
+    width: 80vw;
     height: 50vh;
     img {
       position: absolute;
@@ -25,7 +25,7 @@
     height: 20vh;
     h1 {
       position: absolute;
-      top: 20vh;
+      top: 0;
       width: 100%;
     }
   }
@@ -47,8 +47,8 @@
   }
   h1 {
     text-align: center;
-    font-size: 60px;
-    padding: 80px;
+    font-size: 55px;
+    padding: 5vh;
   }
 
   img {

@@ -4,12 +4,12 @@ import { getRandomPic } from '~/utils/GetRandomPic';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.scss';
 gsap.config({
-  markers: true
+  markers: true,
 });
 
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
-console.log(screenWidth, ", ", screenHeight);
+console.log(screenWidth, ', ', screenHeight);
 
 const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
   const wrapperRef = useRef(null);
@@ -31,7 +31,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
         scrub: 1,
       },
       opacity: 0.7,
-      y: "-7vh",
+      y: '-7vh',
     });
     gsap.to(imgWrapperRef.current, {
       scrollTrigger: {
@@ -40,7 +40,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
         end: 'bottom+=100',
         scrub: 2,
       },
-      y: "-14vh",
+      y: '-14vh',
       scale: 0.7,
       opacity: 0.7,
     });
@@ -51,7 +51,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
         end: 'bottom+=500',
         scrub: 3,
       },
-      y: "-55vh",
+      y: '-55vh',
       opacity: 0.3,
     });
 
@@ -59,8 +59,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (500 + 4000 * index),
-          end: 'bottom top-=' + (4000 * index + 100),
+          start: 'bottom top-=' + (500 + 2000 * index),
+          end: 'bottom top-=' + (2000 * index + 100),
           scrub: 1,
         },
         opacity: 1,
@@ -70,8 +70,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (500 + 4000 * index),
-          end: 'bottom top-=' + (4000 * index + 100),
+          start: 'bottom top-=' + (500 + 2000 * index),
+          end: 'bottom top-=' + (2000 * index + 100),
           scrub: 1,
         },
         opacity: 0,
@@ -83,32 +83,32 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(img, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (1000 + 4000 * index),
-          end: 'bottom top-=' + (4000 * index - 500),
+          start: 'bottom top-=' + (1000 + 2000 * index),
+          end: 'bottom top-=' + (2000 * index - 500),
           scrub: 1,
         },
         opacity: 1,
-        // y: effectOffset,
+        y: effectOffset,
       });
       index++;
       gsap.to(img, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (1000 + 4000 * index),
-          end: 'bottom top-=' + (4000 * index - 500),
+          start: 'bottom top-=' + (1000 + 2000 * index),
+          end: 'bottom top-=' + (2000 * index - 500),
           scrub: 1,
         },
         opacity: 0,
-        // y: -effectOffset,
+        y: -effectOffset,
       });
     });
-    
+
     text2Refs.current.forEach((text, index) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (1000 + 4000 * index),
-          end: 'bottom top-=' + (4000 * index - 500),
+          start: 'bottom top-=' + (1000 + 2000 * index),
+          end: 'bottom top-=' + (2000 * index - 500),
           scrub: 1,
         },
         opacity: 1,
@@ -118,8 +118,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (1000 + 4000 * index),
-          end: 'bottom top-=' + (4000 * index - 500),
+          start: 'bottom top-=' + (1000 + 2000 * index),
+          end: 'bottom top-=' + (2000 * index - 500),
           scrub: 1,
         },
         opacity: 0,
@@ -158,7 +158,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
                 </h1>
               ))}
             </div>
-            <div className="section-img-wrapper opacity-0 " ref={imgWrapperRef}>
+            <div className="opacity-0 section-img-wrapper " ref={imgWrapperRef}>
               {imgSrc.map((src, index) => (
                 <img
                   ref={(el) => (imgRefs.current[index] = el)}
@@ -168,6 +168,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
                   className="sticky-text-image object-cover w-full h-[40vh] opacity-0 "
                   style={{
                     opacity: index === 0 ? 1 : 0,
+                    top: -effectOffset,
                   }}
                 />
               ))}
@@ -179,8 +180,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
             >
               {subTexts.map((subText, index) => (
                 <h5
-                key={index}
-                className="opacity-0 h5 indent-10"
+                  key={index}
+                  className="opacity-0 h5 indent-10"
                   style={{
                     left: -effectOffset,
                   }}

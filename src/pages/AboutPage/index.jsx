@@ -9,7 +9,7 @@ import Timeline from '~/components/Timeline';
 import TagList from '~/components/TagList';
 import HeroImage from '~/images/hero-image-01.jpg';
 import TeamSection from '~/partials/TeamSection';
-import { teamInfo } from '~/consts/teamInfo'
+import { teamInfo } from '~/consts/teamInfo';
 // TODO reuse
 const insList = [
   {
@@ -21,7 +21,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:43',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/04/98ma5.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/04/98ma5.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
@@ -44,7 +44,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2022-07-04 18:30:29',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/03/12t396m.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/03/12t396m.webp',
     contribution: 71,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -66,7 +66,7 @@ const insList = [
       '北京工业大学是一所以工为主，工、理、经、管、文、法、艺术、教育相结合的多科性市属重点大学，是国家“世界一流学科建设高校”、国家“211工程”建设高校',
     register_time: '2021-09-07 22:25:31',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/04/ad93x.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/04/ad93x.webp',
     contribution: 0,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -89,7 +89,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2021-11-22 18:22:08',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/04/ckj90.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/04/ckj90.webp',
     contribution: 2,
     node_type: '科研院校-数据节点',
     user_count: 1,
@@ -112,7 +112,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2021-07-06 18:17:25',
     merit_count: 6,
-    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/03/12x39p9.webp',
     contribution: 17,
     node_type: '科研院校-数据节点',
     user_count: 2,
@@ -135,7 +135,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2022-08-16 22:35:23',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/03/12x39p9.webp',
     contribution: 19,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -158,7 +158,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2022-02-06 18:25:54',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/03/12zelsi.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/03/12zelsi.webp',
     contribution: 7,
     node_type: '公司-算法节点',
     user_count: 1,
@@ -183,7 +183,7 @@ const insList = [
     owner_phone: '18811591037',
     register_time: '2022-10-25 15:46:44',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/04/fnkdt.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/04/fnkdt.webp',
     contribution: 53,
     node_type: '公司-混合节点',
     user_count: 1,
@@ -206,7 +206,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2021-11-03 18:20:10',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/04/b23n0.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/04/b23n0.webp',
     contribution: 5,
     node_type: '公司-数据节点',
     user_count: 1,
@@ -230,7 +230,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2022-08-16 22:37:41',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/03/12x39p9.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/03/12x39p9.webp',
     contribution: 7,
     node_type: '科研院校-混合节点',
     user_count: 1,
@@ -254,7 +254,7 @@ const insList = [
     owner_phone: '12345678910',
     register_time: '2021-12-24 18:22:49',
     merit_count: 0,
-    background_picture: 'https://i2.100024.xyz/2023/04/04/d5q1k.webp',
+    background_picture: 'http://81.70.246.244:9126/i/2023/04/04/d5q1k.webp',
     contribution: 20,
     node_type: '公司-混合节点',
     user_count: 1,
@@ -326,7 +326,7 @@ const AboutPage = () => {
         >
           {teamInfo?.description}
         </p>
-        
+
         <h3 className="h3 mt-20">研究方向</h3>
         <div className="mt-5 mb-16">
           <TagList list={teamInfo?.researchDirections || []} size="medium" />
@@ -364,44 +364,58 @@ const AboutPage = () => {
         <h3 className="h3 mt-20">合作团队</h3>
         <TeamSection showDetail={false} />
         <h3 className="h3 mt-20 mb-8">鸣谢</h3>
-          <p
-            className="mb-16 text-xl text-justify text-gray-400 text-indent-2 "
-            data-aos="fade-up"
-            data-aos-delay="200"
-            style={{
-              textIndent: '2.5rem',
-            }}
-          >
-            在此鸣谢感谢所有为城市交通大数据集成平台所做出的贡献的合作伙伴和团队，包括但不限于：
-              各大数据源提供者，他们为我们提供了海量、高质量的城市交通数据；
-              各位专业的应用场景开发者，他们基于平台提供的数据和工具，开发了各种实用的、创新的交通应用场景；
-              各位模型开发者，他们通过对数据的深入挖掘和分析，开发出了一系列高效、准确的交通预测、优化模型；
-              平台开发及维护团队，他们投入了大量心血，精益求精地打造了这个平台，并且持续保障着平台的稳定运行。
-              正是由于以上各方的努力和支持，才让城市交通大数据集成平台得以不断壮大和完善，从而更好地为广大用户服务。
-          </p>
-          <p
-            className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
-            data-aos="fade-up"
-            data-aos-delay="200"
-            style={{
-              textIndent: '2.5rem',
-            }}
-          >
-            Thank you to all partners and teams who have made contributions to the urban transportation big data integration platform, including but not limited to: major data source providers who have provided us with massive and high-quality urban transportation data; Professional application scenario developers have developed various practical and innovative transportation application scenarios based on the data and tools provided by the platform; Dear model developers, they have developed a series of efficient and accurate traffic prediction and optimization models through in-depth mining and analysis of data; The platform development and maintenance team has invested a lot of effort and excellence to build this platform, and continuously ensures its stable operation. It is precisely due to the efforts and support of all parties mentioned above that the urban transportation big data integration platform has been continuously strengthened and improved, thereby better serving the vast number of users.
-          </p>
-          <div className="relative max-w-4xl mx-auto text-center h-[36rem] mt-20">
-                {pos.map((p, index) => {
-                  return (
-                    <img
-                      key={index}
-                      className="absolute"
-                      src={insList[index].background_picture}
-                      style={p}
-                      data-aos={p.aos}
-                    />
-                  );
-                })}
-              </div>
+        <p
+          className="mb-16 text-xl text-justify text-gray-400 text-indent-2 "
+          data-aos="fade-up"
+          data-aos-delay="200"
+          style={{
+            textIndent: '2.5rem',
+          }}
+        >
+          在此鸣谢感谢所有为城市交通大数据集成平台所做出的贡献的合作伙伴和团队，包括但不限于：
+          各大数据源提供者，他们为我们提供了海量、高质量的城市交通数据；
+          各位专业的应用场景开发者，他们基于平台提供的数据和工具，开发了各种实用的、创新的交通应用场景；
+          各位模型开发者，他们通过对数据的深入挖掘和分析，开发出了一系列高效、准确的交通预测、优化模型；
+          平台开发及维护团队，他们投入了大量心血，精益求精地打造了这个平台，并且持续保障着平台的稳定运行。
+          正是由于以上各方的努力和支持，才让城市交通大数据集成平台得以不断壮大和完善，从而更好地为广大用户服务。
+        </p>
+        <p
+          className="mb-8 text-xl text-justify text-gray-400 text-indent-2 "
+          data-aos="fade-up"
+          data-aos-delay="200"
+          style={{
+            textIndent: '2.5rem',
+          }}
+        >
+          Thank you to all partners and teams who have made contributions to the
+          urban transportation big data integration platform, including but not
+          limited to: major data source providers who have provided us with
+          massive and high-quality urban transportation data; Professional
+          application scenario developers have developed various practical and
+          innovative transportation application scenarios based on the data and
+          tools provided by the platform; Dear model developers, they have
+          developed a series of efficient and accurate traffic prediction and
+          optimization models through in-depth mining and analysis of data; The
+          platform development and maintenance team has invested a lot of effort
+          and excellence to build this platform, and continuously ensures its
+          stable operation. It is precisely due to the efforts and support of
+          all parties mentioned above that the urban transportation big data
+          integration platform has been continuously strengthened and improved,
+          thereby better serving the vast number of users.
+        </p>
+        <div className="relative max-w-4xl mx-auto text-center h-[36rem] mt-20">
+          {pos.map((p, index) => {
+            return (
+              <img
+                key={index}
+                className="absolute"
+                src={insList[index].background_picture}
+                style={p}
+                data-aos={p.aos}
+              />
+            );
+          })}
+        </div>
       </PageTemplate>
     </div>
   );

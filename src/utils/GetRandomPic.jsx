@@ -24,20 +24,20 @@ const imgList = [
 ];
 
 export const trafficImgList = [
-  "https://i2.100024.xyz/2023/04/07/1yhrzk.webp" ,
-  "https://i2.100024.xyz/2023/04/07/1yilth.webp",
-  "https://i2.100024.xyz/2023/04/07/1yj3zh.webp",
-  "https://i2.100024.xyz/2023/04/07/1yjbbv.webp",
-  "https://i2.100024.xyz/2023/04/07/1yjt0m.webp",
-  "https://i2.100024.xyz/2023/04/07/1ykg2p.webp",
-  "https://i2.100024.xyz/2023/04/07/1ykskq.webp",
-  "https://i2.100024.xyz/2023/04/07/1yl57p.webp",
-  "https://i2.100024.xyz/2023/04/07/1ylfkj.webp",
-  "https://i2.100024.xyz/2023/04/07/1yupyt.webp",
-  "https://i2.100024.xyz/2023/04/07/1yuyzz.webp",
-  "https://i2.100024.xyz/2023/04/07/1ywd3k.webp",
-  "https://i2.100024.xyz/2023/04/07/1yx48m.webp",
-  "https://i2.100024.xyz/2023/04/07/1yxwxu.webp",
+  'http://81.70.246.244:9126/i/2023/04/07/1yhrzk.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yilth.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yj3zh.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yjbbv.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yjt0m.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1ykg2p.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1ykskq.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yl57p.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1ylfkj.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yupyt.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yuyzz.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1ywd3k.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yx48m.webp',
+  'http://81.70.246.244:9126/i/2023/04/07/1yxwxu.webp',
 ];
 export const getIndexPic = (index) => {
   const idx = Math.floor(index % imgList.length);
@@ -46,11 +46,12 @@ export const getIndexPic = (index) => {
 
 export const getAuthorImgSrc = (author) => {
   if (author === '中山大学') return 'https://www.sysu.edu.cn/images/logo.png';
-  if (author === '北京工业大学') return 'https://th.bing.com/th/id/OIP.atQ5roc3bgb8kvHNJB0whgAAAA?pid=ImgDet&rs…';
-  if (author === '中国科学院自动化研究所') return 'http://www.ia.cas.cn/images/logo.png';
-  else return 'https://i2.100024.xyz/2023/04/14/bygr9.webp'
+  if (author === '北京工业大学')
+    return 'https://th.bing.com/th/id/OIP.atQ5roc3bgb8kvHNJB0whgAAAA?pid=ImgDet&rs…';
+  if (author === '中国科学院自动化研究所')
+    return 'http://www.ia.cas.cn/images/logo.png';
+  else return 'http://81.70.246.244:9126/i/2023/04/14/bygr9.webp';
 };
-
 
 export const getRandomPic = () => {
   const idx = Math.floor(Math.random() * imgList.length);
@@ -60,9 +61,9 @@ export const getRandomPic = () => {
 export const getTrafficPic = (index) => {
   const idx = Math.floor(index % trafficImgList.length);
   return trafficImgList[idx];
-}
+};
 
-export const getTrafficPicRandom = () => {  
+export const getTrafficPicRandom = () => {
   const idx = Math.floor(Math.random() * trafficImgList.length);
   return trafficImgList[idx];
-}
+};

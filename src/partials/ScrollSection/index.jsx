@@ -10,7 +10,7 @@ import StickyTextImgs from './components/StickyTextImgs';
 import StickyTexts from './components/StickyTexts';
 import TeamInfo from './components/TeamInfo';
 import ImgGallery from './components/ImgGallery';
-    import StickyTextImgDescs from './components/StickyTextImgDescs';
+import StickyTextImgDescs from './components/StickyTextImgDescs';
 
 const ScrollSection = () => {
   const cardViewFn = () => {
@@ -66,7 +66,7 @@ const ScrollSection = () => {
             <StickyTextImg
               text="飞云集智"
               subText="交通大数据共享开放平台"
-              imgSrc="https://i2.100024.xyz/2023/05/02/12pfkjy.webp"
+              imgSrc="http://81.70.246.244:9126/i/2023/05/02/12pfkjy.webp"
             />
             <StickyTextImgDescs
               texts={[
@@ -78,8 +78,8 @@ const ScrollSection = () => {
                 '平台汇聚行业内优质数据，通过动态发布公开数据，为交通领域带来更加精准、全面的分析和应用。平台利用先进的数据处理和分析技术，能够实现交通拥堵预测、车辆识别跟踪、路况分析等功能。在保障数据安全的同时，平台还提供丰富的数据接口和应用工具，满足用户不同场景下的需求，为行业创造更大的价值。',
               ]}
               imgSrc={[
-                'https://i2.100024.xyz/2023/05/09/n5j0ar.webp',
-                'https://i2.100024.xyz/2023/05/09/m5e782.webp',
+                'http://81.70.246.244:9126/i/2023/05/09/n5j0ar.webp',
+                'http://81.70.246.244:9126/i/2023/05/09/m5e782.webp',
               ]}
             />
             {/* <StickyTextCard
@@ -96,7 +96,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/02/13083ew.webp',
+                  imgSrc: 'http://81.70.246.244:9126/i/2023/05/02/13083ew.webp',
                 },
                 {
                   children: (
@@ -111,13 +111,13 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kn8bd0.webp',
+                  imgSrc: 'http://81.70.246.244:9126/i/2023/05/08/kn8bd0.webp',
                 },
               ]}
             /> */}
             <OutlineText
               text="多维数据，海量汇聚"
-              imgSrc="https://i2.100024.xyz/2023/05/08/pglmj7.webp"
+              imgSrc="http://81.70.246.244:9126/i/2023/05/08/pglmj7.webp"
             />
             <StickyTextImgDescs
               texts={[
@@ -131,9 +131,9 @@ const ScrollSection = () => {
                 '本集成平台不仅是一个数据整合和算法优化的工具，也是一个学者交流和知识共享的平台。平台汇聚了多机构的研究成果和数据，为学术界提供了公开、透明、高质量的交通数据资源，致力于促进交通领域专业人士之间的合作和创新',
               ]}
               imgSrc={[
-                'https://i2.100024.xyz/2023/05/14/s5h093.webp',
-                'https://i2.100024.xyz/2023/05/14/s6l2bs.webp',
-                'https://i2.100024.xyz/2023/05/08/kkd1yk.webp'
+                'http://81.70.246.244:9126/i/2023/05/14/s5h093.webp',
+                'http://81.70.246.244:9126/i/2023/05/14/s6l2bs.webp',
+                'http://81.70.246.244:9126/i/2023/05/08/kkd1yk.webp',
               ]}
             />
             {/* <StickyCard
@@ -147,7 +147,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kg4ak8.webp',
+                  imgSrc: 'http://81.70.246.244:9126/i/2023/05/08/kg4ak8.webp',
                 },
                 {
                   children: (
@@ -158,7 +158,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kidpox.webp',
+                  imgSrc: 'http://81.70.246.244:9126/i/2023/05/08/kidpox.webp',
                 },
                 {
                   children: (
@@ -169,7 +169,7 @@ const ScrollSection = () => {
                       </span>
                     </div>
                   ),
-                  imgSrc: 'https://i2.100024.xyz/2023/05/08/kkd1yk.webp',
+                  imgSrc: 'http://81.70.246.244:9126/i/2023/05/08/kkd1yk.webp',
                 },
               ]}
             /> */}
@@ -185,9 +185,9 @@ const ScrollSection = () => {
                 '通过高效可靠的交通数据分析和预测功能提供算法合约服务，实现用户需求与算法执行的无缝衔接，同时通过资源共享的方式降低了用户使用成本，确保每个用户都能快速地获得所需结果。平台维护算法执行过程中的稳定性和可靠性，为用户提供优质的交通智能化解决方案。',
               ]}
               imgSrc={[
-                'https://i2.100024.xyz/2023/05/08/rbwb23.webp',
-                'https://i2.100024.xyz/2023/05/08/kobmji.webp',
-                'https://i2.100024.xyz/2023/05/07/qlh1jb.webp',
+                'http://81.70.246.244:9126/i/2023/05/08/rbwb23.webp',
+                'http://81.70.246.244:9126/i/2023/05/08/kobmji.webp',
+                'http://81.70.246.244:9126/i/2023/05/07/qlh1jb.webp',
               ]}
             />
             <div></div>
@@ -221,7 +221,7 @@ const ScrollSection = () => {
             /> */}
             <OutlineText
               text="持续共享数据，学术资源发布"
-              imgSrc="https://i2.100024.xyz/2023/04/14/jozbu.webp"
+              imgSrc="http://81.70.246.244:9126/i/2023/04/14/jozbu.webp"
             />
 
             <StickyTexts headText="敬请关注" text="..." />
@@ -236,11 +236,12 @@ const ScrollSection = () => {
               text={
                 <div className="flex items-stretch h-70 gap-16 w-[64rem]">
                   <img
-                    src='https://i2.100024.xyz/2023/05/08/gnnfsz.webp'
-                    className='flex flex-col object-cover w-64 h-64 rounded-3xl center'
+                    src="http://81.70.246.244:9126/i/2023/05/08/gnnfsz.webp"
+                    className="flex flex-col object-cover w-64 h-64 rounded-3xl center"
                   />
-                  <div className='flex-1 overflow-auto text-justify h4 opacity-80 indent-12'>
-                    吕卫锋，教授、博士生导师。 1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，软件开发环境国家重点实验室副主任。目前是国家标准委员会专家组成员，国家科技平台标准化技术委员会委员，北京市信息化专家咨询委员会委员，中国电子学会理事会理事。中国软件协会副理事长、秘书长。
+                  <div className="flex-1 overflow-auto text-justify h4 opacity-80 indent-12">
+                    吕卫锋，教授、博士生导师。
+                    1998年博士毕业于北京航空航天大学计算机系。现任北京航空航天大学副校长，软件开发环境国家重点实验室副主任。目前是国家标准委员会专家组成员，国家科技平台标准化技术委员会委员，北京市信息化专家咨询委员会委员，中国电子学会理事会理事。中国软件协会副理事长、秘书长。
                     主要从事大数据挖掘理论与智慧城市应用研究工作，主要研究方向为海量数据处理、算法及大型信息系统开发方法。获国家科技发明二等奖1项，国家科技进步二等奖1项，省部级科学技术一等奖3项。
                   </div>
                 </div>

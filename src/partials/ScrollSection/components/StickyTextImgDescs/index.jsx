@@ -3,13 +3,7 @@ import { Expo, gsap } from 'gsap';
 import { getRandomPic } from '~/utils/GetRandomPic';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.scss';
-gsap.config({
-  markers: true,
-});
 
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-console.log(screenWidth, ', ', screenHeight);
 
 const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
   const wrapperRef = useRef(null);
@@ -20,7 +14,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
   const imgWrapperRef = useRef(null);
   const text2Ref = useRef(null);
   const num = texts.length;
-  const effectOffset = 20;
+  const effectOffset = 30;
 
   const init = () => {
     gsap.to(text1Ref.current, {
@@ -59,8 +53,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (200 + 1000 * index),
-          end: 'bottom top-=' + (1000 * index -1000),
+          start: 'bottom top-=' + (400 + 1500 * index),
+          end: 'bottom top-=' + (1500 * index - 1100),
           scrub: 1,
         },
         opacity: 1,
@@ -70,8 +64,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (200 + 1000 * index),
-          end: 'bottom top-=' + (1000 * index -1000),
+          start: 'bottom top-=' + (400 + 1500 * index),
+          end: 'bottom top-=' + (1500 * index - 1100),
           scrub: 1,
         },
         opacity: 0,
@@ -83,23 +77,27 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(img, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (200 + 1000 * index),
-          end: 'bottom top-=' + (1000 * index -1000),
+          start: 'bottom top-=' + (400 + 1500 * index),
+          end: 'bottom top-=' + (1500 * index - 1100),
           scrub: 1,
         },
         opacity: 1,
         y: effectOffset,
+        x: effectOffset,
+        scale: 1,
       });
       index++;
       gsap.to(img, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (200 + 1000 * index),
-          end: 'bottom top-=' + (1000 * index -1000),
+          start: 'bottom top-=' + (400 + 1500 * index),
+          end: 'bottom top-=' + (1500 * index - 1100),
           scrub: 1,
         },
+        scale: 0.7,
         opacity: 0,
         y: -effectOffset,
+        x: -effectOffset,
       });
     });
 
@@ -107,8 +105,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (200 + 1000 * index),
-          end: 'bottom top-=' + (1000 * index -1000),
+          start: 'bottom top-=' + (400 + 1500 * index),
+          end: 'bottom top-=' + (1500 * index - 1100),
           scrub: 1,
         },
         opacity: 1,
@@ -118,8 +116,8 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       gsap.to(text, {
         scrollTrigger: {
           trigger: text1Ref.current,
-          start: 'bottom top-=' + (200 + 1000 * index),
-          end: 'bottom top-=' + (1000 * index -1000),
+          start: 'bottom top-=' + (400 + 1500 * index),
+          end: 'bottom top-=' + (1500 * index - 1100),
           scrub: 1,
         },
         opacity: 0,
@@ -135,7 +133,7 @@ const StickyTextImgDescs = ({ texts = [], subTexts = [], imgSrc = [] }) => {
       className="section-text-view"
       data-component="sticky-text-img-descs"
     >
-      <div className="sticky-wrapper" style={{ height: `${ 200 * num }vh` }}>
+      <div className="sticky-wrapper" style={{ height: `${ 240 * num }vh` }}>
         <div className="sticky-content" ref={wrapperRef}>
           <div className="section-wrapper">
             {/*  <img

@@ -11,6 +11,7 @@ import StickyTexts from './components/StickyTexts';
 import TeamInfo from './components/TeamInfo';
 import ImgGallery from './components/ImgGallery';
 import StickyTextImgDescs from './components/StickyTextImgDescs';
+import { FEIYUN_URL } from '~/consts/index';
 
 const ScrollSection = () => {
   const cardViewFn = () => {
@@ -224,13 +225,20 @@ const ScrollSection = () => {
               imgSrc="http://81.70.246.244:9126/i/2023/04/14/jozbu.webp"
             />
 
-            <StickyTexts headText="敬请关注" text="..." />
-
-            <ImgGallery
+            {/* <StickyTexts headText="敬请关注" text="..." /> */}
+            <StickyTexts
+              headText={
+                <a target="_blank" href={FEIYUN_URL} className="h1">
+                  Powered By <span>Feiyun</span>
+                </a>
+              }
+              text={<span>↓</span>}
+            />
+            {/* <ImgGallery
               imgList={Array(7)
                 .fill(0)
                 .map(() => getRandomPic())}
-            />
+            /> */}
             <StickyTexts
               headText="团队带头人"
               text={

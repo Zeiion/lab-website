@@ -6,11 +6,13 @@ specifiers:
   aos: ^3.0.0-beta.6
   autoprefixer: ^10.4.13
   chart.js: ^4.2.1
+  gsap: ^3.11.5
   postcss: ^8.4.21
   prop-types: ^15.8.1
   react: ^18.2.0
   react-chartjs-2: ^5.2.0
   react-dom: ^18.2.0
+  react-icons: ^4.8.0
   react-router-dom: ^6.8.1
   react-transition-group: ^4.4.5
   sass: ^1.59.3
@@ -21,10 +23,12 @@ dependencies:
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
   aos: 3.0.0-beta.6
   chart.js: 4.2.1
+  gsap: 3.11.5
   prop-types: 15.8.1
   react: 18.2.0
   react-chartjs-2: 5.2.0_t5yjg6ab35jnsudnh2qdighszm
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.8.0_react@18.2.0
   react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
   react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
   sass: 1.60.0
@@ -845,6 +849,10 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /gsap/3.11.5:
+    resolution: {integrity: sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==}
+    dev: false
+
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
     engines: {node: '>=4'}
@@ -1091,6 +1099,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons/4.8.0_react@18.2.0:
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

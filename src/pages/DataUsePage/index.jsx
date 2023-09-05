@@ -30,7 +30,7 @@ ChartJS.register(
   Tooltip,
   Legend,
   PointElement,
-  LineElement
+  LineElement,
 );
 const chartConfig = (title) => {
   return {
@@ -142,7 +142,7 @@ function Puzzle() {
   //     title: 'Large-scale Traffic Speed Data Set',
   //     description:
   //       'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
-  //     imgSrc: 'https://i2.100024.xyz/2023/04/07/1ywd3k.webp',
+  //     imgSrc: 'http://81.70.246.244:9126/i/2023/04/07/1ywd3k.webp',
   //     tags: ['Openits'],
   //     author: 'OpenITs',
   //     authorImgSrc:
@@ -310,7 +310,7 @@ function Puzzle() {
     },
     20,
     [status],
-    status === 2
+    status === 2,
   );
   const { dataState: chartData2 } = useChartTransition(
     {
@@ -321,20 +321,20 @@ function Puzzle() {
     },
     40,
     [status],
-    status === 2
+    status === 2,
   );
 
   const { dataState: chartData3 } = useChartTransition(
     chart3,
     100,
     [status],
-    status === 2
+    status === 2,
   );
   const { dataState: chartData4 } = useChartTransition(
     chart4,
     200,
     [status],
-    status === 2
+    status === 2,
   );
 
   return (

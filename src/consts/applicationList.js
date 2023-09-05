@@ -13,6 +13,7 @@ export const parseApplicationList = () => {
       href: item.link,
       data: item.data,
       model: item.model,
+      description: item.description,
     };
   });
   return list;
@@ -22,9 +23,7 @@ export const parseApplicationList2 = () => {
   const list = applicationList.map((item) => {
     return {
       title: item.name,
-      description: `使用的数据集: \n${item.data
-        .slice(0, 10)
-        .join(', ')}...\n使用的模型: ${item.model.slice(0, 5).join(', ')}...`,
+      description: '简介:' + item.description,
       imgSrc: item.backgroundUrl,
       slogan: ' ',
       href: item.link,
@@ -42,9 +41,11 @@ export const parseApplicationList2 = () => {
 };
 export const applicationList = [
   {
+    description:
+      '基于深度学习模型DeepLabV3P实现高精度车道线检测,使用的数据集为城市道路交通流数据',
     backgroundUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/81c6299f65a333b90bf91e88b947de7b.png',
-    heat: 11589,
+    heat: 8319,
     data: ['城市道路交通流数据'],
     name: '交通拥堵预测-联邦学习与差分隐私',
     link: 'http://8.140.124.245:38080/#/',
@@ -56,8 +57,54 @@ export const applicationList = [
     influence: 21342,
   },
   {
-    backgroundUrl:
-      'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/97f4413480b4b203abbd1eb03a18f10e.png',
+    description:
+      '本系统首先针对交通系统运行与环境效益分离的问题，研究不同交通状态对交通环境的影响规律，同时，基于环境对交通需求的制约机制挖掘交通状态及交通环境的耦合关系。并研究大数据驱动的交通及环境重大事件的感知、辨识、预测、影响分析与应急响应，进而，提出基于交通与环境态势的协同决策方案，并基于路网动态排放实时监测平台实现本课题的决策应用。',
+    backgroundUrl: 'http://81.70.246.244:9126/i/2023/05/04/ivlqpm.webp',
+    heat: 5623,
+    data: ['城市道路交通流数据'],
+    name: '地铁客流可视化系统',
+    link: 'http://8.140.124.245:38080/#/',
+    model: ['GWNET', '基于深度学习模型DeepLabV3P实现高精度车道线检测'],
+    user: '系统管理员',
+    logoUrl:
+      'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/f422b57b3eaf84f177d9c2a6edd25676.jpg',
+    faculty: '该用户未注册机构',
+    influence: 24332,
+  },
+  {
+    description:
+      '本系统是一个基于大数据的城市交通平行验证与分析系统——针对城市交通管理面临的操作对象过于复杂、实验难以开展等难题，通过构建实际交通系统与人工交通系统之间交互运行和过程演化的“平行系统”，实现对现实交通系统管理和控制方案的仿真、评估和优化，为基于大数据的城市交通一体化协同技术集成与综合应用示范提供实验支持，减少我国城市交通规划、设计、建设和管理中的盲目性。',
+    backgroundUrl: 'http://81.70.246.244:9126/i/2023/05/04/j076yv.webp',
+    heat: 11589,
+    data: ['城市道路交通流数据'],
+    name: '疫情防控应急系统',
+    link: 'http://transworld.trsim.group/',
+    model: ['GWNET', '基于深度学习模型DeepLabV3P实现高精度车道线检测'],
+    user: '系统管理员',
+    logoUrl:
+      'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/f422b57b3eaf84f177d9c2a6edd25676.jpg',
+    faculty: '该用户未注册机构',
+    influence: 14332,
+  },
+  {
+    description:
+      '本项目形成城市交通出行大数据实时可视化分析平台，利用交通流一致的交通视频实时协同仿真技术，依托于“天河二号”超算平台，搭建了基于Spark的百万级轨迹数据的分析系统。',
+    backgroundUrl: 'http://81.70.246.244:9126/i/2023/05/04/j2rovg.webp',
+    heat: 24613,
+    data: ['城市道路交通流数据'],
+    name: '交通线网可视化系统',
+    link: 'http://metroflow-xw.trsim.group/bj/#/xw',
+    model: ['GWNET', '基于深度学习模型DeepLabV3P实现高精度车道线检测'],
+    user: '系统管理员',
+    logoUrl:
+      'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/f422b57b3eaf84f177d9c2a6edd25676.jpg',
+    faculty: '该用户未注册机构',
+    influence: 9371,
+  },
+  {
+    description:
+      '本系统探究了复杂交通系统的交通要素与特征内在耦合机理，面向交通出行行为分析研究了出行属性分布特征，提出了基于社会关联性的交通同行行为检测方法和出行关联强度分析方法，并构建出行行为的联合概率加权模型实现出行规律发现。',
+    backgroundUrl: 'http://81.70.246.244:9126/i/2023/05/04/ittmym.webp',
     heat: 39241,
     data: [
       '深圳出租车GPS数据',
@@ -82,8 +129,8 @@ export const applicationList = [
       'PEMSD7(M)',
       'PEMSD8',
     ],
-    name: '城市天眼监控系统',
-    link: 'http://221.122.78.148:18888/',
+    name: '交通仿真系统',
+    link: 'http://citytrsim.trsim.group/qingdao/',
     model: ['LOS_LOOP', 'PEMSD7(M)', 'PEMSD8'],
     user: '系统管理员',
     logoUrl:
@@ -92,6 +139,7 @@ export const applicationList = [
     influence: 34293,
   },
   {
+    description: '基于AGCRN、DCRNN、MTGNN等模型进行城市数据知识挖掘与系统画像',
     backgroundUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/686fc2ae65a775c7eadce617c1126c74.png',
     heat: 39240,
@@ -119,7 +167,7 @@ export const applicationList = [
       'PEMSD8',
     ],
     name: '城市数据知识挖掘与系统画像',
-    link: 'http://221.122.78.148:18080/portal/',
+    link: 'http://www.feiyun.tech:82/#/homepage',
     model: [
       'AGCRN',
       'DCRNN',
@@ -153,6 +201,7 @@ export const applicationList = [
     influence: 18283,
   },
   {
+    description: '基于AGCRN、DCRNN、MTGNN等模型进行路网结构分析',
     backgroundUrl:
       'http://8.140.124.245:8129/mnt/deploy/resource/scene-logo/168f491be7222b70e36be992d067a814.png',
     heat: 16995,

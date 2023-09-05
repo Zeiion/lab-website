@@ -21,7 +21,7 @@ const DataPage = () => {
         imgSrc: getTrafficPic(index),
         action: (
           <a
-            href={'/datause/'+item.id}
+            href={'/datause/' + item.id}
             target="_blank"
             className="absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200"
           >
@@ -48,7 +48,7 @@ const DataPage = () => {
     setKeyword(e.target.value);
   };
   return (
-    <PageTemplate title={'数据共享'} subTitle={'Models'}>
+    <PageTemplate title={'数据共享'} subTitle={'Data Share'}>
       <input
         type="text"
         className="mb-10 form-input"
@@ -70,7 +70,7 @@ const DataPage = () => {
               href={dataList[0].href}
             />
           </div>
-          <VCardList title="Models" list={dataList.slice(1)}></VCardList>
+          <VCardList title="ALL" list={dataList.slice(1)}></VCardList>
         </>
       )}
     </PageTemplate>

@@ -26,7 +26,7 @@ const AchieveIntro = () => {
   //     search for compact architectures with flexible and compact architecture search.
   //     The method is based on a novel architecture search algorithm that is able to
   //     search for compact architectures with flexible and compact architecture search.`,
-  //     imgSrc: 'https://i2.100024.xyz/2023/03/28/stxgx7.webp',
+  //     imgSrc: 'http://81.70.246.244:9126/i/2023/03/28/stxgx7.webp',
   //     tags: ['人工智能', '客服'],
   //     author: 'Zeiion',
   //     authorImgSrc: 'http://placekitten.com/300/300',

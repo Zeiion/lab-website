@@ -9,39 +9,38 @@
 //   const Module = lazy(() => import(`~/pages/${name}.jsx`));
 //   return <Module />;
 // };
+import { FEIYUN_URL } from '~/consts/index';
+import { FEIYUN_URL_LOGIN } from '~/consts';
 
 export const navList = [
   {
-    title: '平台概览',
-    href: '/',
+    title: '进入飞云',
+    href: FEIYUN_URL_LOGIN,
+    blank: true,
   },
-  {
-    title: '合作团队',
-    href: '/teams',
-  },
-  {
-    title: '成果共享',
-    href: '/achievements',
-  },
+  // {
+  //   title: '合作团队',
+  //   href: '/teams',
+  // },
   {
     title: '数据共享',
     href: '/datas',
   },
   {
     title: '知识协同',
-    href: '/models',
+    href: '/achievements',
   },
   {
-    title: '典型场景',
+    title: '场景适配',
     href: '/scenes',
   },
   {
     title: '关于我们',
     href: '/about',
   },
-  {
-    title: '飞云集智',
-    href: 'http://www.feiyun.tech:82/#/about',
-    blank: true,
-  },
+  // {
+  //   title: '飞云集智',
+  //   href: FEIYUN_URL,
+  //   blank: true,
+  // },
 ];

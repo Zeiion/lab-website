@@ -20,14 +20,19 @@
   }
 }
 
+body,
+html {
+  font-family: 'TimesNewRoman', sans-serif;
+}
+
 /* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
 [x-cloak=''] {
   display: none;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 0px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -35,4 +40,9 @@
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
+}
+
+@font-face {
+  font-family: TimesNewRoman;
+  src: url('/fonts/TimesNewRoman.ttf');
 }

@@ -10,7 +10,7 @@ import IconCard from '~/components/IconCard';
 import { parseModelList } from '~/consts/modelList';
 import { useRequest } from '../../utils/useRequest';
 import { getModelList } from '../../request/model';
-import { getAuthorImgSrc, getTrafficPic } from '../../utils/GetRandomPic';
+import { getAuthorImgSrc } from '../../utils/GetRandomPic';
 
 const dealAuthorName = (name) => {
   if (name.substr(-2, 2) == '大学' || name.substr(-1, 1) == '所')

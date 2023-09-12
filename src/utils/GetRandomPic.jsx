@@ -24,20 +24,20 @@ const imgList = [
 ];
 
 export const trafficImgList = [
-  'http://81.70.246.244:9126/i/2023/04/07/1yhrzk.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yilth.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yj3zh.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yjbbv.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yjt0m.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1ykg2p.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1ykskq.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yl57p.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1ylfkj.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yupyt.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yuyzz.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1ywd3k.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yx48m.webp',
-  'http://81.70.246.244:9126/i/2023/04/07/1yxwxu.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yhrzk.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yilth.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yj3zh.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yjbbv.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yjt0m.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1ykg2p.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1ykskq.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yl57p.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1ylfkj.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yupyt.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yuyzz.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1ywd3k.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yx48m.webp',
+  'http://39.97.209.211:9126/i/2023/04/07/1yxwxu.webp',
 ];
 export const getIndexPic = (index) => {
   const idx = Math.floor(index % imgList.length);
@@ -50,7 +50,7 @@ export const getAuthorImgSrc = (author) => {
     return 'https://th.bing.com/th/id/OIP.atQ5roc3bgb8kvHNJB0whgAAAA?pid=ImgDet&rs…';
   if (author === '中国科学院自动化研究所')
     return 'http://www.ia.cas.cn/images/logo.png';
-  else return 'http://81.70.246.244:9126/i/2023/04/14/bygr9.webp';
+  else return 'http://39.97.209.211:9126/i/2023/04/14/bygr9.webp';
 };
 
 export const getRandomPic = () => {

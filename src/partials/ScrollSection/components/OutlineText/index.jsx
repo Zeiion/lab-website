@@ -60,7 +60,7 @@ const OutlineText = ({ text, imgSrc }) => {
             <img
               className="outline-text-image object-cover w-full h-[50vh]"
               src={
-                imgSrc || 'http://81.70.246.244:9126/i/2023/04/07/1yx48m.webp'
+                imgSrc || 'http://39.97.209.211:9126/i/2023/04/07/1yx48m.webp'
               }
             />
           </div>

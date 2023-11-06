@@ -16,7 +16,7 @@ const DataIntro = () => {
   //     title: 'Large-scale Traffic Speed Data Set',
   //     description:
   //       'This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.This traffic speed data set is comprised of 214 anonymous road segments (mainly consist of urban expressways and arterials) from Aug. 1, 2016 to Sep. 30, 2016 at 10-minute interval in Guangzhou, China. It is available for everybody without any commercial use. Relying on this data set, if you plan to do some studies, please clarify the data sources and cite the OpenITS.',
-  //     imgSrc: 'http://81.70.246.244:9126/i/2023/04/07/1ywd3k.webp',
+  //     imgSrc: 'http://39.97.209.211:9126/i/2023/04/07/1ywd3k.webp',
   //     tags: ['Openits'],
   //     author: 'OpenITs',
   //     authorImgSrc:
@@ -28,7 +28,7 @@ const DataIntro = () => {
   //       key: null,
   //       ref: null,
   //       props: {
-  //         href: 'http://81.70.246.244:9898/scene/create/3',
+  //         href: 'http://39.97.209.211:10001/scene/create/3',
   //         target: '_blank',
   //         className:
   //           'absolute top-0 right-0 px-3 py-1 text-sm font-bold text-white transition duration-200 bg-purple-700 border-2 border-purple-600 cursor-pointer hover:bg-purple-800 hover:text-gray-200',

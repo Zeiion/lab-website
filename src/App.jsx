@@ -24,6 +24,9 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
 
+import MapPage from './pages/MapPage';
+import FactoryPage from './pages/FactoryPage'
+
 function App() {
   const location = useLocation();
 
@@ -62,6 +65,12 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* map */}
+        <Route path="/map" element={<MapPage />} />
+        {/* factory */}
+        <Route path="/factory" element={<FactoryPage />} />
+
       </Routes>
       <div className="starsec"></div>
       <div className="starthird"></div>

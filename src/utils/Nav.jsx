@@ -35,6 +35,14 @@ export const navList = [
     href: '/scenes',
   },
   {
+    title: 'Map',
+    href: '/map',
+  },
+  {
+    title: 'Factory',
+    href: '/factory',
+  },
+  {
     title: '关于我们',
     href: '/about',
   },
